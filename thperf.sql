@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : jeu. 16 mars 2023 à 15:44
+-- Généré le : jeu. 16 mars 2023 à 17:20
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -29,9 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `achat` (
   `id_achat` int(10) NOT NULL,
-  `id_car` int(10) NOT NULL,
   `id_user` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `achat`
+--
+
+INSERT INTO `achat` (`id_achat`, `id_user`) VALUES
+(1, 3);
 
 -- --------------------------------------------------------
 
@@ -40,10 +46,17 @@ CREATE TABLE `achat` (
 --
 
 CREATE TABLE `achat_car` (
-  `id_achat_car` int(10) NOT NULL,
   `id_achat` int(10) NOT NULL,
   `id_car` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `achat_car`
+--
+
+INSERT INTO `achat_car` (`id_achat`, `id_car`) VALUES
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -53,7 +66,7 @@ CREATE TABLE `achat_car` (
 
 CREATE TABLE `car` (
   `id_car` int(10) NOT NULL,
-  `color` int(20) NOT NULL,
+  `color` varchar(20) NOT NULL,
   `kilometrage` int(10) NOT NULL,
   `nb_door` tinyint(4) NOT NULL,
   `power` int(10) NOT NULL,
@@ -62,8 +75,16 @@ CREATE TABLE `car` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` int(20) NOT NULL,
-  `picture` varchar(255) NOT NULL
+  `picture` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `car`
+--
+
+INSERT INTO `car` (`id_car`, `color`, `kilometrage`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`, `picture`) VALUES
+(1, 'red', 0, 5, 5, 'gazoil', '2023-03-16', 'BMW', 'xxx', 300, NULL),
+(2, 'blue', 0, 3, 4, 'gazoil', '2023-03-16', 'Mercedes', 'ddd', 100, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,6 +104,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut`) VALUES
+(3, 'test', 'test', 'test@gmail.com', '12345', '9 avenue', '2023-03-16 16:47:34', 1);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -91,14 +119,12 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `achat`
   ADD PRIMARY KEY (`id_achat`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_car` (`id_car`);
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Index pour la table `achat_car`
 --
 ALTER TABLE `achat_car`
-  ADD PRIMARY KEY (`id_achat_car`),
   ADD UNIQUE KEY `id_car` (`id_car`),
   ADD KEY `id_achat` (`id_achat`);
 
@@ -119,22 +145,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT pour la table `achat_car`
---
-ALTER TABLE `achat_car`
-  MODIFY `id_achat_car` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id_car` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_car` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
@@ -144,8 +164,7 @@ ALTER TABLE `user`
 -- Contraintes pour la table `achat`
 --
 ALTER TABLE `achat`
-  ADD CONSTRAINT `achat_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `achat_ibfk_2` FOREIGN KEY (`id_car`) REFERENCES `car` (`id_car`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `achat_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `achat_car`
