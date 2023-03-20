@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : jeu. 16 mars 2023 à 17:20
+-- Généré le : lun. 20 mars 2023 à 17:16
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -24,39 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `achat`
---
-
-CREATE TABLE `achat` (
-  `id_achat` int(10) NOT NULL,
-  `id_user` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `achat`
---
-
-INSERT INTO `achat` (`id_achat`, `id_user`) VALUES
-(1, 3);
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `achat_car`
 --
 
 CREATE TABLE `achat_car` (
   `id_achat` int(10) NOT NULL,
-  `id_car` int(10) NOT NULL
+  `user_id` int(10) NOT NULL,
+  `car_id` int(10) NOT NULL,
+  `nb_voiture` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `achat_car`
---
-
-INSERT INTO `achat_car` (`id_achat`, `id_car`) VALUES
-(1, 1),
-(1, 2);
 
 -- --------------------------------------------------------
 
@@ -66,8 +42,6 @@ INSERT INTO `achat_car` (`id_achat`, `id_car`) VALUES
 
 CREATE TABLE `car` (
   `id_car` int(10) NOT NULL,
-  `color` varchar(20) NOT NULL,
-  `kilometrage` int(10) NOT NULL,
   `nb_door` tinyint(4) NOT NULL,
   `power` int(10) NOT NULL,
   `fuel` enum('gazoil','essence','electric','ethanol','hybrid') NOT NULL,
@@ -75,16 +49,20 @@ CREATE TABLE `car` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` int(20) NOT NULL,
-  `picture` varchar(255) DEFAULT NULL
+  `picture` varchar(255) DEFAULT NULL,
+  `id_cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Déchargement des données de la table `car`
+-- Structure de la table `categorie`
 --
 
-INSERT INTO `car` (`id_car`, `color`, `kilometrage`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`, `picture`) VALUES
-(1, 'red', 0, 5, 5, 'gazoil', '2023-03-16', 'BMW', 'xxx', 300, NULL),
-(2, 'blue', 0, 3, 4, 'gazoil', '2023-03-16', 'Mercedes', 'ddd', 100, NULL);
+CREATE TABLE `categorie` (
+  `id_cat` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -115,24 +93,25 @@ INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `mail`, `password`, `a
 --
 
 --
--- Index pour la table `achat`
---
-ALTER TABLE `achat`
-  ADD PRIMARY KEY (`id_achat`),
-  ADD KEY `id_user` (`id_user`);
-
---
 -- Index pour la table `achat_car`
 --
 ALTER TABLE `achat_car`
-  ADD UNIQUE KEY `id_car` (`id_car`),
-  ADD KEY `id_achat` (`id_achat`);
+  ADD PRIMARY KEY (`id_achat`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `car_id` (`car_id`);
 
 --
 -- Index pour la table `car`
 --
 ALTER TABLE `car`
-  ADD PRIMARY KEY (`id_car`);
+  ADD PRIMARY KEY (`id_car`),
+  ADD KEY `id_cat` (`id_cat`);
+
+--
+-- Index pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  ADD PRIMARY KEY (`id_cat`);
 
 --
 -- Index pour la table `user`
@@ -145,6 +124,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `achat_car`
+--
+ALTER TABLE `achat_car`
+  MODIFY `id_achat` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `car`
 --
 ALTER TABLE `car`
@@ -154,24 +139,24 @@ ALTER TABLE `car`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `achat`
---
-ALTER TABLE `achat`
-  ADD CONSTRAINT `achat_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Contraintes pour la table `achat_car`
 --
 ALTER TABLE `achat_car`
-  ADD CONSTRAINT `achat_car_ibfk_1` FOREIGN KEY (`id_achat`) REFERENCES `achat` (`id_achat`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `achat_car_ibfk_2` FOREIGN KEY (`id_car`) REFERENCES `car` (`id_car`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `achat_car_ibfk_1` FOREIGN KEY (`car_id`) REFERENCES `car` (`id_car`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `achat_car_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `car`
+--
+ALTER TABLE `car`
+  ADD CONSTRAINT `car_ibfk_1` FOREIGN KEY (`id_cat`) REFERENCES `categorie` (`id_cat`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
