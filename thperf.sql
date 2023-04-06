@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 20 mars 2023 à 17:16
+-- Généré le : jeu. 06 avr. 2023 à 10:04
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -44,6 +44,7 @@ CREATE TABLE `car` (
   `id_car` int(10) NOT NULL,
   `nb_door` tinyint(4) NOT NULL,
   `power` int(10) NOT NULL,
+  `km` varchar(50) NOT NULL,
   `fuel` enum('gazoil','essence','electric','ethanol','hybrid') NOT NULL,
   `creation_year` date NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -86,7 +87,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut`) VALUES
-(3, 'test', 'test', 'test@gmail.com', '12345', '9 avenue', '2023-03-16 16:47:34', 1);
+(3, 'test', 'test', 'test@gmail.com', '12345', '9 avenue', '2023-03-16 16:47:34', 1),
+(4, 'Tom', 'Sawyer', 'TomSaw@gmail.com', 'saw1', '4 avenue', '2023-04-06 09:58:42', 0);
 
 --
 -- Index pour les tables déchargées
@@ -133,13 +135,13 @@ ALTER TABLE `achat_car`
 -- AUTO_INCREMENT pour la table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id_car` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_car` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
