@@ -44,7 +44,7 @@ class User extends Db
 	{
 		if(!empty($_POST)){ 
 	
-			if (!isset($_POST["Prenom"]) || empty($_POST["Prenom"]))
+			if (!isset($_POST["prenom"]) || empty($_POST["prenom"]))
 			{
 				$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le Prenom !
@@ -52,7 +52,7 @@ class User extends Db
 			
 			}
 		
-			if (!isset($_POST["Nom"]) || empty($_POST["Nom"]))
+			if (!isset($_POST["nom"]) || empty($_POST["nom"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir le nom !
@@ -60,7 +60,7 @@ class User extends Db
 			
 			}
 
-			if (!isset($_POST["Mail"]) || empty($_POST["Mail"]))
+			if (!isset($_POST["mail"]) || empty($_POST["mail"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre email !
@@ -85,6 +85,33 @@ class User extends Db
 			}
 		
 	}
+}
+	public static function showDb(){
+
+		$query = "SELECT * FROM user LIMIT 100";
+
+		$requetePreparee = self::getDb()->prepare($query);
+
+		$reponse = $requetePreparee->execute();
+
+		//verifie si la requete s'est bien déroulé
+		if (!$reponse)
+		{
+			$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+					Quelque chose ne s'est pas déroulé correctement pendant la requete
+				</div>";
+				return false;
+		}
+		
+		if ($reponse)
+		{
+			$allUsers = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
+		
+		}
+
+		return $allUsers;
+
+	
 }
 	/**
 	 * Get the value of id_user

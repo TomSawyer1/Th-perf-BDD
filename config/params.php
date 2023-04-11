@@ -7,13 +7,13 @@ const CONFIG = [
     'db' => [
         'DB_HOST' => 'localhost',
         'DB_PORT' => '3306',
-        'DB_NAME' => 'projet',
+        'DB_NAME' => 'thperf',
         'DB_USER' => 'root',
-        'DB_PSWD' => '',
+        'DB_PSWD' => 'root',
     ],
     'app' => [
-        'name' => 'Projet-ws',
-        'projectBaseUrl' => 'http://localhost/Projet-ws/'
+        'name' => 'TH-PERF-BDD',
+        'projectBaseUrl' => 'http://localhost/TH-PERF-BDD/'
     ]
 ];
 

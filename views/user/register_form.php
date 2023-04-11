@@ -10,34 +10,35 @@
 	
 	<div class="row g-3">
 		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
-			<label for="nom">Nom</label>
+			<input type="text" class="form-control" id="prenom" placeholder="Prenom" name="prenom">
+			<label for="prenom">Prenom</label>
 		</div>
 
 		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="prenom" placeholder="Prenom" name="prenom">
-			 <label for="prenom">Prénom</label>
+			<input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+			 <label for="nom">Nom</label>
 		</div>
 	</div>
 
-	<div class="form-floating mb-3">
+<!--	<div class="form-floating mb-3">
 		<input type="text" class="form-control" id="user" placeholder="Pseudo" name="pseudo">
 		<label for="user">Pseudo</label>
 	</div>
+-->
 
 	<div class="form-floating mb-3">
-		<input type="email" class="form-control" id="email" placeholder="email" name="mail">
-		<label for="user">Email</label>
+		<input type="mail" class="form-control" id="mail" placeholder="mail" name="mail">
+		<label for="user">Mail</label>
 	</div>
 
 	<div class="form-floating mb-3">
-		<input type="password" class="form-control" id="password" placeholder="votre mdp" name="mdp">
-		<label for="floatingPassword">Mot de Passe</label>
+		<input type="password" class="form-control" id="password" placeholder="Password" name="password">
+		<label for="floatingPassword">password</label>
 	</div>
 
 	<div class="form-floating mb-3">
-		<input type="tel" class="form-control" id="number" placeholder="telephone" name="numero">
-		<label for="floatingPassword">Numéro de téléphone</label>
+		<input type="tel" class="form-control" id="address" placeholder="Address" name="address">
+		<label for="floatingPassword">Addr</label>
 	</div>
 
 	<input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
