@@ -13,17 +13,16 @@ class User extends Db
 
 	public function createFromPost(array $dataFromPost)
 	{
-		$this->setFirstName($dataFromPost["nom"]);
-		$this->setLastName($dataFromPost["prenom"]);
-		$this->setMail($dataFromPost["pseudo"]);
-		$this->setPassword($dataFromPost["mdp"]);
-		$this->setAddress($dataFromPost["numero"]);
+		$this->setFirstName($dataFromPost["first_name"]);
+		$this->setLastName($dataFromPost["last_name"]);
+		$this->setPassword($dataFromPost["password"]);
+		$this->setAddress($dataFromPost["address"]);
 		$this->setStatut(0);
 	}
 
 	public function insertDb()
 	{
-		$query = "INSERT INTO user (`nom`,`prenom`,`pseudo`,`password`,`adresse`,`numero`) VALUES (?,?,?,?,?,?)";
+		$query = "INSERT INTO user (`first_name`,`last_name`,`mail`,`password`,`address`) VALUES (?,?,?,?,?)";
 
 		$requetePreparee = self::getDb()->prepare($query);
 
@@ -45,31 +44,23 @@ class User extends Db
 	{
 		if(!empty($_POST)){ 
 	
-			if (!isset($_POST["nom"]) || empty($_POST["nom"]))
+			if (!isset($_POST["Prenom"]) || empty($_POST["Prenom"]))
 			{
 				$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le nom !
+				Veuillez remplir le Prenom !
 				</div>";
 			
 			}
 		
-			if (!isset($_POST["prenom"]) || empty($_POST["prenom"]))
+			if (!isset($_POST["Nom"]) || empty($_POST["Nom"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-					  Veuillez remplir le prenom !
+					  Veuillez remplir le nom !
 				</div>";
 			
 			}
 
-			if (!isset($_POST["pseudo"]) || empty($_POST["pseudo"]))
-			{
-				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-					  Veuillez remplir le pseudo !
-				</div>";
-			
-			}
-
-			if (!isset($_POST["mail"]) || empty($_POST["mail"]))
+			if (!isset($_POST["Mail"]) || empty($_POST["Mail"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre email !
@@ -77,7 +68,7 @@ class User extends Db
 			
 			}
 
-			if (!isset($_POST["mdp"]) || empty($_POST["mdp"]))
+			if (!isset($_POST["password"]) || empty($_POST["password"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre mot de passe !
@@ -85,10 +76,10 @@ class User extends Db
 			
 			}
 
-			if (!isset($_POST["numero"]) || empty($_POST["numero"]))
+			if (!isset($_POST["address"]) || empty($_POST["address"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-					  Veuillez remplir votre numero !
+					  Veuillez remplir votre address !
 				</div>";
 			
 			}
