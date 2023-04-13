@@ -14,11 +14,7 @@ class UserController
 
 			if (empty($_SESSION["message"]))	// Si y'a pas d'erreur
 			{
-				$user = new User();
-
-				$user->createFromPost($_POST);
-
-				$user->insertDb();
+				User::insertData();
 
 				if (empty($_SESSION["message"]))
 				{

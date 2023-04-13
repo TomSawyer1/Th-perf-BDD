@@ -22,7 +22,7 @@ class User extends Db
 
 	public function insertDb()
 	{
-		$query = "INSERT INTO user (`first_name`,`last_name`,`mail`,`password`,`address`) VALUES (?,?,?,?,?)";
+		$query = "INSERT INTO user (`first_name`,`last_name`,`mail`,`password`,`address`,`statut`) VALUES (?,?,?,?,?,?)";
 
 		$requetePreparee = self::getDb()->prepare($query);
 
@@ -44,7 +44,7 @@ class User extends Db
 	{
 		if(!empty($_POST)){ 
 	
-			if (!isset($_POST["prenom"]) || empty($_POST["prenom"]))
+			if (!isset($_POST["first_name"]) || empty($_POST["first_name"]))
 			{
 				$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le Prenom !
@@ -52,7 +52,7 @@ class User extends Db
 			
 			}
 		
-			if (!isset($_POST["nom"]) || empty($_POST["nom"]))
+			if (!isset($_POST["last_name"]) || empty($_POST["last_name"]))
 			{
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir le nom !
@@ -113,7 +113,10 @@ class User extends Db
 
 	
 }
-	/**
+	
+
+
+/**
 	 * Get the value of id_user
 	 */
 	public function getIdUser()

@@ -10,12 +10,12 @@
 	
 	<div class="row g-3">
 		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="prenom" placeholder="Prenom" name="prenom">
+			<input type="text" class="form-control" id="prenom" placeholder="Prenom" name="first_name">
 			<label for="prenom">Prenom</label>
 		</div>
 
 		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+			<input type="text" class="form-control" id="nom" placeholder="Nom" name="last_name">
 			 <label for="nom">Nom</label>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 
 	<div class="form-floating mb-3">
 		<input type="tel" class="form-control" id="address" placeholder="Address" name="address">
-		<label for="floatingPassword">Addr</label>
+		<label for="floatingPassword">Address</label>
 	</div>
 
 	<input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
