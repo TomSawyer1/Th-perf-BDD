@@ -1,15 +1,9 @@
-<?php  
-$title = "Administration";
-include VIEWS.'inc/header.php';
+<?php  include VIEWS.'inc/header.php'; ?>
 
-
-?>
-
-
-			<h1 class="text-center my-5">Vous êtes au bon endroit pour gerez vos utilisateur inscrit !</h1>
+			<h1 class="text-center my-5">Liste des Utilisateurs </h1>
                   <?= isset($_SESSION["message"]) ? $_SESSION["message"] : ""; 
 
-			$_SESSION["message"] = "";
+			/*$_SESSION["message"] = "";*/
 	?>
                   <table class="table table-striped container">
 
@@ -22,7 +16,6 @@ include VIEWS.'inc/header.php';
             <th scope="col">Mail</th>
             <th scope="col">Password</th>
             <th scope="col">Address</th>
-            <th scope="col">Date de creation</th>
             <th scope="col">Statut</th>
 
       </tr>
@@ -30,7 +23,7 @@ include VIEWS.'inc/header.php';
 <tbody class="table-striped">
 <?php       
 
-            $allUsers=User::showDb();
+            $allUsers= User::showDb();
             foreach ($allUsers as $user)
              {
                  
@@ -43,18 +36,23 @@ include VIEWS.'inc/header.php';
                     <td><?=$user["mail"]?></td>
                     <td><?=$user["password"]?></td>
                     <td><?=$user["address"]?></td>
-                    <td><?=$user["date_creation"]?></td>
                     <td><?=$user["statut"]?></td>
-                  <td> 
-
-                       
-
-                  </td>
-                  <td> 
-
-                       
-
-                  </td>
+                    <td></td>
+                    <td></td>
+                    <?php 
+	  							if ($user["statut"] == 0)
+	  							{
+	  								?>
+	  								<a href="<?=URL?>admin/gestion_admin.php?action=nommer_admin&id=<?=$user["id_user"]?>" class="btn btn-secondary">Devenir administrateur</a>
+	  								<?php
+	  							}
+	  							if ($user["statut"] == 0)
+	  							{
+	  								?>
+	  								<a href="<?=URL?>admin/gestion_admin.php?action=delete&id=<?=$user["id_user"]?>" class="btn btn-danger">Supprimer</a> 
+	  								<?php
+	  							}
+	  							?>
 
                 </tr>
                 <?php

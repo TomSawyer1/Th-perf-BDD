@@ -46,7 +46,7 @@ const COVER = '../../public/upload/';
 $routes = [
     ''                  => ['AppController', 'index'],
     //j'appelle la methode registre() qui est dans le fichier UserController
-    '/inscription'      => ['UserController', 'register']
- 
+    '/inscription'      => ['UserController', 'register'],
+    '/administration'   => ['UserController', 'tab_user'],
 
 ];

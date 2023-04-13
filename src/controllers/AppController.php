@@ -8,6 +8,10 @@ class AppController
 
         include VIEWS . "app/home.php";
     }
+    public static function tab_user()
+    {
 
+        include VIEWS ."admin/admin.php";
+    }
 
 }

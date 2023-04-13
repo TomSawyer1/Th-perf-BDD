@@ -19,13 +19,19 @@
 	        <li class="nav-item">
 	          <a class="nav-link mx-2" aria-current="page" href="#">Accueil</a>
 	        </li>
+			<li class="nav-item">
+	          <a class="nav-link mx-2" href="#">Histoire</a>
+	        </li>
+			<li class="nav-item">
+	          <a class="nav-link mx-2" href="#">Categorie</a>
+	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link mx-2" href="#">Inscription</a>
 	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link mx-2" href="#">Categorie</a>
-			  
+			<li class="nav-item">
+	          <a class="nav-link mx-2" href="#">Connexion</a>
 	        </li>
+	        
 	    </div>
 	  </div>
 	</nav>
