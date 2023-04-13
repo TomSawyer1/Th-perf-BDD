@@ -38,4 +38,14 @@ class UserController
 		include VIEWS . "user/register_form.php";
 		// echo "Mon controller register fonctionne hyper bien<br>";
 	}
+
+	public static function tab_user()
+	{
+		$user = new user();
+		$requete = user::showDb("SELECT * FROM `user`");
+		$user->showDb($requete);
+
+		include VIEWS . "admin/admin.php";
+
+	}
 }
