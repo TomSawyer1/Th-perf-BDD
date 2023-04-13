@@ -1,6 +1,6 @@
 <?php
 
-class User extends Db
+class user extends Db
 {
 	private $id_user;
 	private $first_name;
@@ -15,6 +15,7 @@ class User extends Db
 	{
 		$this->setFirstName($dataFromPost["first_name"]);
 		$this->setLastName($dataFromPost["last_name"]);
+		$this->setMail($dataFromPost["mail"]);
 		$this->setPassword($dataFromPost["password"]);
 		$this->setAddress($dataFromPost["address"]);
 		$this->setStatut(0);
