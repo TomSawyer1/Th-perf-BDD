@@ -121,4 +121,16 @@ class UserController extends Db
 
 		include VIEWS . "admin/admin.php";
 	}
+
+	public static function modifier()
+	{
+			// nouvelle user
+			$user = new User();
+			// requete select ALL
+
+			$user->modifier();
+		
+			//header location vers le front 
+		include VIEWS . "user/modification.php";
+	}
 }

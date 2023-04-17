@@ -173,6 +173,22 @@ public static function getUser($mail, $password) {
 	}
 }
 
+public static function modifier(){
+
+	$query = "SELECT `id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut` FROM `user` WHERE `id_user` = ?";
+
+	$requetePreparee = self::getDb()->prepare($query);
+
+	$reponse = $requetePreparee->execute([
+
+	$_GET["id"]
+
+	]);
+
+	$userFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
+	return $userFromBdd;
+	}
+
 
 
 /**
