@@ -115,6 +115,64 @@ class user extends Db
 	
 }
 
+/*public function connexionDb(){ 
+	$query="SELECT * FROM `user` WHERE `mail`=? AND `password`=?";
+
+	$requetePreparee = self::getDb()->prepare($query);
+	
+	$reponse = $requetePreparee->execute([
+		$this->getMail(),
+		$this->getPassword()
+]);
+	// tableau associatif d'element :
+	$Users_connecte = $requetePreparee->fetch(PDO::FETCH_ASSOC);
+	
+
+	//verifie si la requete s'est bien déroulé
+	if (!$reponse)
+	{
+		$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+				 Erreur au niveau de la requete SQL !
+		   </div>";
+	}
+
+	// si authentification reussi
+	if ($requetePreparee->rowCount() == 1)
+	{
+		$_SESSION['user']= $Users_connecte;
+		header("Location:" . BASE_PATH . "connexion");
+		$_SESSION["message"] = "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
+		Bonjour " .$_SESSION['user']['prenom']. "</div>";
+
+	}
+
+   // erreur authentification
+	if ($requetePreparee->rowCount() == 0) {
+		header("Location:" . BASE_PATH . "connexion");
+		$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+		Erreur d'authentification ! veuillez réssayer
+  </div>";
+
+
+}
+}*/
+
+public static function getUser($mail, $password) {
+	//$requete = "SELECT first_name, last_name , statut FROM user WHERE mail = ? AND password = ?";
+	$requete = "SELECT * FROM user WHERE mail = ? AND password = ?";
+	$requetePreparee = self::getDb()->prepare($requete);
+	$reponse = $requetePreparee->execute([$mail, $password]);
+
+	if (!$reponse) {
+		$_SESSION["message"] = "
+	   Désolé, veuillez revoir vos informations de connexion </div>";
+		return false;
+	} else {
+		$result = $requetePreparee->fetch();
+		return $result;
+	}
+}
+
 
 
 /**

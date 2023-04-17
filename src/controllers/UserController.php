@@ -39,52 +39,33 @@ class UserController extends Db
 		// echo "Mon controller register fonctionne hyper bien<br>";
 	}
 
-	public static function connexion()
-	{
-		$query="SELECT * FROM `user` WHERE `mail`=? AND `password`=?";
+	public static function connexion() {
+		if (!empty($_POST)) {
+            $mail = $_POST['mail'];
+            $password = $_POST['password'];
 
-		$requetePreparee = self::getDb()->prepare($query);
-        
-        $reponse = $requetePreparee->execute([
-            $_POST["mail"],
-            $_POST["password"]
-    ]);
-        // tableau associatif d'element :
-        $Users_connecte = $requetePreparee->fetch(PDO::FETCH_ASSOC);
-        
+            $result = User::getUser($mail, $password);
 
-        //verifie si la requete s'est bien déroulé
-        if (!$reponse)
-        {
-            $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-                     Erreur au niveau de la requete SQL !
-               </div>";
+            if ($result) {
+                $_SESSION['user'] = $result;
+                header("Location:" . BASE_PATH . "home");
+                exit();
+            } else {
+                $_SESSION['message'] = "
+                    Les informations de connexion sont incorrectes </div>";
+
+
+            }
         }
-
-        // si authentification reussi
-        if ($requetePreparee->rowCount() == 1)
-        {
-            $_SESSION['user']= $Users_connecte;
-            header("Location:" . BASE_PATH . "connexion");
-            $_SESSION["message"] = "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
-            Bonjour " .$_SESSION['user']['prenom']. "</div>";
-
-            // echo($_SESSION['user']['nom']);
-        }
-
-       // erreur authentification
-        if ($requetePreparee->rowCount() == 0) {
-            header("Location:" . BASE_PATH . "connexion");
-            $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-            Erreur d'authentification ! veuillez réssayer
-      </div>";
-        }
-
+		include VIEWS . "user/connexion.php";
+	}
+		
+	
 
 
 		
-		include VIEWS . "user/connexion.php";
-	}
+		
+
 
 	public static function tab_user()
 	{

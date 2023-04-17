@@ -20,6 +20,6 @@
 
 
 <?php  
-UserController::connexion();
+//UserController::connexion();
 include VIEWS.'inc/footer.php'; 
 ?>
