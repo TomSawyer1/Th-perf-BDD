@@ -9,7 +9,7 @@ const CONFIG = [
         'DB_PORT' => '3306',
         'DB_NAME' => 'thperf',
         'DB_USER' => 'root',
-        'DB_PSWD' => 'root',
+        'DB_PSWD' => '',
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
