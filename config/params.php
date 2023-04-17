@@ -20,6 +20,7 @@ const CONFIG = [
 /**
  * Constantes pour accéder rapidement aux dossiers importants du MVC
  */
+/*
 const BASE_DIR = __DIR__ . '/../';
 const BASE_PATH = CONFIG['app']['projectBaseUrl'] . '/public/index.php/';
 const PUBLIC_FOLDER = BASE_DIR . 'public/';
@@ -28,8 +29,8 @@ const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = BASE_DIR.'public/upload/';
 const COVER = '../../public/upload/';
+*/
 
-/*
 const BASE_DIR = __DIR__ . '\\..\\';
 const BASE_PATH = CONFIG['app']['projectBaseUrl'] . '/public/index.php/';
 const PUBLIC_FOLDER = BASE_DIR . 'public\\';
@@ -38,7 +39,7 @@ const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = BASE_DIR.'public\\upload\\';
 const COVER = '../../public/upload/';
-*/
+
 
 /**
  * Liste des actions/méthodes possibles (les routes du routeur)
