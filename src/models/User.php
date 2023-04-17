@@ -114,43 +114,7 @@ class user extends Db
 
 	
 }
-public static function remove(){
 
-	$requete = "DELETE FROM `user` WHERE `id_user` = ?";
-
-	$requetePreparee = self::getDb()->prepare($requete);
-
-	$reponse = $requetePreparee->execute([
-		$_GET["id"]
-		]);
-
-	if (!$reponse)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-			  La requete ne s'est pas déroulé correctement
-		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
-
-	if ($requetePreparee->rowCount() == 0)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-			  L'utilisateur que vous essayez de supprimer, n'existe pas !
-		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
-
-	if ($requetePreparee->rowCount() == 1)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
-			  Vous avez bien supprimé l'utilisateur dont l'id est " . $_GET["id"] . "
-		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
-	}
 
 
 /**

@@ -13,7 +13,7 @@ const CONFIG = [
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
-        'projectBaseUrl' => 'http://localhost/TH-PERF-BDD/'
+        'projectBaseUrl' => 'http://localhost:8888/TH-PERF-BDD/'
     ]
 ];
 
@@ -49,5 +49,6 @@ $routes = [
     '/inscription'      => ['UserController', 'register'],
     '/administration'   => ['UserController', 'tab_user'],
     '/supprimer'        => ['UserController', 'remove'],
+    '/connexion'        => ['UserController', 'connexion'],
 
 ];
