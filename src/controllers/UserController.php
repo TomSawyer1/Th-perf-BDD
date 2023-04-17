@@ -48,4 +48,6 @@ class UserController
 		include VIEWS . "admin/admin.php";
 
 	}
+
+	
 }

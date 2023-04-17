@@ -129,7 +129,7 @@ public static function remove(){
 		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 			  La requete ne s'est pas déroulé correctement
 		</div>";
-		header("Location:" . __DIR__ . "profil");
+		header("Location:" . BASE_PATH . "administration");
 		exit;
 	}
 
@@ -138,7 +138,7 @@ public static function remove(){
 		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 			  L'utilisateur que vous essayez de supprimer, n'existe pas !
 		</div>";
-		header("Location:" . __DIR__ . "profil");
+		header("Location:" . BASE_PATH . "administration");
 		exit;
 	}
 
@@ -147,7 +147,7 @@ public static function remove(){
 		$_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
 			  Vous avez bien supprimé l'utilisateur dont l'id est " . $_GET["id"] . "
 		</div>";
-		header("Location:" . URL . "User.php");
+		header("Location:" . BASE_PATH . "administration");
 		exit;
 	}
 	}

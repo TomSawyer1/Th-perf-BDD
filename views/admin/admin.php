@@ -37,22 +37,13 @@
                     <td><?=$user["password"]?></td>
                     <td><?=$user["address"]?></td>
                     <td><?=$user["statut"]?></td>
-                    <td></td>
-                    <td></td>
-                    <?php 
-	  							if ($user["statut"] == 0)
-	  							{
-	  								?>
-	  								<a href="<?=URL?>admin/gestion_admin.php?action=nommer_admin&id=<?=$user["id_user"]?>" class="btn btn-secondary">Devenir administrateur</a>
-	  								<?php
-	  							}
-	  							if ($user["statut"] == 0)
-	  							{
-	  								?>
-	  								<a href="<?=URL?>admin/gestion_admin.php?action=delete&id=<?=$user["id_user"]?>" class="btn btn-danger">Supprimer</a> 
-	  								<?php
-	  							}
-	  							?>
+                    <td>
+                        <a href="supprimer?id=<?=$user["id_user"]?>" class="btn btn-danger">Supprimer</a>
+                    </td>
+                    <td>
+                    <a href="modifier?id=<?=$user["id_user"]?>" class="btn btn-primary">Modifier</a>
+
+                    </td>
 
                 </tr>
                 <?php

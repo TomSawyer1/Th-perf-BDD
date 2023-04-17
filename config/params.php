@@ -48,5 +48,6 @@ $routes = [
     //j'appelle la methode registre() qui est dans le fichier UserController
     '/inscription'      => ['UserController', 'register'],
     '/administration'   => ['UserController', 'tab_user'],
+    '/supprimer'        => ['UserController', 'remove'],
 
 ];
