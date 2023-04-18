@@ -58,6 +58,7 @@ $routes = [
     '/supprimer'        => ['UserController', 'remove'],
     '/connexion'        => ['UserController', 'connexion'],
     '/modifier'         => ['UserController', 'modifier'],
+    '/ajoutcar'         => ['UserController', 'ajtcar'],
 
 
 ];

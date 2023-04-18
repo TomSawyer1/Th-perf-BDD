@@ -21,16 +21,12 @@ class UserController extends Db
 
 				$user->insertDb();
 
-				if (empty($_SESSION["message"]))
-				{
+				if (empty($_SESSION["message"])) {
 					$_SESSION["message"] .= "Ca a marché<br>";
 					header("Location:" . BASE_PATH . "connexion");
 					exit;
-				}
-				else
-				{
+				} else {
 					$_SESSION["message"] .= "Ca a pas marché<br>";
-
 				}
 			}
 		}
@@ -39,32 +35,31 @@ class UserController extends Db
 		// echo "Mon controller register fonctionne hyper bien<br>";
 	}
 
-	public static function connexion() {
+	public static function connexion()
+	{
 		if (!empty($_POST)) {
-            $mail = $_POST['mail'];
-            $password = $_POST['password'];
+			$mail = $_POST['mail'];
+			$password = $_POST['password'];
 
-            $result = User::getUser($mail, $password);
+			$result = User::getUser($mail, $password);
 
-            if ($result) {
-                $_SESSION['user'] = $result;
-                header("Location:" . BASE_PATH . "home");
-                exit();
-            } else {
-                $_SESSION['message'] = "
+			if ($result) {
+				$_SESSION['user'] = $result;
+				header("Location:" . BASE_PATH . "home");
+				exit();
+			} else {
+				$_SESSION['message'] = "
                     Les informations de connexion sont incorrectes </div>";
-
-
-            }
-        }
+			}
+		}
 		include VIEWS . "user/connexion.php";
 	}
-		
-	
 
 
-		
-		
+
+
+
+
 
 
 	public static function tab_user()
@@ -74,48 +69,44 @@ class UserController extends Db
 		$user->showDb($requete);
 
 		include VIEWS . "admin/admin.php";
-
 	}
 
 
 	public static function remove()
 	{
 
-	$requete = "DELETE FROM `user` WHERE `id_user` = ?";
+		$requete = "DELETE FROM `user` WHERE `id_user` = ?";
 
-	$requetePreparee = self::getDb()->prepare($requete);
+		$requetePreparee = self::getDb()->prepare($requete);
 
-	$reponse = $requetePreparee->execute([
-		$_GET["id"]
+		$reponse = $requetePreparee->execute([
+			$_GET["id"]
 		]);
 
-	if (!$reponse)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+		if (!$reponse) {
+			$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 			  La requete ne s'est pas déroulé correctement
 		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
+			header("Location:" . BASE_PATH . "administration");
+			exit;
+		}
 
-	if ($requetePreparee->rowCount() == 0)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+		if ($requetePreparee->rowCount() == 0) {
+			$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 			  L'utilisateur que vous essayez de supprimer, n'existe pas !
 		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
+			header("Location:" . BASE_PATH . "administration");
+			exit;
+		}
 
-	if ($requetePreparee->rowCount() == 1)
-	{
-		$_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
+		if ($requetePreparee->rowCount() == 1) {
+			$_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
 			  Vous avez bien supprimé l'utilisateur dont l'id est " . $_GET["id"] . "
 		</div>";
-		header("Location:" . BASE_PATH . "administration");
-		exit;
-	}
-	
+			header("Location:" . BASE_PATH . "administration");
+			exit;
+		}
+
 
 
 
@@ -124,13 +115,21 @@ class UserController extends Db
 
 	public static function modifier()
 	{
-			// nouvelle user
-			$user = new User();
-			// requete select ALL
+		// nouvelle user
+		$user = new User();
+		// requete select ALL
 
-			$user->modifier();
-		
-			//header location vers le front 
+		$user->modifier();
+
+		//header location vers le front 
 		include VIEWS . "user/modification.php";
+	}
+
+	public static function ajtcar()
+	{
+
+
+
+		include VIEWS . "car/ajoutcar.php";
 	}
 }
