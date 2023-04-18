@@ -84,43 +84,37 @@ class car extends Db
 
             if (!isset($_POST["fuel"]) || empty($_POST["fuel"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez remplir le champ fuel!
 				</div>";
             }
 
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
+            if (!isset($_POST["creation_year"]) || empty($_POST["creation_year"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez remplir le champ date de création !
 				</div>";
             }
 
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
+            if (!isset($_POST["title"]) || empty($_POST["title"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez remplir le Titre !
 				</div>";
             }
 
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
+            if (!isset($_POST["description"]) || empty($_POST["description"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez remplir le champ description !
 				</div>";
             }
 
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
+            if (!isset($_POST["price"]) || empty($_POST["price"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez remplir le prix !
 				</div>";
             }
 
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
+            if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
-				</div>";
-            }
-
-            if (!isset($_POST["color"]) || empty($_POST["color"])) {
-                $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez remplir le Color !
+				Veuillez choisir une photo !
 				</div>";
             }
         }
