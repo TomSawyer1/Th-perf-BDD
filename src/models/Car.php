@@ -13,6 +13,7 @@ class car extends Db
     private $title;
     private $description;
     private $picture;
+    private $id_cat;
 
     public function createFromPost(array $dataFromPost)
     {
@@ -336,6 +337,26 @@ class car extends Db
     public function setPicture($picture)
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_cat
+     */
+    public function getId_cat()
+    {
+        return $this->id_cat;
+    }
+
+    /**
+     * Set the value of id_cat
+     *
+     * @return  self
+     */
+    public function setId_cat($id_cat)
+    {
+        $this->id_cat = $id_cat;
 
         return $this;
     }
