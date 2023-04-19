@@ -1,18 +1,21 @@
 <?php
 
-class categorie extends Db
+class cat extends Db
 {
+
     private $id_cat;
     private $name;
 
     public function createFromPost(array $dataFromPost)
     {
-        $this->name = $dataFromPost['name'];
+        $this->setName($dataFromPost["name"]);
     }
+
 
     public function insertDb()
     {
         $query = "INSERT INTO `categorie`(`name`) VALUES (?)";
+
 
         $requetePreparee = self::getDb()->prepare($query);
 
@@ -25,7 +28,8 @@ class categorie extends Db
         }
     }
 
-    public function verifyData()
+
+    public static function verifyData()
     {
         if (!empty($_POST)) {
             if (!isset($_POST["name"]) || empty($_POST["name"])) {

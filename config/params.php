@@ -9,7 +9,7 @@ const CONFIG = [
         'DB_PORT' => '3306',
         'DB_NAME' => 'thperf',
         'DB_USER' => 'root',
-        'DB_PSWD' => '',
+        'DB_PSWD' => 'root',
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
@@ -58,8 +58,14 @@ $routes = [
     '/supprimer'        => ['UserController', 'remove'],
     '/connexion'        => ['UserController', 'connexion'],
     '/modifier'         => ['UserController', 'modifier'],
-    '/ajoutcar'         => ['UserController', 'ajtcar'],
-    '/ajoutcat'         => ['UserController', 'ajtcat'],
+
+    //Car
+    '/ajoutcar'         => ['CarController', 'ajtcar'],
+
+
+    //Category
+    '/ajoutcat'         => ['CatController', 'ajtcat'],
+
 
 
 ];

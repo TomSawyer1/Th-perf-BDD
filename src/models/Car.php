@@ -54,7 +54,7 @@ class car extends Db
         }
     }
 
-    public function verifyData()
+    public static function verifyData()
     {
 
         if (!empty($_POST)) {
