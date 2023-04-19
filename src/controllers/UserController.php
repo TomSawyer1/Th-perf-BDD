@@ -153,4 +153,9 @@ class UserController extends Db
 
 		include VIEWS . "car/ajoutcar.php";
 	}
+
+	public static function ajtcat()
+	{
+		include VIEWS . "ajoutcat.php";
+	}
 }

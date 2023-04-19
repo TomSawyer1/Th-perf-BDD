@@ -59,6 +59,7 @@ $routes = [
     '/connexion'        => ['UserController', 'connexion'],
     '/modifier'         => ['UserController', 'modifier'],
     '/ajoutcar'         => ['UserController', 'ajtcar'],
+    '/ajoutcat'         => ['UserController', 'ajtcat'],
 
 
 ];
