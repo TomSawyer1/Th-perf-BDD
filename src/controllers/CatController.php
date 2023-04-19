@@ -7,12 +7,12 @@ class CatController extends Db
     {
         if (!empty($_POST))                     // Si le formulaire est rempli
         {
-            Cat::verifyData($_POST);            // On vérifie toutes les infos
+            Categorie::verifyData($_POST);            // On vérifie toutes les infos
 
             if (empty($_SESSION["message"]))    // Si y'a pas d'erreur
             {
                 /*User::insertData();*/
-                $cat = new cat();
+                $cat = new categorie();
 
                 $cat->createFromPost($_POST);
 
@@ -29,5 +29,55 @@ class CatController extends Db
         }
 
         include VIEWS . "categories/ajoutcat.php";
+    }
+
+    public static function tab_cat()
+    {
+        $categorie = new categorie();
+        $requete = categorie::showDb("SELECT * FROM `categorie`");
+        $categorie->showDb($requete);
+
+        include VIEWS . "admin/admincat.php";
+    }
+
+    public static function removecat()
+    {
+
+        $requete = "DELETE FROM `categorie` WHERE `id_cat` = ?";
+
+        $requetePreparee = self::getDb()->prepare($requete);
+
+        $reponse = $requetePreparee->execute([
+            $_GET["id"]
+        ]);
+
+        if (!$reponse) {
+            $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+			  La requete ne s'est pas déroulé correctement
+		</div>";
+            header("Location:" . BASE_PATH . "admincat");
+            exit;
+        }
+
+        if ($requetePreparee->rowCount() == 0) {
+            $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+			  La Catégorie que vous essayez de supprimer, n'existe pas !
+		</div>";
+            header("Location:" . BASE_PATH . "admincat");
+            exit;
+        }
+
+        if ($requetePreparee->rowCount() == 1) {
+            $_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
+			  Vous avez bien supprimé la catégorie dont l'id est " . $_GET["id"] . "
+		</div>";
+            header("Location:" . BASE_PATH . "admincat");
+            exit;
+        }
+
+
+
+
+        include VIEWS . "admin/admincat.php";
     }
 }

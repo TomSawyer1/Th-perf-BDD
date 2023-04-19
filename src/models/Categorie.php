@@ -1,6 +1,6 @@
 <?php
 
-class cat extends Db
+class categorie extends Db
 {
 
     private $id_cat;
@@ -14,7 +14,7 @@ class cat extends Db
 
     public function insertDb()
     {
-        $query = "INSERT INTO `categorie`(`name`) VALUES (?)";
+        $query = "  INSERT INTO `categorie`(`name`) VALUES (?)";
 
 
         $requetePreparee = self::getDb()->prepare($query);
@@ -38,6 +38,30 @@ class cat extends Db
 				</div>";
             }
         }
+    }
+
+    public static function showDb()
+    {
+
+        $query = "SELECT * FROM categorie LIMIT 100";
+
+        $requetePreparee = self::getDb()->prepare($query);
+
+        $reponse = $requetePreparee->execute();
+
+        //verifie si la requete s'est bien déroulé
+        if (!$reponse) {
+            $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+					Quelque chose ne s'est pas déroulé correctement pendant la requete
+				</div>";
+            return false;
+        }
+
+        if ($reponse) {
+            $allCats = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $allCats;
     }
 
 
