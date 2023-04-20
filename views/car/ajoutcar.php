@@ -27,20 +27,12 @@ $_SESSION["message"] = "";
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Model</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <?php $allCategorie = CatController::fetchAllCategorie(); ?>
+        <select class="custom-select" id="inputGroupSelect01" name="model">
             <option value="">Choose an Model</option>
-            <?php
-            $model = array(
-
-                $categorie["name"]
-                //"M31" => "M3 E30",
-                //"M32" => "M3 E36"
-            );
-
-            foreach ($model as $key => $value) {
-                echo "<option value='$key'>$value</option>";
-            }
-            ?>
+            <?php foreach ($allCategorie as $value) { ?>
+                <option value='<?= $value["id_cat"] ?>'><?= $value["name"] ?></option>
+            <?php } ?>
         </select>
     </div>
 
@@ -54,7 +46,7 @@ $_SESSION["message"] = "";
         <select name="model" id="model-select">
             <option value="">Choose an Model</option>
 
-            <?php
+           /* /*
             $model = array(
 
                 "M31" => "M3 E30",
@@ -63,8 +55,8 @@ $_SESSION["message"] = "";
 
             foreach ($model as $key => $value) {
                 echo "<option value='$key'>$value</option>";
-            }
-            ?>
+            }¨*/
+                ?>
         </select>
     </div>
         -->

@@ -15,6 +15,9 @@ class CarController extends Db
 
                 $car->createFromPost($_POST);
 
+                printf($car->getTitle());
+                printf($car->getId_cat());
+
                 $car->insertDb();
 
                 if (empty($_SESSION["message"])) {

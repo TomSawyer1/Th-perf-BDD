@@ -64,7 +64,7 @@ $routes = [
 
 
     //Category
-    '/ajoutcat'         => ['CatController', 'ajtcat'],
+    '/addCategorie'     => ['CatController', 'addCategorie'],
     '/admincat'         => ['CatController', 'tab_cat'],
     '/suppcat'          => ['CatController', 'removecat'],
 

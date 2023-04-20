@@ -12,11 +12,12 @@ class car extends Db
     private $fuel;
     private $title;
     private $description;
-    private $picture;
+    //private $picture;
     private $id_cat;
 
     public function createFromPost(array $dataFromPost)
     {
+        $this->id_cat = $dataFromPost['model'];
         $this->color = $dataFromPost['color'];
         $this->miles = $dataFromPost['miles'];
         $this->price = $dataFromPost['price'];
@@ -26,17 +27,20 @@ class car extends Db
         $this->fuel = $dataFromPost['fuel'];
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
-        $this->picture = $dataFromPost['picture'];
+        //$this->picture = $dataFromPost['picture'];
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO `car`(`color`, `miles`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`, `picture`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO car (`id_cat`,`color`, `miles`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`) 
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
         $reponse = $requetePreparee->execute([
+
+            $this->getId_cat(),
             $this->getColor(),
             $this->getMiles(),
             $this->getNb_door(),
@@ -45,11 +49,12 @@ class car extends Db
             $this->getCreation_year(),
             $this->getTitle(),
             $this->getDescription(),
-            $this->getPrice(),
-            $this->getPicture()
+            $this->getPrice()
+            //$this->getPicture()
         ]);
 
         if (!$reponse) {
+            printf($reponse);
             $_SESSION["message"] = "Il y a eu une erreur lors de l'ajout en bdd<br>";
         }
     }
@@ -58,6 +63,14 @@ class car extends Db
     {
 
         if (!empty($_POST)) {
+
+
+            if (!isset($_POST["model"]) || empty($_POST["model"])) {
+                $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+				Veuillez remplir le Model !
+				</div>";
+            }
+
 
             if (!isset($_POST["color"]) || empty($_POST["color"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
@@ -113,11 +126,11 @@ class car extends Db
 				</div>";
             }
 
-            if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
-                $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez choisir une photo !
-				</div>";
-            }
+            // if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
+            //     $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+            // 	Veuillez choisir une photo !
+            // 	</div>";
+            // }
         }
     }
 
@@ -321,25 +334,25 @@ class car extends Db
         return $this;
     }
 
-    /**
-     * Get the value of picture
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
+    // /**
+    //  * Get the value of picture
+    //  */
+    // public function getPicture()
+    // {
+    //     return $this->picture;
+    // }
 
-    /**
-     * Set the value of picture
-     *
-     * @return  self
-     */
-    public function setPicture($picture)
-    {
-        $this->picture = $picture;
+    // /**
+    //  * Set the value of picture
+    //  *
+    //  * @return  self
+    //  */
+    // public function setPicture($picture)
+    // {
+    //     $this->picture = $picture;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * Get the value of id_cat

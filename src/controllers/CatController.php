@@ -3,7 +3,7 @@
 class CatController extends Db
 {
 
-    public static function ajtcat()
+    public static function addCategorie()
     {
         if (!empty($_POST))                     // Si le formulaire est rempli
         {
@@ -79,5 +79,12 @@ class CatController extends Db
 
 
         include VIEWS . "admin/admincat.php";
+    }
+
+    public static function fetchAllCategorie()
+    {
+        $categorie = new categorie();
+        $allCategorie = $categorie->showDb();
+        return $allCategorie;
     }
 }
