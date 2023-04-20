@@ -11,7 +11,7 @@
     <thead>
         <tr>
 
-            <th scope="col">id_user</th>
+            <th scope="col">id_cat</th>
             <th scope="col">Nom</th>
 
         </tr>
@@ -20,13 +20,13 @@
     <tbody class="table-striped">
         <?php
 
-        $allCats = categorie::showDb();
-        foreach ($allCats as $categorie) {
+        $allCategorie = categorie::showDb();
+        foreach ($allCategorie as $categorie) {
 
         ?>
             <tr>
-                <td><?= $allCats["id_cat"] ?></td>
-                <td><?= $allCats["name"] ?></td>
+                <td><?= $categorie["id_cat"] ?></td>
+                <td><?= $categorie["name"] ?></td>
                 <td>
                     <a href="supprimer?id=<?= $categorie["id_cat"] ?>" class="btn btn-danger">Supprimer</a>
                 </td>

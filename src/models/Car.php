@@ -4,7 +4,7 @@ class car extends Db
 {
     private $id_car;
     private $color;
-    private $kilometrage;
+    private $miles;
     private $price;
     private $creation_year;
     private $nb_door;
@@ -18,7 +18,7 @@ class car extends Db
     public function createFromPost(array $dataFromPost)
     {
         $this->color = $dataFromPost['color'];
-        $this->kilometrage = $dataFromPost['kilometrage'];
+        $this->miles = $dataFromPost['miles'];
         $this->price = $dataFromPost['price'];
         $this->creation_year = $dataFromPost['creation_year'];
         $this->nb_door = $dataFromPost['nb_door'];
@@ -32,13 +32,13 @@ class car extends Db
     public function insertDb()
     {
 
-        $query = "INSERT INTO `car`(`color`, `kilometrage`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`, `picture`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `car`(`color`, `miles`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`, `picture`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
         $reponse = $requetePreparee->execute([
             $this->getColor(),
-            $this->getKilometrage(),
+            $this->getMiles(),
             $this->getNb_door(),
             $this->getPower(),
             $this->getFuel(),
@@ -65,7 +65,7 @@ class car extends Db
 				</div>";
             }
 
-            if (!isset($_POST["kilometrage"]) || empty($_POST["kilometrage"])) {
+            if (!isset($_POST["miles"]) || empty($_POST["miles"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le kilometrage !
 				</div>";
@@ -164,9 +164,9 @@ class car extends Db
     /**
      * Get the value of kilometrage
      */
-    public function getKilometrage()
+    public function getMiles()
     {
-        return $this->kilometrage;
+        return $this->miles;
     }
 
     /**
@@ -174,9 +174,9 @@ class car extends Db
      *
      * @return  self
      */
-    public function setKilometrage($kilometrage)
+    public function setMiles($miles)
     {
-        $this->kilometrage = $kilometrage;
+        $this->miles = $miles;
 
         return $this;
     }
