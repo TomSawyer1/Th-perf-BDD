@@ -18,11 +18,6 @@ $_SESSION["message"] = "";
         <label for="description"> Description</label>
     </div>
 
-    <div class="form-floating mb-3 w-100">
-        <input type="text" class="form-control" id="brand" placeholder="Brand" name="brand">
-        <label for="brand">Brand</label>
-    </div>
-
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Model</label>

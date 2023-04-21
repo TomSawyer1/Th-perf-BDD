@@ -17,7 +17,7 @@ class car extends Db
 
     public function createFromPost(array $dataFromPost)
     {
-        $this->id_cat = $dataFromPost['model'];
+
         $this->color = $dataFromPost['color'];
         $this->miles = $dataFromPost['miles'];
         $this->price = $dataFromPost['price'];
@@ -27,20 +27,21 @@ class car extends Db
         $this->fuel = $dataFromPost['fuel'];
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
+        $this->id_cat = $dataFromPost['model'];
         //$this->picture = $dataFromPost['picture'];
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO car (`id_cat`,`color`, `miles`, `nb_door`, `power`, `fuel`, `creation_year`, `title`, `description`, `price`) 
-        VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
         $reponse = $requetePreparee->execute([
 
-            $this->getId_cat(),
+
             $this->getColor(),
             $this->getMiles(),
             $this->getNb_door(),
@@ -49,7 +50,8 @@ class car extends Db
             $this->getCreation_year(),
             $this->getTitle(),
             $this->getDescription(),
-            $this->getPrice()
+            $this->getPrice(),
+            $this->getId_cat()
             //$this->getPicture()
         ]);
 

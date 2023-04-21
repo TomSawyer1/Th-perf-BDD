@@ -16,9 +16,9 @@ class  Db
             );
             return $bdd;
         } catch (Exception $e) {
-            printf("erreurrrrrr");
-            printf($e);
-            //var_dump($e);
+            //printf("erreurrrrrr");
+            //printf($e);
+            var_dump($e);
             die;
         }
     }
