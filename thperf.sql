@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 18 avr. 2023 à 16:30
+-- Généré le : ven. 21 avr. 2023 à 10:20
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -45,13 +45,12 @@ CREATE TABLE `car` (
   `color` varchar(100) NOT NULL,
   `nb_door` tinyint(4) NOT NULL,
   `power` int(10) NOT NULL,
-  `km` varchar(50) NOT NULL,
+  `miles` varchar(50) NOT NULL,
   `fuel` enum('gazoil','essence','electric','ethanol','hybrid') NOT NULL,
   `creation_year` date NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` int(20) NOT NULL,
-  `picture` varchar(255) DEFAULT NULL,
   `id_cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -65,6 +64,18 @@ CREATE TABLE `categorie` (
   `id_cat` int(11) NOT NULL,
   `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id_cat`, `name`) VALUES
+(1, 'M3 E30'),
+(2, 'M3 E36'),
+(3, 'M3 E46'),
+(4, 'M3 E90'),
+(5, 'M3 F80'),
+(6, 'M3 G80');
 
 -- --------------------------------------------------------
 
@@ -138,6 +149,12 @@ ALTER TABLE `car`
   MODIFY `id_car` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
@@ -158,7 +175,7 @@ ALTER TABLE `achat_car`
 -- Contraintes pour la table `car`
 --
 ALTER TABLE `car`
-  ADD CONSTRAINT `car_ibfk_1` FOREIGN KEY (`id_cat`) REFERENCES `categorie` (`id_cat`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `car_ibfk_1` FOREIGN KEY (`id_cat`) REFERENCES `categorie` (`id_cat`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
