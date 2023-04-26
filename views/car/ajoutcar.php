@@ -6,7 +6,7 @@
 
 $_SESSION["message"] = "";
 ?>
-<form method="post" action="" class="w-50 mx-auto">
+<form method="post" action="" class="w-50 mx-auto" enctype="multipart/form-data">
 
 
     <div class="form-floating mb-3">
@@ -31,30 +31,6 @@ $_SESSION["message"] = "";
         </select>
     </div>
 
-    <!--
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label for="model-select"> Model</label>
-        </div>
-
-
-        <select name="model" id="model-select">
-            <option value="">Choose an Model</option>
-
-           /* /*
-            $model = array(
-
-                "M31" => "M3 E30",
-                "M32" => "M3 E36"
-            );
-
-            foreach ($model as $key => $value) {
-                echo "<option value='$key'>$value</option>";
-            }¨*/
-                ?>
-        </select>
-    </div>
-        -->
 
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="price" placeholder="price" name="price">
@@ -92,6 +68,9 @@ $_SESSION["message"] = "";
             <label for="nb_door"> N° Door</label>
         </div>
     </div>
+
+    <label for="picture">File</label>
+    <input type="file" name="picture">
 
 
     <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
