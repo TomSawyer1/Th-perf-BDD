@@ -36,58 +36,47 @@ class user extends Db
 			$this->getStatut()
 		]);
 
-		if (!$reponse)
-		{
+		if (!$reponse) {
 			$_SESSION["message"] = "Il y a eu une erreur lors de l'ajout en bdd<br>";
 		}
 	}
 	public static function verifyData()
 	{
-		if(!empty($_POST)){ 
-	
-			if (!isset($_POST["first_name"]) || empty($_POST["first_name"]))
-			{
+		if (!empty($_POST)) {
+
+			if (!isset($_POST["first_name"]) || empty($_POST["first_name"])) {
 				$_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le Prenom !
 				</div>";
-			
 			}
-		
-			if (!isset($_POST["last_name"]) || empty($_POST["last_name"]))
-			{
+
+			if (!isset($_POST["last_name"]) || empty($_POST["last_name"])) {
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir le nom !
 				</div>";
-			
 			}
 
-			if (!isset($_POST["mail"]) || empty($_POST["mail"]))
-			{
+			if (!isset($_POST["mail"]) || empty($_POST["mail"])) {
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre email !
 				</div>";
-			
 			}
 
-			if (!isset($_POST["password"]) || empty($_POST["password"]))
-			{
+			if (!isset($_POST["password"]) || empty($_POST["password"])) {
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre mot de passe !
 				</div>";
-			
 			}
 
-			if (!isset($_POST["address"]) || empty($_POST["address"]))
-			{
+			if (!isset($_POST["address"]) || empty($_POST["address"])) {
 				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					  Veuillez remplir votre address !
 				</div>";
-			
 			}
-		
+		}
 	}
-}
-	public static function showDb(){
+	public static function showDb()
+	{
 
 		$query = "SELECT * FROM user LIMIT 100";
 
@@ -96,26 +85,21 @@ class user extends Db
 		$reponse = $requetePreparee->execute();
 
 		//verifie si la requete s'est bien déroulé
-		if (!$reponse)
-		{
+		if (!$reponse) {
 			$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 					Quelque chose ne s'est pas déroulé correctement pendant la requete
 				</div>";
-				return false;
+			return false;
 		}
-		
-		if ($reponse)
-		{
+
+		if ($reponse) {
 			$allUsers = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
-		
 		}
 
 		return $allUsers;
+	}
 
-	
-}
-
-/*public function connexionDb(){ 
+	/*public function connexionDb(){ 
 	$query="SELECT * FROM `user` WHERE `mail`=? AND `password`=?";
 
 	$requetePreparee = self::getDb()->prepare($query);
@@ -157,41 +141,62 @@ class user extends Db
 }
 }*/
 
-public static function getUser($mail, $password) {
-	//$requete = "SELECT first_name, last_name , statut FROM user WHERE mail = ? AND password = ?";
-	$requete = "SELECT * FROM user WHERE mail = ? AND password = ?";
-	$requetePreparee = self::getDb()->prepare($requete);
-	$reponse = $requetePreparee->execute([$mail, $password]);
+	public static function getUser($mail, $password)
+	{
+		//$requete = "SELECT first_name, last_name , statut FROM user WHERE mail = ? AND password = ?";
+		$requete = "SELECT * FROM user WHERE mail = ? AND password = ?";
+		$requetePreparee = self::getDb()->prepare($requete);
+		$reponse = $requetePreparee->execute([$mail, $password]);
 
-	if (!$reponse) {
-		$_SESSION["message"] = "
+		if (!$reponse) {
+			$_SESSION["message"] = "
 	   Désolé, veuillez revoir vos informations de connexion </div>";
-		return false;
-	} else {
-		$result = $requetePreparee->fetch();
-		return $result;
-	}
-}
-
-public static function modifier(){
-
-	$query = "SELECT `id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut` FROM `user` WHERE `id_user` = ?";
-
-	$requetePreparee = self::getDb()->prepare($query);
-
-	$reponse = $requetePreparee->execute([
-
-	$_GET["id"]
-
-	]);
-
-	$userFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
-	return $userFromBdd;
+			return false;
+		} else {
+			$result = $requetePreparee->fetch();
+			return $result;
+		}
 	}
 
+	public static function modifier()
+	{
+
+		$query = "SELECT `id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut` FROM `user` WHERE `id_user` = ?";
+
+		$requetePreparee = self::getDb()->prepare($query);
+
+		$reponse = $requetePreparee->execute([
+
+			$_GET["id"]
+
+		]);
+
+		$userFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
+		return $userFromBdd;
+	}
+
+	public static function verifConnexion()
+	{
+		if (!empty($_POST)) {
 
 
-/**
+			if (!isset($_POST["mail"]) || empty($_POST["mail"])) {
+				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+					  Veuillez remplir votre email !
+				</div>";
+			}
+
+			if (!isset($_POST["password"]) || empty($_POST["password"])) {
+				$_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+					  Veuillez remplir votre mot de passe !
+				</div>";
+			}
+		}
+	}
+
+
+
+	/**
 	 * Get the value of id_user
 	 */
 	public function getIdUser()

@@ -37,19 +37,25 @@ class UserController extends Db
 
 	public static function connexion()
 	{
-		if (!empty($_POST)) {
-			$mail = $_POST['mail'];
-			$password = $_POST['password'];
 
-			$result = User::getUser($mail, $password);
+		if (!empty($_POST)) 					// Si le formulaire est rempli
+		{
+			User::verifConnexion($_POST);
 
-			if ($result) {
-				$_SESSION['user'] = $result;
-				header("Location:" . BASE_PATH . "home");
-				exit();
-			} else {
-				$_SESSION['message'] = "
+			if (!empty($_POST)) {
+				$mail = $_POST['mail'];
+				$password = $_POST['password'];
+
+				$result = User::getUser($mail, $password);
+
+				if ($result) {
+					$_SESSION['user'] = $result;
+					header("Location:" . BASE_PATH . "home");
+					exit();
+				} else {
+					$_SESSION['message'] = "
                     Les informations de connexion sont incorrectes </div>";
+				}
 			}
 		}
 		include VIEWS . "user/connexion.php";
