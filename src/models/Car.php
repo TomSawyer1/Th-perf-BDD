@@ -35,7 +35,7 @@ class car extends Db
     {
 
         $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`)
-         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+         VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
