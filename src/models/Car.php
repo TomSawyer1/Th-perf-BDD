@@ -61,6 +61,30 @@ class car extends Db
         }
     }
 
+    public static function showDb()
+    {
+
+        $query = "SELECT * FROM car LIMIT 100";
+
+        $requetePreparee = self::getDb()->prepare($query);
+
+        $reponse = $requetePreparee->execute();
+
+        //verifie si la requete s'est bien déroulé
+        if (!$reponse) {
+            $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+					Quelque chose ne s'est pas déroulé correctement pendant la requete
+				</div>";
+            return false;
+        }
+
+        if ($reponse) {
+            $allCars = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $allCars;
+    }
+
     public static function verifyData()
     {
 

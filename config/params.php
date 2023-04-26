@@ -61,6 +61,7 @@ $routes = [
 
     //Car
     '/ajoutcar'         => ['CarController', 'ajtcar'],
+    '/admincar'         => ['CarController', 'tab_car'],
 
 
     //Category

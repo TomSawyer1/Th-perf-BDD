@@ -29,4 +29,13 @@ class CarController extends Db
 
         include VIEWS . "car/ajoutcar.php";
     }
+
+    public static function tab_car()
+    {
+        $car = new car();
+        $requete = car::showDb("SELECT * FROM `car`");
+        $car->showDb($requete);
+
+        include VIEWS . "admin/admincar.php";
+    }
 }
