@@ -22,7 +22,6 @@
             <th scope="col">Fuel</th>
             <th scope="col">Creation Year</th>
             <th scope="col">N° Door</th>
-            <th scope="col">THOMAS</th>
 
         </tr>
     </thead>

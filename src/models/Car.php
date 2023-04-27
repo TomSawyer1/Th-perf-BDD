@@ -42,9 +42,9 @@ class car extends Db
 
 
             $this->getColor(),
-            $this->getMiles(),
             $this->getNb_door(),
             $this->getPower(),
+            $this->getMiles(),
             $this->getFuel(),
             $this->getCreation_year(),
             $this->getTitle(),
