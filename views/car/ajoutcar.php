@@ -69,9 +69,6 @@ $_SESSION["message"] = "";
         </div>
     </div>
 
-    <!-- <label for="picture">File</label>
-    <input type="file" name="picture"> -->
-
 
     <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
 </form>

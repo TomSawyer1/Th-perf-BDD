@@ -13,7 +13,8 @@ const CONFIG = [
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
-        'projectBaseUrl' => 'http://localhost:8888/TH-PERF-BDD/' /*'http://localhost/PHP/Th-perf-BDD/'*/
+        'projectBaseUrl' => 'http://localhost:8888/TH-PERF-BDD/'   //------MAC
+        /*'http://localhost/PHP/Th-perf-BDD/'*/                     //------WINDOWS
     ]
 ];
 
