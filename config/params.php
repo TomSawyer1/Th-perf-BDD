@@ -9,11 +9,12 @@ const CONFIG = [
         'DB_PORT' => '3306',
         'DB_NAME' => '3pm',
         'DB_USER' => 'root',
-        'DB_PSWD' => '',
+        'DB_PSWD' => 'root',
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
-        'projectBaseUrl' => /*'http://localhost:8888/TH-PERF-BDD/'*/ 'http://localhost/PHP/Th-perf-BDD/'
+        'projectBaseUrl' => 'http://localhost:8888/TH-PERF-BDD/'   //------MAC
+        /*'http://localhost/PHP/Th-perf-BDD/'*/                     //------WINDOWS
     ]
 ];
 
@@ -23,7 +24,7 @@ const CONFIG = [
 
 //---------------------------- MAC ---------------------------//
 
-/*const BASE_DIR = __DIR__ . '/../';
+const BASE_DIR = __DIR__ . '/../';
 const BASE_PATH = CONFIG['app']['projectBaseUrl'] . '/public/index.php/';
 const PUBLIC_FOLDER = BASE_DIR . 'public/';
 const VIEWS = BASE_DIR . 'views/';
@@ -31,10 +32,10 @@ const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = BASE_DIR . 'public/upload/';
 const COVER = '../../public/upload/';
-*/
+
 
 //---------------------------- WINDOWS ---------------------------//
-
+/*
 const BASE_DIR = __DIR__ . '\\..\\';
 const BASE_PATH = CONFIG['app']['projectBaseUrl'] . '/public/index.php/';
 const PUBLIC_FOLDER = BASE_DIR . 'public\\';
@@ -43,7 +44,7 @@ const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = BASE_DIR . 'public\\upload\\';
 const COVER = '../../public/upload/';
-
+*/
 
 /**
  * Liste des actions/méthodes possibles (les routes du routeur)

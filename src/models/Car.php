@@ -12,7 +12,6 @@ class car extends Db
     private $fuel;
     private $title;
     private $description;
-    //private $picture;
     private $id_cat;
 
     public function createFromPost(array $dataFromPost)
@@ -52,7 +51,6 @@ class car extends Db
             $this->getDescription(),
             $this->getPrice(),
             $this->getId_cat()
-            //$this->getPicture()
         ]);
 
         if (!$reponse) {
@@ -151,12 +149,6 @@ class car extends Db
 				Veuillez remplir le prix !
 				</div>";
             }
-
-            // if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
-            //     $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-            // 	Veuillez choisir une photo !
-            // 	</div>";
-            // }
         }
     }
 
@@ -359,26 +351,6 @@ class car extends Db
 
         return $this;
     }
-
-    // /**
-    //  * Get the value of picture
-    //  */
-    // public function getPicture()
-    // {
-    //     return $this->picture;
-    // }
-
-    // /**
-    //  * Set the value of picture
-    //  *
-    //  * @return  self
-    //  */
-    // public function setPicture($picture)
-    // {
-    //     $this->picture = $picture;
-
-    //     return $this;
-    // }
 
     /**
      * Get the value of id_cat
