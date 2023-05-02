@@ -13,6 +13,7 @@ class car extends Db
     private $title;
     private $description;
     private $id_cat;
+    private $picture;
 
     public function createFromPost(array $dataFromPost)
     {
@@ -27,14 +28,14 @@ class car extends Db
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
         $this->id_cat = $dataFromPost['model'];
-        //$this->picture = $dataFromPost['picture'];
+        $this->picture = $dataFromPost['picture'];
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`)
-         VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
@@ -50,7 +51,8 @@ class car extends Db
             $this->getTitle(),
             $this->getDescription(),
             $this->getPrice(),
-            $this->getId_cat()
+            $this->getId_cat(),
+            $this->getPicture()
         ]);
 
         if (!$reponse) {
@@ -147,6 +149,12 @@ class car extends Db
             if (!isset($_POST["price"]) || empty($_POST["price"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le prix !
+				</div>";
+            }
+
+            if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
+                $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+				Veuillez mettre une photo !
 				</div>";
             }
         }
@@ -368,6 +376,26 @@ class car extends Db
     public function setId_cat($id_cat)
     {
         $this->id_cat = $id_cat;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of picture
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set the value of picture
+     *
+     * @return  self
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
 
         return $this;
     }

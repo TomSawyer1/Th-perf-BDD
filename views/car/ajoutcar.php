@@ -6,7 +6,7 @@
 
 $_SESSION["message"] = "";
 ?>
-<form action="" method="post" class="w-50 mx-auto">
+<form action="" method="post" enctype="multipart/form-data" class="w-50 mx-auto">
 
 
     <div class="form-floating mb-3">
@@ -68,7 +68,9 @@ $_SESSION["message"] = "";
             <label for="nb_door"> N° Door</label>
         </div>
     </div>
-
+    <label for="picture">Picture</label>
+    <input type="file" name="picture" id="picture">
+    <br>
 
     <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
 </form>
