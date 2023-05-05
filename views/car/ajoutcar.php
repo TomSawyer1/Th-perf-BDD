@@ -37,8 +37,8 @@ $_SESSION["message"] = "";
         </div>
         <select class="custom-select" id="inputGroupSelect01">
             <option selected>Choose...</option>
-            <option value="1">Manual</option>
-            <option value="2">Automatique</option>
+            <option value="">Manual</option>
+            <option value="">Automatique</option>
         </select>
     </div>
 
