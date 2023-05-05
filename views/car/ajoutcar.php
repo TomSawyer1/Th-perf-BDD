@@ -82,7 +82,7 @@ $_SESSION["message"] = "";
     <label for="picture">Picture</label>
     <input type="file" name="picture" id="picture">
 
-
+    <!-- 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text">Upload</span>
@@ -91,7 +91,7 @@ $_SESSION["message"] = "";
             <input type="file" name="picture" class="custom-file-input" id="picture">
             <label class="custom-file-label" for="picture">Choose file</label>
         </div>
-    </div>
+    </div> -->
 
     <br>
     <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
