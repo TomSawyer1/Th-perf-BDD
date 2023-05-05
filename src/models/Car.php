@@ -14,6 +14,7 @@ class car extends Db
     private $description;
     private $id_cat;
     private $picture;
+    private $transmission;
 
     public function createFromPost(array $dataFromPost)
     {
@@ -29,13 +30,14 @@ class car extends Db
         $this->description = $dataFromPost['description'];
         $this->id_cat = $dataFromPost['model'];
         $this->picture = $dataFromPost['picture'];
+        $this->transmission = $dataFromPost['transmission'];
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`)
-         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`,`transmission`)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
@@ -52,7 +54,8 @@ class car extends Db
             $this->getDescription(),
             $this->getPrice(),
             $this->getId_cat(),
-            $this->getPicture()
+            $this->getPicture(),
+            $this->getTransmission()
         ]);
 
         if (!$reponse) {
@@ -155,6 +158,12 @@ class car extends Db
             if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez mettre une photo !
+				</div>";
+            }
+
+            if (!isset($_POST["transmission"]) || empty($_POST["transmission"])) {
+                $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+				Veuillez mettre une transmission !
 				</div>";
             }
         }
@@ -396,6 +405,26 @@ class car extends Db
     public function setPicture($picture)
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of transmission
+     */
+    public function getTransmission()
+    {
+        return $this->transmission;
+    }
+
+    /**
+     * Set the value of transmission
+     *
+     * @return  self
+     */
+    public function setTransmission($transmission)
+    {
+        $this->transmission = $transmission;
 
         return $this;
     }

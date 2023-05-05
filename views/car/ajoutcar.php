@@ -31,6 +31,17 @@ $_SESSION["message"] = "";
         </select>
     </div>
 
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01" name="transmission">Transmission</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Manual</option>
+            <option value="2">Automatique</option>
+        </select>
+    </div>
+
 
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="price" placeholder="price" name="price">
@@ -70,8 +81,19 @@ $_SESSION["message"] = "";
     </div>
     <label for="picture">Picture</label>
     <input type="file" name="picture" id="picture">
-    <br>
 
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Upload</span>
+        </div>
+        <div class="custom-file">
+            <input type="file" name="picture" class="custom-file-input" id="picture">
+            <label class="custom-file-label" for="picture">Choose file</label>
+        </div>
+    </div>
+
+    <br>
     <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
 </form>
 
