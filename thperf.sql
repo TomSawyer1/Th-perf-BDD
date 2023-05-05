@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 21 avr. 2023 à 10:20
+-- Généré le : ven. 05 mai 2023 à 18:18
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `thperf`
+-- Base de données : `3pm`
 --
 
 -- --------------------------------------------------------
@@ -46,12 +46,14 @@ CREATE TABLE `car` (
   `nb_door` tinyint(4) NOT NULL,
   `power` int(10) NOT NULL,
   `miles` varchar(50) NOT NULL,
-  `fuel` enum('gazoil','essence','electric','ethanol','hybrid') NOT NULL,
+  `fuel` enum('Gazoil','Essence','Electric','Ethanol','Hybrid') NOT NULL,
   `creation_year` date NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` int(20) NOT NULL,
-  `id_cat` int(11) NOT NULL
+  `id_cat` int(11) NOT NULL,
+  `picture` varchar(200) NOT NULL,
+  `transmission` enum('Manual','Automatique') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -99,7 +101,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `mail`, `password`, `address`, `data_creation`, `statut`) VALUES
-(9, 'Thomas', 'Sauce', 'Chateau@gmail.com', 'Thomas', '34 Avenue', '2023-04-17 17:15:45', 0);
+(9, 'Thomas', 'Sauce', 'Chateau@gmail.com', 'Thomas', '34 Avenue', '2023-04-17 17:15:45', 0),
+(10, 'Maison', 'Chateau ', 'Rouge@gmail.com', 'Rouge', '34 Avenue', '2023-04-27 13:22:14', 0);
 
 --
 -- Index pour les tables déchargées
@@ -158,7 +161,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
