@@ -27,9 +27,9 @@ class CarController extends Db
             }
         }
 
-        print_r($_FILES);
+        //print_r($_FILES);
 
-        if (isset($_FILES["photo"])) // Si FILES existe pourle "photo"
+        if (isset($_FILES["picture"])) // Si FILES existe pourle "picture"
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
 
