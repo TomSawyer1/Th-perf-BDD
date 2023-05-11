@@ -33,7 +33,7 @@ class CarController extends Db
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
 
-            $destination = $_SERVER["DOCUMENT_ROOT"] . "/PHP/Th-perf-BDD/images/" . $name;
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "/MAMP/htdocs/Th-perf-BDD/images/" . $name;
 
             if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
                 echo "L'image est bien enregistré, voila sa destination : $destination<br>";
@@ -70,4 +70,9 @@ class CarController extends Db
     //         }
     //     }
     // }
+
+    public static function en_transmission()
+    {
+        $requete = "SELECT FROM car WHERE transmission IN ('Manual','Automatique')";
+    }
 }

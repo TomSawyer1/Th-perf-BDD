@@ -29,18 +29,15 @@ class car extends Db
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
         $this->id_cat = $dataFromPost['model'];
-<<<<<<< Updated upstream
         $this->picture = $dataFromPost['picture'];
         $this->transmission = $dataFromPost['transmission'];
-=======
->>>>>>> Stashed changes
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO `car`(`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`,`transmission`)
-         VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO car (`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`,`transmission`)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
@@ -59,6 +56,7 @@ class car extends Db
             $this->getId_cat(),
             $this->getPicture(),
             $this->getTransmission()
+
         ]);
 
         if (!$reponse) {
@@ -160,8 +158,8 @@ class car extends Db
 
             if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-				Veuillez mettre une photo !
-				</div>";
+            	Veuillez mettre une photo !
+            	</div>";
             }
 
             if (!isset($_POST["transmission"]) || empty($_POST["transmission"])) {

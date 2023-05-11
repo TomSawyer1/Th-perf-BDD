@@ -31,17 +31,22 @@ $_SESSION["message"] = "";
         </select>
     </div>
 
-    <div class="input-group mb-3">
+    <!-- <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01" name="transmission">Transmission</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        /* $query = $this->db->query('car',array('transmission' => $data['transmissions']));*/
+        <select class="custom-select" id="inputGroupSelect01" name="transmission">
             <option selected>Choose...</option>
             <option value="">Manual</option>
             <option value="">Automatique</option>
         </select>
-    </div>
+    </div> -->
 
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="transmission" placeholder="transmission" name="transmission">
+        <label for="transmission">Transmission</label>
+    </div>
 
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="price" placeholder="price" name="price">
