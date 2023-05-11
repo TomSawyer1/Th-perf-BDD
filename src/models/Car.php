@@ -29,8 +29,11 @@ class car extends Db
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
         $this->id_cat = $dataFromPost['model'];
+<<<<<<< Updated upstream
         $this->picture = $dataFromPost['picture'];
         $this->transmission = $dataFromPost['transmission'];
+=======
+>>>>>>> Stashed changes
     }
 
     public function insertDb()
