@@ -39,6 +39,15 @@ class CatController extends Db
 
         include VIEWS . "admin/admincat.php";
     }
+    public static function cat()
+    {
+
+        $categorie = new categorie();
+        $requete = categorie::showDb("SELECT * FROM `categorie`");
+        $categorie->showDb($requete);
+
+        include VIEWS . "categories/showcat.php";
+    }
 
     public static function removecat()
     {
@@ -48,7 +57,7 @@ class CatController extends Db
         $requetePreparee = self::getDb()->prepare($requete);
 
         $reponse = $requetePreparee->execute([
-            $_GET["id"]
+            $_GET["id_cat"]
         ]);
 
         if (!$reponse) {
@@ -69,7 +78,7 @@ class CatController extends Db
 
         if ($requetePreparee->rowCount() == 1) {
             $_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
-			  Vous avez bien supprimé la catégorie dont l'id est " . $_GET["id"] . "
+			  Vous avez bien supprimé la catégorie dont l'id est " . $_GET["id_cat"] . "
 		</div>";
             header("Location:" . BASE_PATH . "admincat");
             exit;

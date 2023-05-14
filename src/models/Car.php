@@ -13,7 +13,7 @@ class car extends Db
     private $title;
     private $description;
     private $id_cat;
-    private $picture;
+    //private $picture;
     private $transmission;
 
     public function createFromPost(array $dataFromPost)
@@ -29,14 +29,14 @@ class car extends Db
         $this->title = $dataFromPost['title'];
         $this->description = $dataFromPost['description'];
         $this->id_cat = $dataFromPost['model'];
-        $this->picture = $dataFromPost['picture'];
+        //$this->picture = $dataFromPost['picture'];
         $this->transmission = $dataFromPost['transmission'];
     }
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO car (`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`picture`,`transmission`)
+        $query = "INSERT INTO car (`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`transmission`)
          VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
@@ -54,7 +54,7 @@ class car extends Db
             $this->getDescription(),
             $this->getPrice(),
             $this->getId_cat(),
-            $this->getPicture(),
+            //$this->getPicture(),
             $this->getTransmission()
 
         ]);
@@ -156,11 +156,11 @@ class car extends Db
 				</div>";
             }
 
-            if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
+            /*if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
             	Veuillez mettre une photo !
             	</div>";
-            }
+            }*/
 
             if (!isset($_POST["transmission"]) || empty($_POST["transmission"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
@@ -393,7 +393,7 @@ class car extends Db
     /**
      * Get the value of picture
      */
-    public function getPicture()
+    /*    public function getPicture()
     {
         return $this->picture;
     }
@@ -403,7 +403,7 @@ class car extends Db
      *
      * @return  self
      */
-    public function setPicture($picture)
+    /*    public function setPicture($picture)
     {
         $this->picture = $picture;
 

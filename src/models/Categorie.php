@@ -64,6 +64,21 @@ class categorie extends Db
         return $allCats;
     }
 
+    public static function showcar()
+    {
+
+        $query = "SELECT * FROM car WHERE `id_cat`='?'";
+
+        $requetePreparee = self::getDb()->prepare($query);
+
+        $reponse = $requetePreparee->execute();
+
+        if ($reponse) {
+            $allCar = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $allCar;
+    }
+
 
 
     /**

@@ -25,7 +25,7 @@
 						<a class="nav-link mx-2" href="#">Histoire</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link mx-2" href="#">Categorie</a>
+						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/showcat">Categorie</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/inscription">Inscription</a>
