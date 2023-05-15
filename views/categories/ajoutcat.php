@@ -1,4 +1,12 @@
-<?php include VIEWS . 'inc/header.php'; ?>
+<?php include VIEWS . 'inc/header.php';
+
+if (!App::isconnect()) {
+    header("Location:" . BASE_PATH . "");
+}
+
+if (!App::isadmin()) {
+    header("Location:" . BASE_PATH . "");
+} ?>
 
 
 <h1 class="text-center my-5">Ajout d'une Categorie !</h1>
