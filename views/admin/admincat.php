@@ -28,7 +28,7 @@
                 <td><?= $categorie["id_cat"] ?></td>
                 <td><?= $categorie["name"] ?></td>
                 <td>
-                    <a href="supprimer?id=<?= $categorie["id_cat"] ?>" class="btn btn-danger">Supprimer</a>
+                    <a href="suppcat?id=<?= $categorie["id_cat"] ?>" class="btn btn-danger">Supprimer</a>
                 </td>
                 <td>
                     <!--<a href="modifier?id= /* $categorie["id_cat"] ?>" class="btn btn-primary">Modifier</a> -->

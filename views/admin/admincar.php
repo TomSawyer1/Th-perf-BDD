@@ -51,7 +51,7 @@
                 <td><?= $car["transmission"] ?></td>
 
                 <td>
-                    <a href="supprimer?id=<?= $car["id_car"] ?>" class="btn btn-danger">Supprimer</a>
+                    <a href="suppcar?id=<?= $car["id_car"] ?>" class="btn btn-danger">Supprimer</a>
                 </td>
                 <td>
                     <a href="modifier?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>

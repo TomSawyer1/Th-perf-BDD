@@ -16,7 +16,7 @@ class car extends Db
     //private $picture;
     private $transmission;
 
-    public function createFromPost(array $dataFromPost)
+    /*public function createFromPost(array $dataFromPost)
     {
 
         $this->color = $dataFromPost['color'];
@@ -31,19 +31,35 @@ class car extends Db
         $this->id_cat = $dataFromPost['model'];
         //$this->picture = $dataFromPost['picture'];
         $this->transmission = $dataFromPost['transmission'];
+    }*/
+
+    public function createFromPost(array $dataFromPost)
+    {
+
+        $this->setColor($dataFromPost['color']);
+        $this->setNb_door($dataFromPost['nb_door']);
+        $this->setPower($dataFromPost['power']);
+        $this->setMiles($dataFromPost['miles']);
+        $this->setFuel($dataFromPost['fuel']);
+        $this->setCreation_year($dataFromPost['creation_year']);
+        $this->setTitle($dataFromPost['title']);
+        $this->setDescription($dataFromPost['description']);
+        $this->setPrice($dataFromPost['price']);
+        $this->setId_cat($dataFromPost['id_cat']);
+        //$this->picture = $dataFromPost['picture'];
+        $this->setTransmission($dataFromPost['transmission']);
     }
+
 
     public function insertDb()
     {
 
-        $query = "INSERT INTO car (`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`transmission`)
+        $query = "INSERT INTO `car` (`color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`,`transmission`)
          VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $requetePreparee = self::getDb()->prepare($query);
 
         $reponse = $requetePreparee->execute([
-
-
             $this->getColor(),
             $this->getNb_door(),
             $this->getPower(),
@@ -54,7 +70,6 @@ class car extends Db
             $this->getDescription(),
             $this->getPrice(),
             $this->getId_cat(),
-            //$this->getPicture(),
             $this->getTransmission()
 
         ]);
@@ -95,7 +110,7 @@ class car extends Db
         if (!empty($_POST)) {
 
 
-            if (!isset($_POST["model"]) || empty($_POST["model"])) {
+            if (!isset($_POST["id_cat"]) || empty($_POST["id_cat"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
 				Veuillez remplir le Model !
 				</div>";

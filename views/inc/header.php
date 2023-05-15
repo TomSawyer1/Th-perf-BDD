@@ -27,11 +27,28 @@
 					<li class="nav-item">
 						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/showcat">Categorie</a>
 					</li>
+					<?php
+					if (!$isconnect()) {
+						echo "<li class='nav-item'>";
+						echo "<a class='av-link mx-2' href='http://localhost/PHP/Th-perf-BDD//public/index.php/inscription'>Inscription</a>";
+						echo "</li>";
+
+						echo "<li class='nav-item'>";
+						echo "<a class='nav-link mx-2'href='http://localhost/PHP/Th-perf-BDD//public/index.php/connexion'>Connexion</a>";
+						echo "</li>";
+					} else {
+						echo "<li class='nav-item'>";
+						echo "<a class='av-link mx-2' href='http://localhost/PHP/Th-perf-BDD//public/index.php/inscription'>Inscription</a>";
+						echo "</li>";
+
+						echo "<li class='nav-item'>";
+						echo "<a class='nav-link mx-2'href='http://localhost/PHP/Th-perf-BDD//public/index.php/connexion'>Connexion</a>";
+						echo "</li>";
+					}
+
+					?>
 					<li class="nav-item">
-						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/inscription">Inscription</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/connexion">Connexion</a>
+						<a class="nav-link mx-2" href="#"> <?= !empty($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : ""; ?></a>
 					</li>
 
 			</div>

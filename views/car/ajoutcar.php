@@ -23,7 +23,7 @@ $_SESSION["message"] = "";
             <label class="input-group-text" for="inputGroupSelect01">Model</label>
         </div>
         <?php $allCategorie = CatController::fetchAllCategorie(); ?>
-        <select class="custom-select" id="inputGroupSelect01" name="model">
+        <select class="custom-select" id="inputGroupSelect01" name="id_cat">
             <option value="">Choose an Model</option>
             <?php foreach ($allCategorie as $value) { ?>
                 <option value='<?= $value["id_cat"] ?>'><?= $value["name"] ?></option>

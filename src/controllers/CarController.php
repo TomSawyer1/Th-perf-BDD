@@ -6,16 +6,18 @@ class CarController extends Db
     {
         if (!empty($_POST))                     // Si le formulaire est rempli
         {
-            Car::verifyData($_POST);            // On vérifie toutes les infos
+            Car::verifyData();            // On vérifie toutes les infos
 
             if (empty($_SESSION["message"]))    // Si y'a pas d'erreur
             {
 
-                $car = new car();
+                $car = new Car();
 
                 $car->createFromPost($_POST);
 
                 $car->insertDb();
+
+                //var_dump($car);
 
                 if (empty($_SESSION["message"])) {
                     $_SESSION["message"] .= "Ca a marché<br>";
@@ -57,7 +59,7 @@ class CarController extends Db
     public static function removecar()
     {
 
-        $requete = "DELETE FROM `car` WHERE `id_cat` = ?";
+        $requete = "DELETE FROM `car` WHERE `id_car` = ?";
 
         $requetePreparee = self::getDb()->prepare($requete);
 
@@ -75,7 +77,7 @@ class CarController extends Db
 
         if ($requetePreparee->rowCount() == 0) {
             $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-			  La Catégorie que vous essayez de supprimer, n'existe pas !
+			  La Voiture que vous essayez de supprimer, n'existe pas !
 		</div>";
             header("Location:" . BASE_PATH . "admincar");
             exit;
@@ -83,7 +85,7 @@ class CarController extends Db
 
         if ($requetePreparee->rowCount() == 1) {
             $_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
-			  Vous avez bien supprimé la catégorie dont l'id est " . $_GET["id"] . "
+			  Vous avez bien supprimé la voiture dont l'id est " . $_GET["id"] . "
 		</div>";
             header("Location:" . BASE_PATH . "admincar");
             exit;

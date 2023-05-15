@@ -1,5 +1,7 @@
 <?php include VIEWS . 'inc/header.php';
 
+var_dump($_SESSION['user']);
+
 // if (isset($_SESSION['id'])) {
 //     $var = "Bonjour " . $_SESSION['mail'];
 // } else {
