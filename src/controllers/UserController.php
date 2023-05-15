@@ -130,4 +130,10 @@ class UserController extends Db
 		//header location vers le front 
 		include VIEWS . "user/modification.php";
 	}
+
+	public static function deconnexion()
+	{
+		session_destroy(); // supprimer la session
+		header("Location:" . BASE_PATH . ""); // redirection page d'aceuil 
+	}
 }

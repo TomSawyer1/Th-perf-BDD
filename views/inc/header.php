@@ -1,3 +1,14 @@
+<?php
+$connected = App::isconnect();
+
+$admin = null;
+
+if ($connected == 'false') {
+	$admin = App::isadmin();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -19,36 +30,30 @@
 			<div class=" collapse navbar-collapse" id="">
 				<ul class="navbar-nav mx-auto ">
 					<li class="nav-item">
-						<a class="nav-link mx-2" aria-current="page" href="http://localhost/PHP/Th-perf-BDD//public/index.php/home">Accueil</a>
+						<a class="nav-link mx-2" aria-current="page" href="home">Accueil</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link mx-2" href="#">Histoire</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link mx-2" href="http://localhost/PHP/Th-perf-BDD//public/index.php/showcat">Categorie</a>
+						<a class="nav-link mx-2" href="showcat">Categorie</a>
 					</li>
-					<?php
-					if (!$isconnect()) {
-						echo "<li class='nav-item'>";
-						echo "<a class='av-link mx-2' href='http://localhost/PHP/Th-perf-BDD//public/index.php/inscription'>Inscription</a>";
-						echo "</li>";
 
-						echo "<li class='nav-item'>";
-						echo "<a class='nav-link mx-2'href='http://localhost/PHP/Th-perf-BDD//public/index.php/connexion'>Connexion</a>";
-						echo "</li>";
-					} else {
-						echo "<li class='nav-item'>";
-						echo "<a class='av-link mx-2' href='http://localhost/PHP/Th-perf-BDD//public/index.php/inscription'>Inscription</a>";
-						echo "</li>";
+					<li class='nav-item'>
+						<a class='nav-link mx-2' href='inscription'><?= !$connected == 'false' ? "Inscription" : ""; ?></a>
+					</li>
 
-						echo "<li class='nav-item'>";
-						echo "<a class='nav-link mx-2'href='http://localhost/PHP/Th-perf-BDD//public/index.php/connexion'>Connexion</a>";
-						echo "</li>";
-					}
+					<li class='nav-item'>
+						<a class='nav-link mx-2' href='connexion'><?= !$connected == 'false' ? "Connexion" : ""; ?></a>
+					</li>
 
-					?>
+
 					<li class="nav-item">
-						<a class="nav-link mx-2" href="#"> <?= !empty($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : ""; ?></a>
+						<a class="nav-link mx-2" href="profil"> <?= !empty($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : ""; ?></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link mx-2" href="deconnexion"> <?= $connected == 'false' ? "Se deconnecter" : ""; ?></a>
 					</li>
 
 			</div>

@@ -17,7 +17,7 @@ class CarController extends Db
 
                 $car->insertDb();
 
-                //var_dump($car);
+
 
                 if (empty($_SESSION["message"])) {
                     $_SESSION["message"] .= "Ca a marché<br>";
