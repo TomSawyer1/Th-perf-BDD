@@ -63,7 +63,9 @@ if (!App::isadmin()) {
                 </td>
                 <td>
                     <a href="modifiercar?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>
-
+                </td>
+                <td>
+                    <a href="voircar?id=<?= $car["id_car"] ?>" class="btn btn-success">Voir</a>
                 </td>
 
             </tr>

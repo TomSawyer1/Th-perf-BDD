@@ -127,4 +127,10 @@ class CarController extends Db
 
         include VIEWS . "car/modifiercar.php";
     }
+
+    public static function voircar()
+    {
+
+        include VIEWS . "car/voiture.php";
+    }
 }

@@ -68,6 +68,7 @@ $routes = [
     '/admincar'         => ['CarController', 'tab_car'],
     '/suppcar'          => ['CarController', 'removecar'],
     '/modifiercar'      => ['CarController', 'modifiercar'],
+    '/voircar'          => ['CarController', 'voircar'],
 
 
     //Category
