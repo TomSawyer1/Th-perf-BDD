@@ -131,6 +131,11 @@ class UserController extends Db
 		include VIEWS . "user/modification.php";
 	}
 
+	public static function profil()
+	{
+		include VIEWS . "user/profil.php";
+	}
+
 	public static function deconnexion()
 	{
 		session_destroy(); // supprimer la session

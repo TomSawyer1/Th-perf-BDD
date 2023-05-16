@@ -118,4 +118,13 @@ class CarController extends Db
     {
         $requete = "SELECT FROM car WHERE transmission IN ('Manual','Automatique')";
     }
+
+    public static function modifiercar()
+    {
+        $car = new Car();
+
+        $car->modifiercar();
+
+        include VIEWS . "car/modifiercar.php";
+    }
 }

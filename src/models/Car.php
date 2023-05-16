@@ -185,6 +185,20 @@ class car extends Db
         }
     }
 
+    public static function modifiercar()
+    {
+        $query = "SELECT `id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`, `picture`, `transmission` FROM `car` WHERE `id_car` =?";
+
+        $requetePreparee = self::getDb()->prepare($query);
+
+        $reponse = $requetePreparee->execute([
+            $_GET["id"]
+        ]);
+
+        $carFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
+        return $carFromBdd;
+    }
+
     /**
      * Get the value of id_car
      */

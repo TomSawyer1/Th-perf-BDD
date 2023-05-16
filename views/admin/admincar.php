@@ -62,7 +62,7 @@ if (!App::isadmin()) {
                     <a href="suppcar?id=<?= $car["id_car"] ?>" class="btn btn-danger">Supprimer</a>
                 </td>
                 <td>
-                    <a href="modifier?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>
+                    <a href="modifiercar?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>
 
                 </td>
 
