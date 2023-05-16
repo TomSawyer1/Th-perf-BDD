@@ -44,6 +44,10 @@ if ($connected == 'false') {
 					</li>
 
 					<li class='nav-item'>
+						<a class='nav-link mx-2' href='ajoutcar'><?= !$connected == 'false' ? "Vendre" : ""; ?></a>
+					</li>
+
+					<li class='nav-item'>
 						<a class='nav-link mx-2' href='connexion'><?= !$connected == 'false' ? "Connexion" : ""; ?></a>
 					</li>
 
