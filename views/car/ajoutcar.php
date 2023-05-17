@@ -84,8 +84,8 @@ $_SESSION["message"] = "";
             <label for="nb_door"> N° Door</label>
         </div>
     </div>
-    <!--<label for="picture">Picture</label>
-    <input type="file" name="picture" id="picture"> -->
+    <label for="picture">Picture</label>
+    <input type="file" name="picture" id="picture">
 
     <!-- 
     <div class="input-group mb-3">

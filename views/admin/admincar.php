@@ -30,7 +30,7 @@ if (!App::isadmin()) {
             <th scope="col">Fuel</th>
             <th scope="col">Creation Year</th>
             <th scope="col">N° Door</th>
-            <!-- <th scope="col">Picture</th> -->
+            <th scope="col">Picture</th>
             <th scope="col">Transmission</th>
 
         </tr>
@@ -55,7 +55,7 @@ if (!App::isadmin()) {
                 <td><?= $car["fuel"] ?></td>
                 <td><?= $car["creation_year"] ?></td>
                 <td><?= $car["nb_door"] ?></td>
-                <!-- <td> //$car["picture"] </td> -->
+                <td><?= $car["picture"] ?></td>
                 <td><?= $car["transmission"] ?></td>
 
                 <td>

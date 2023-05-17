@@ -31,18 +31,18 @@ class CarController extends Db
 
         //print_r($_FILES);
 
-        /*if (isset($_FILES["picture"])) // Si FILES existe pourle "picture"
+        if (isset($_FILES["picture"])) // Si FILES existe pourle "picture"
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
 
-            $destination = $_SERVER["DOCUMENT_ROOT"] . "/PHP/Th-perf-BDD/images/" . $name;
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "/Th-perf-BDD/images/" . $name;
 
             if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
                 echo "L'image est bien enregistré, voila sa destination : $destination<br>";
             } else {
                 echo "Il y a eu une erreur, voila la destination : $destination<br>";
             }
-        }*/
+        }
 
         include VIEWS . "car/ajoutcar.php";
     }
