@@ -46,7 +46,28 @@ class car extends Db
         $this->setDescription($dataFromPost['description']);
         $this->setPrice($dataFromPost['price']);
         $this->setId_cat($dataFromPost['id_cat']);
-        $this->picture = $dataFromPost['picture'];
+
+
+
+        if (isset($_FILES["picture"])) // Si FILES existe pourle "picture"
+        {
+            $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
+            $this->setPicture($name);
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "/Th-perf-BDD/images/" . $name;
+
+            if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
+                echo "L'image est bien enregistré, voila sa destination : $destination<br>";
+            } else {
+                echo "Il y a eu une erreur, voila la destination : $destination<br>";
+            }
+        }
+
+
+
+
+
+
+
         $this->setTransmission($dataFromPost['transmission']);
     }
 
@@ -172,7 +193,7 @@ class car extends Db
 				</div>";
             }
 
-            if (!isset($_POST["picture"]) || empty($_POST["picture"])) {
+            if (!isset($_FILES["picture"]) || empty($_FILES["picture"])) {
                 $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
             	Veuillez mettre une photo !
             	</div>";

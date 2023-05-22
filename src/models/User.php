@@ -11,6 +11,7 @@ class user extends Db
 	private $date_creation;
 	private $statut;
 
+
 	public function createFromPost(array $dataFromPost)
 	{
 		$this->setFirstName($dataFromPost["first_name"]);

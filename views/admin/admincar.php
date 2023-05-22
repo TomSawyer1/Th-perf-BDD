@@ -44,6 +44,7 @@ if (!App::isadmin()) {
 
         ?>
             <tr>
+
                 <td><?= $car["id_car"] ?></td>
                 <td><?= $car["title"] ?></td>
                 <td><?= $car["description"] ?></td>
@@ -55,7 +56,7 @@ if (!App::isadmin()) {
                 <td><?= $car["fuel"] ?></td>
                 <td><?= $car["creation_year"] ?></td>
                 <td><?= $car["nb_door"] ?></td>
-                <td><?= $car["picture"] ?></td>
+                <td><img src=" <?= PHOTO . $car["picture"] ?> " alt=""> </td>
                 <td><?= $car["transmission"] ?></td>
 
                 <td>
