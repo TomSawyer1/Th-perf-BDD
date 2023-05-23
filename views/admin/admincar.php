@@ -4,9 +4,7 @@ if (!App::isconnect()) {
     header("Location:" . BASE_PATH . "");
 }
 
-if (!App::isadmin()) {
-    header("Location:" . BASE_PATH . "");
-} ?>
+?>
 
 <h1 class="text-center my-5">Liste des Voitures </h1>
 <?= isset($_SESSION["message"]) ? $_SESSION["message"] : "";
@@ -59,12 +57,19 @@ if (!App::isadmin()) {
                 <td><img src=" <?= PHOTO . $car["picture"] ?> " alt=""> </td>
                 <td><?= $car["transmission"] ?></td>
 
-                <td>
-                    <a href="suppcar?id=<?= $car["id_car"] ?>" class="btn btn-danger">Supprimer</a>
-                </td>
-                <td>
-                    <a href="modifiercar?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>
-                </td>
+                <?php
+                if (App::isadmin()) {
+                    // header("Location:" . BASE_PATH . ""); 
+                ?>
+
+                    <td>
+                        <a href="suppcar?id=<?= $car["id_car"] ?>" class="btn btn-danger">Supprimer</a>
+                    </td>
+                    <td>
+                        <a href="modifiercar?id=<?= $car["id_car"] ?>" class="btn btn-primary">Modifier</a>
+                    </td><?php
+                        }
+                            ?>
                 <td>
                     <a href="voircar?id=<?= $car["id_car"] ?>" class="btn btn-success">Voir</a>
                 </td>

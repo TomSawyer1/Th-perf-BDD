@@ -53,7 +53,7 @@ class car extends Db
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
             $this->setPicture($name);
-            $destination = $_SERVER["DOCUMENT_ROOT"] . "/Th-perf-BDD/images/" . $name;
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "PHP/Th-perf-BDD/images/" . $name;
 
             if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
                 echo "L'image est bien enregistré, voila sa destination : $destination<br>";
@@ -101,6 +101,9 @@ class car extends Db
             $_SESSION["message"] = "Il y a eu une erreur lors de l'ajout en bdd<br>";
         }
     }
+
+
+
 
     public static function showDb()
     {
@@ -219,6 +222,51 @@ class car extends Db
 
         $carFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
         return $carFromBdd;
+    }
+
+    // public static function modifcar()
+    // {
+    //     $query = "UPDATE `car` SET `power`=?,`miles`=?,`fuel`=?,`creation_year`=?,`title`=?,`description`=?,`price`=?,`transmission`=? WHERE `id_car` = ?";
+    //     $requetePrepare = self::getDb()->prepare($query);
+    //     $reponse = $requetePrepare->execute([
+    //         $this->getPower(),
+    //         $this->getMiles(),
+    //         $this->getFuel(),
+    //         $this->getCreation_year(),
+    //         $this->getTitle(),
+    //         $this->getDescription(),
+    //         $this->getPrice(),
+    //         $this->getTransmission(),
+    //         $this->getId_car()
+    //     ]);
+    //     return $reponse;
+    // }
+
+
+    public function modifyCar()
+    {
+
+        $query = "UPDATE `car` SET  `color` = ? , `nb_door` = ?, `power` = ?, `miles` = ?, `fuel` = ?, `creation_year` = ?, `title` = ?, `description` = ?, `price` = ?, `id_cat` = ?,`picture` = ?,`transmission` = ? WHERE `id_car` = ?";
+
+        $requetePreparee = self::getDb()->prepare($query);
+
+        $reponse = $requetePreparee->execute([
+            $this->getColor(),
+            $this->getNb_door(),
+            $this->getPower(),
+            $this->getMiles(),
+            $this->getFuel(),
+            $this->getCreation_year(),
+            $this->getTitle(),
+            $this->getDescription(),
+            $this->getPrice(),
+            $this->getId_cat(),
+            $this->getPicture(),
+            $this->getTransmission(),
+            $this->getId_car()
+
+        ]);
+        return $reponse;
     }
 
     /**

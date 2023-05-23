@@ -6,11 +6,7 @@
 
 
 
-var_dump($allCars);
-
-var_dump($car);
 for ($i = 0; $i < count($car); $i++) {
-    var_dump($car);
     if ($_GET['id'] == $car[$i]['id_car']) {
 ?>
 

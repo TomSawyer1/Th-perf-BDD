@@ -49,7 +49,7 @@ class AppController extends Db
         }
     }
 
-    public static function enregistrement2()
+    /* public static function modifcar()
     {
         $title = strtolower(htmlspecialchars($_POST["title"]));
         $description = strtolower(htmlspecialchars($_POST["description"]));
@@ -79,7 +79,7 @@ class AppController extends Db
             $_SESSION["message"] = "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
                   Bravo votre voiture qui porte le nom " . $title . " a bien été mis à jour !
             </div>";
-            header("Location:" . BASE_PATH . "modifiercar");
+            header("Location:" . BASE_PATH . "admincar");
             exit;
         } else {
             $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
@@ -88,7 +88,7 @@ class AppController extends Db
             header("Location:" . BASE_PATH . "modifiercar");
             exit;
         }
-    }
+    }*/
 
     public static function connexion()
     {
