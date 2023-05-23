@@ -125,6 +125,21 @@ class CarController extends Db
 
     public static function listcar()
     {
+        $requete = "SELECT `title`,`picture` FROM `car` WHERE `id_cat` = ?";
+
+        $requetePreparee = self::getDb()->prepare($requete);
+
+        $reponse = $requetePreparee->execute([
+            $_GET["id"]
+        ]);
+
+
+        $reponse = $requetePreparee->fetchAll(PDO::FETCH_ASSOC);
+
+
+        return $reponse;
+
+
 
         include VIEWS . "car/listcar.php";
     }

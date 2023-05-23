@@ -16,12 +16,12 @@
 
         $allCategorie = categorie::showDb();
         foreach ($allCategorie as $categorie) {
-
         ?>
             <tr>
                 <td><?= $categorie["name"] ?></td>
                 <td>
-                    <a class="btn btn-success" href="#">Voir Plus</a>
+
+                    <a class="btn btn-success" href="listcar?id=<?= $categorie["id_cat"] ?>">Voir Plus</a>
 
                 </td>
 

@@ -14,7 +14,7 @@ for ($i = 0; $i < count($allCars); $i++) {
         <p class="text-center my-5"><?= $allCars[$i]['description'] ?></p>
     <?php
     }
-    if (!empty($allCars[$i]['picture'])) {
+    if ($_GET['id'] == $allCars[$i]['id_car']) {
     ?>
         <img src=" <?= PHOTO . $allCars[$i]['picture'] ?> " alt="voiture">
 <?php
