@@ -108,27 +108,19 @@ class CarController extends Db
     //     $requete = "SELECT FROM car WHERE transmission IN ('Manual','Automatique')";
     // }
 
+    public static function modifcar()
+    {
+
+
+
+        include VIEWS . "car/modifiercar.php";
+    }
+
     public static function modifiercar()
     {
         $car = new Car();
 
-        $car->modifiercar();
-
-        if ($reponse) {
-            $_SESSION["message"] = "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
-                  Bravo votre voiture qui porte le nom " . $title . " a bien été mis à jour !
-            </div>";
-            header("Location:" . BASE_PATH . "admincar");
-            exit;
-        } else {
-            $_SESSION["message"] = "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
-                  ALERTE ! Il y a eu une erreur lors de la modification de la voiture!
-            </div>";
-            header("Location:" . BASE_PATH . "modifiercar");
-            exit;
-        }
-
-        include VIEWS . "car/modifiercar.php";
+        $car->modifierCar();
     }
 
     public static function voircar()

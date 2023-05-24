@@ -210,17 +210,17 @@ class car extends Db
         }
     }
 
-    public static function modifiercar()
+    public static function recupcar()
     {
-        $query = "SELECT `id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`, `picture`, `transmission` FROM `car` WHERE `id_car` =?";
+        $query = "SELECT * FROM `car` WHERE `id_car` = ?";
 
         $requetePreparee = self::getDb()->prepare($query);
 
-        $reponse = $requetePreparee->execute([
+        $requetePreparee->execute([
             $_GET["id"]
         ]);
-
         $carFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
+
         return $carFromBdd;
     }
 
@@ -243,30 +243,37 @@ class car extends Db
     // }
 
 
-    public function modifyCar()
+    public function modifiercar()
     {
 
-        $query = "UPDATE `car` SET  `color` = ? , `nb_door` = ?, `power` = ?, `miles` = ?, `fuel` = ?, `creation_year` = ?, `title` = ?, `description` = ?, `price` = ?, `id_cat` = ?,`picture` = ?,`transmission` = ? WHERE `id_car` = ?";
+        $query = "UPDATE `car` SET  `nb_door` = ?, `power` = ?, `miles` = ?, `fuel` = ?, `creation_year` = ?, `title` = ?, `description` = ?, `price` = ?,`transmission` = ? WHERE `id_car` = ?";
 
         $requetePreparee = self::getDb()->prepare($query);
 
         $reponse = $requetePreparee->execute([
-            $this->getColor(),
-            $this->getNb_door(),
-            $this->getPower(),
-            $this->getMiles(),
-            $this->getFuel(),
-            $this->getCreation_year(),
-            $this->getTitle(),
-            $this->getDescription(),
-            $this->getPrice(),
-            $this->getId_cat(),
-            $this->getPicture(),
-            $this->getTransmission(),
-            $this->getId_car()
-
+            $_POST["nb_door"],
+            $_POST["power"],
+            $_POST["miles"],
+            $_POST["fuel"],
+            $_POST["creation_year"],
+            $_POST["title"],
+            $_POST["description"],
+            $_POST["price"],
+            $_POST["transmission"],
+            $_GET["id"]
         ]);
-        return $reponse;
+        if ($reponse) {
+            $_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
+            Vous avez bien modifier la voiture dont l'id est  " . $_GET["id"] . "
+            </div>";
+            header("Location:" . BASE_PATH . "admincar");
+            exit;
+        } else {
+            $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+        erreur lors de la requete </div>";
+            header("Location:" . BASE_PATH . "admincar");
+            exit;
+        }
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 include VIEWS . 'inc/header.php';
-$carFromBdd = car::modifiercar();
+
 
 if (!App::isconnect()) {
     header("Location:" . BASE_PATH . "");
@@ -9,6 +9,8 @@ if (!App::isconnect()) {
 if (!App::isadmin()) {
     header("Location:" . BASE_PATH . "");
 }
+
+$carFromBdd = Car::recupcar();
 ?>
 
 <h1 class="text-center my-5">Modification Voiture</h1>
@@ -17,7 +19,7 @@ if (!App::isadmin()) {
 $_SESSION["message"] = "";
 ?>
 
-<form method="post" action="enregistrement2?id<?= $carFromBdd["id_car"] ?>" class="w-50 mx-auto">
+<form method="post" action="modifcar?id=<?= $carFromBdd["id_car"] ?>" class="w-50 mx-auto">
 
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="<?= !empty($carFromBdd['title']) ? $carFromBdd['title'] : ""; ?>">
