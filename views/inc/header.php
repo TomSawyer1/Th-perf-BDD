@@ -51,13 +51,16 @@ if ($connected == 'false') {
 						<a class='nav-link mx-2' href='connexion'><?= !$connected == 'false' ? "Connexion" : ""; ?></a>
 					</li>
 
-
 					<li class="nav-item">
 						<a class="nav-link mx-2" href="profil"> <?= !empty($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : ""; ?></a>
 					</li>
 
 					<li class="nav-item">
 						<a class="nav-link mx-2" href="deconnexion"> <?= $connected == 'false' ? "Se deconnecter" : ""; ?></a>
+					</li>
+
+					<li class='nav-item'>
+						<a class='nav-link mx-2' href='panier'><?= !$connected == 'false' ? "Panier" : ""; ?></a>
 					</li>
 
 			</div>

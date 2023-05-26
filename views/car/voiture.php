@@ -16,11 +16,14 @@ for ($i = 0; $i < count($allCars); $i++) {
     }
     if ($_GET['id'] == $allCars[$i]['id_car']) {
     ?>
-        <img src=" <?= PHOTO . $allCars[$i]['picture'] ?> " alt="voiture">
+        <img src=" <?= PHOTO . $allCars[$i]['picture'] ?> " class="d-block mx-auto rounded" alt="voiture" style="width:50%">
 <?php
     }
 }
 ?>
+<a class="btn btn-success" href="panier">Aller a l'Achat</a>
+
+
 
 
 
