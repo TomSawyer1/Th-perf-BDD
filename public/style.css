@@ -1,3 +1,115 @@
-/* body{
-    background-color: red;
-} */
+/* --------------------- FOOTER ------------------------ */
+
+footer {
+    /* position: absolute; */
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+  }
+
+
+  /*----------------------- AVANT BAS --------------------*/
+
+
+  .av-bas{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 436px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-columns {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 106px; */
+
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 436px;
+    display: flex;
+    justify-content: space-between;
+    
+    padding-bottom: 99px;
+    padding-top: 99px;
+  }
+  
+  .footer-column {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+  }
+  
+  .footer-column h3 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    margin-bottom: 14px;
+
+    
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-column ul li {
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 5px;
+    color: white;
+    
+    font-size: 16px;
+    list-style: none;
+    
+   
+    
+  }
+
+#Social{
+  list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 36px;
+    display: flex;
+    flex-direction: row;
+}
+#Social li a{
+  text-decoration: none;
+  color: white;
+}
+/*------------------------- BAS -----------------------------*/
+
+  .bas{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bas-content{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+
+  }
+  .bas-content a{
+    color: white;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+  }

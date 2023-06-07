@@ -28,6 +28,7 @@ const BASE_DIR = __DIR__ . '/../';
 const BASE_PATH = CONFIG['app']['projectBaseUrl'] . '/public/index.php/';
 const PUBLIC_FOLDER = BASE_DIR . 'public/';
 const VIEWS = BASE_DIR . 'views/';
+const ROOT = CONFIG['app']['projectBaseUrl'] . 'public/';
 const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = CONFIG['app']['projectBaseUrl'] . 'images/';
