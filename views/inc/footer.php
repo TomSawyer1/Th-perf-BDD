@@ -1,3 +1,4 @@
+</body>
 <footer>
     <div class="footer-columns">
         <div class="footer-column">
