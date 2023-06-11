@@ -162,14 +162,15 @@ video {
 .back .M3 h1{
   font-family: 'Fugaz one', sans-serif;
   font-size: 40px;
-  
+  color: white;
 }
 
 .button{
 height: 39px;
 width: 142px;
-background-color: black;
+background-color: transparent;
 color: white;
+border: 2px solid white;
 border-radius: 9px;
 cursor: pointer;
 list-style: none;
