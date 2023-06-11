@@ -60,6 +60,7 @@ nav ul li a{
   font-size: 16px;
   font-family: 'Rubik', sans-serif;
   padding: 0 10px;
+  /* text-align: left; */
   }
 
 nav ul li i{
@@ -92,7 +93,7 @@ nav ul li i{
   margin-right: 50px;
 } */
 
-.sub-menu {
+.sub-menu, .sub-menu2 {
   display: none;
   position: absolute;
   background-color: black;
@@ -109,7 +110,7 @@ nav ul li i{
   display: block;
 } */
 
-.deroulant {
+.deroulant ,.deroulant2 {
   position: relative;  /*Assurez-vous que le menu déroulant est positionné par rapport à son parent */
 }
 
@@ -117,20 +118,20 @@ nav ul li i{
   display: block;
 } */
 
-.sub-menu li{
+.sub-menu li ,.sub-menu2 li{
   /* float: none;
   width: 100%; */
   text-align: left;
   margin-bottom: 10px;
 }
-.sub-menu a{
+.sub-menu a, .sub-menu2 a{
   padding: 10px;
   border-bottom: none;
-  text-align: center;
+  /* text-align: center; */
 }
-.sub-menu a:hover{
+.sub-menu a:hover, .sub-menu2 a:hover{
   border-bottom: none;
-  background-color: RGBa(200,200,200,0.1);
+  /* background-color: RGBa(200,200,200,0.1); */
 }
 
 

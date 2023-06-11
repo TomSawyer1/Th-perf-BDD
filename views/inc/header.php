@@ -57,7 +57,15 @@ if ($connected == 'false') {
 				</li>
 				<li><a href="#">Acheter</a></li>
 				<li><a href="#">3PM ?</a></li>
-				<li><a href='ajoutcar'><?= $connected == 'false' ? "Vendre" : ""; ?></a></li>
+				<?php
+				if ($connected == 'false') {
+
+
+				?>
+					<li><a href='ajoutcar'>Vendre</a></li>
+				<?php
+				}
+				?>
 			</ul>
 		</div>
 		<div class="outil">
@@ -67,16 +75,24 @@ if ($connected == 'false') {
 
 
 				</li>
-				<li class="deroulant">
+				<li class="deroulant2">
 					<div class="test">
 						<i class="fa-regular fa-user">
 						</i>
 					</div>
-					<ul class="sub-menu">
+					<ul class="sub-menu2">
 						<li><a href='connexion'><?= !$connected == 'false' ? "Connexion" : ""; ?></a></li>
 						<li><a href='inscription'><?= !$connected == 'false' ? "Inscription" : ""; ?></a></li>
-						<li><a href="#">Profil</a></li>
-						<li><a href="deconnexion"> <?= $connected == 'false' ? "Se deconnecter" : ""; ?></a></li>
+						<?php
+						if ($connected == 'false') {
+
+						?>
+
+							<li><a href="#">Profil</a></li>
+							<li><a href="deconnexion">Se deconnecter</a></li>
+						<?php
+						}
+						?>
 					</ul>
 				</li>
 			</ul>
