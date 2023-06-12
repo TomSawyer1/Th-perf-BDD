@@ -35,7 +35,7 @@ if ($connected == 'false') {
 </head>
 
 <header>
-	<nav id="nav1" class="wrapper">
+	<nav id="nav1" class="wrapper <?php echo $page === "home" ? "home_nav" : "other"; ?>">
 		<div class="logo">
 			<a href="index.html"><img src="<?= ROOT . "Logo/logo3pm1.png" ?>" id="logo" alt="logo"></a>
 		</div>

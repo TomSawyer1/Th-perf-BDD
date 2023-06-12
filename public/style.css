@@ -3,6 +3,16 @@
   
 
 }
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+h2{
+  font-family: 'Rubik';
+  font-size: 30px;
+  font-weight: 700;
+  margin: 75px auto;
+}
 
 
 /*---------------------- NAV ----------------------------- */
@@ -26,10 +36,22 @@ nav{
 .wrapper{
   margin: 0 auto;
   width: 100%;
+  background: black;
 }
+
 #nav1{
   transition: background-color 0.6s ease-out;
 }
+
+.home_nav {
+  background: none;
+}
+
+
+.other {
+  background: black;
+}
+
 #logo{
   width: 120px;
 }
@@ -62,7 +84,7 @@ nav ul li a{
   }
 
 nav ul li i{
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   justify-content: space-between;
   
@@ -92,16 +114,18 @@ nav ul li i{
 } */
 
 .sub-menu, .sub-menu2 {
+  z-index: 1;
   display: none;
   position: absolute;
   background-color: black;
   color: white;
   text-align: center;
   padding: 10px;
-  top: 215%; /* Place le menu déroulant juste en dessous de l'icône utilisateur */
+  top: 248%; /* Place le menu déroulant juste en dessous de l'icône utilisateur */
   left: 50%; /* Centre horizontalement le menu déroulant par rapport à son conteneur */
   transform: translateX(-50%); /* Ajuste le centrage horizontal exact du menu déroulant */
   width: 665%;
+  
 }
 
 /* .sub-menu:hover .sub-menu {
@@ -180,6 +204,63 @@ font-size: 16px;
 text-decoration: none;
 }
 
+/*---------------------- MAIN ---------------------------------*/
+.container{
+  margin: auto;
+  max-width: 1300px;
+
+}
+
+.annonces{
+  row-gap: 50px;
+    column-gap: 20px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 70px;
+}
+
+.box-annonces{
+  border-radius: 15px;
+  background-color: red;
+}
+.box-annonces>a {
+  overflow: hidden;
+  display: flex;
+  border-radius: 15px 15px 0 0;
+}
+.box-annonces>a>img{
+transition: transform .5s ease;
+  border-radius: 15px 15px 0 0;
+}
+
+.box-annonces>a>img:hover{
+  transform: scale(1.1);
+}
+.nom_prix{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+}
+
+.container-back{
+  margin: auto;
+  max-width: 1300px;
+}
+
+.Mweek{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Mweek >img{
+  width: 640px;
+  border-radius: 15px;
+}
+
 /*---------------------- PAGE CONNECT -------------------------*/
 
 .login-box {
@@ -212,10 +293,13 @@ text-decoration: none;
   height: 50px;
   padding: 10px;
   font-size: 16px;
-  
   border: none;
   border-bottom: 1px solid #ccc;
   border-radius: 8px;
+}
+
+.user-box input:focus label {
+  color: transparent;
 }
 
 .user-box label {

@@ -1,4 +1,5 @@
 <?php
+$page = "other";
 $title = "Connexion";
 include VIEWS . 'inc/header.php';
 
@@ -21,11 +22,11 @@ include VIEWS . 'inc/header.php';
         <!-- <label>Nom d'utilisateur</label> -->
 
         <label class="form-label" for="typeEmailX-2">Email</label>
-        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="mail" value="<?= !empty($_SESSION['mail']) ? $_SESSION['mail'] : ""; ?>">
+        <input type="email" id="typeEmailX-2" onclick="effacerLabelmail()" class="form-control form-control-lg" name="mail" value="<?= !empty($_SESSION['mail']) ? $_SESSION['mail'] : ""; ?>">
       </div>
       <div class="user-box">
         <label class="form-label" for="typePasswordX-2">Mot de passe</label>
-        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="password" />
+        <input type="password" id="typePasswordX-2" onclick="effacerLabelmdp()" class="form-control form-control-lg" name="password" />
       </div>
       <button type="submit">Se connecter</button>
       <p class="message">Pas encore inscrit ? <a href="#">S'inscrire</a></p>

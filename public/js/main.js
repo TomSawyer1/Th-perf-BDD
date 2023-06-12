@@ -1,4 +1,6 @@
 var navigation = document.getElementById('nav1');
+
+var navigation2 = document.querySelector('.other');
 var deroulant = document.querySelector('.deroulant');
 var subMenu = document.querySelector('.sub-menu');
 var isSubMenuVisible = false;
@@ -13,8 +15,16 @@ navigation.addEventListener('mouseover', function() {
 navigation.addEventListener('mouseout', function() {
   if (!isSubMenuVisible && !isSubMenuVisible2) {
     navigation.style.backgroundColor = 'transparent';
+    navigation2.style.backgroundColor = 'black';
   }
 });
+
+/*navigation2.addEventListener('mouseout', function() {
+  if (!isSubMenuVisible && !isSubMenuVisible2) {
+    navigation.style.backgroundColor = 'transparent';
+  }
+});*/
+
 
 deroulant.addEventListener('click', function() {
   isSubMenuVisible = !isSubMenuVisible;
@@ -24,6 +34,7 @@ deroulant.addEventListener('click', function() {
     navigation.style.backgroundColor = 'black';
   } else if (!isSubMenuVisible && !isSubMenuVisible2) {
     navigation.style.backgroundColor = 'transparent';
+    navigation2.style.backgroundColor = 'black';
   }
 });
 
@@ -35,8 +46,19 @@ deroulant2.addEventListener('click', function() {
     navigation.style.backgroundColor = 'black';
   } else if (!isSubMenuVisible && !isSubMenuVisible2) {
     navigation.style.backgroundColor = 'transparent';
+    navigation2.style.backgroundColor = 'black';
   }
 });
+
+function effacerLabelmail() {
+  var label = document.querySelector("label[for='typeEmailX-2']");
+  label.textContent = "";
+}
+
+function effacerLabelmdp() {
+  var label = document.querySelector("label[for='typePasswordX-2']");
+  label.textContent = "";
+} 
 
  
 // document.querySelector('.outil').addEventListener('mousover',function(){

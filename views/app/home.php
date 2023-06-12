@@ -1,4 +1,6 @@
-<?php include VIEWS . 'inc/header.php';
+<?php
+$page = "home";
+include VIEWS . 'inc/header.php';
 
 // if (isset($_SESSION['id'])) {
 //     $var = "Bonjour " . $_SESSION['mail'];
@@ -26,6 +28,90 @@
     <!-- <h1 class="text-center my-5"><?= $var ?> </h1> -->
     <h1 class="text-center my-5"><?= $connected == 'false' ? "Bienvenue " . $_SESSION['user']['first_name'] : ""; ?></h1>
 
+</div>
+
+<div class="container">
+    <h2>DERNIERES ANNONCES</h2>
+    <div class="annonces">
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+        <div class="box-annonces">
+            <a href="#">
+                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
+            </a>
+            <div class="nom_prix">
+                <p>lorem</p>
+                <p>ipsum</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <div class="container-mid">
+
+    <div class="newsletter">
+        <h2 id="title-newsletter">Notre newsletter</h2>
+        <form class="form-newsletter">
+            <input id="newsletter-input" type="email" placeholder="Saisir votre adresse email" name="newsletter">
+            <a href="#"><iconify-icon id="icn-send" icon="iconamoon:send-light" width="24" height="24" rotate="315deg"></iconify-icon></a>
+        </form>
+    </div> -->
+
+<div class="container-back">
+    <h2>M3 DE LA SEMAINE</h2>
+    <div class="Mweek">
+        <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
+        <div class="nom">
+            <h2>BMW M3 F80 CS</h2>
+            <p>lorem</p>
+        </div>
+    </div>
+</div>
 
 
-    <?php include VIEWS . 'inc/footer.php'; ?>
+
+<?php include VIEWS . 'inc/footer.php'; ?>
