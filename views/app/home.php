@@ -101,14 +101,51 @@ include VIEWS . 'inc/header.php';
         </form>
     </div> -->
 
+<div class="container-mid">
+    <div class="newsletter">
+        <div class="Nnom">
+            <h3>ENTREZ DANS LA COMMUNAUTÉ</h3>
+            <img src="<?= ROOT . "Logo/blacklogo.svg" ?>" id="logo2" alt="logo">
+        </div>
+        <div class="Nimput">
+            <p> Soyez alerté de nos exclusivités</p>
+            <div class="box-imput3">
+                <label for="">EMAIL@MAIL.COM</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 <div class="container-back">
     <h2>M3 DE LA SEMAINE</h2>
-    <div class="Mweek">
-        <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
-        <div class="nom">
-            <h2>BMW M3 F80 CS</h2>
-            <p>lorem</p>
+    <div class="space">
+
+
+        <div class="Mweek">
+            <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
+            <div class="nom">
+                <h2>BMW M3 F80 CS</h2>
+                <p> Une berline F80 BMW M3 est revenue à la puissance 6 cylindres,
+                    cette fois avec turbo sur le moteur 3.0L S55.
+                    Le modèle a été produit de 2014 à 2018 et comportait soit une boîte manuelle à 6 vitesses,
+                    soit une transmission à double embrayage à 7 vitesses.</p>
+            </div>
         </div>
+
+        <div class="Mweek">
+            <div class="nom">
+                <h2>BMW M3 F80 CS</h2>
+                <p> Une berline F80 BMW M3 est revenue à la puissance 6 cylindres,
+                    cette fois avec turbo sur le moteur 3.0L S55.
+                    Le modèle a été produit de 2014 à 2018 et comportait soit une boîte manuelle à 6 vitesses,
+                    soit une transmission à double embrayage à 7 vitesses.</p>
+            </div>
+            <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
+
+        </div>
+
     </div>
 </div>
 

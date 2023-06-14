@@ -72,5 +72,5 @@ include VIEWS . 'inc/header.php';
 
   // var_dump($_SESSION['user']);
   //UserController::connexion();
-  include VIEWS . 'inc/footer.php';
+  /*include VIEWS . 'inc/footer.php';*/
   ?>

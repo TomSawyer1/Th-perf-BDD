@@ -17,6 +17,18 @@ h2{
   margin: 75px auto;
 }
 
+h3{
+  font-family: 'Fugaz one';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+
+p{
+  line-height: 28px;
+}
+
 
 /*---------------------- NAV ----------------------------- */
 nav{
@@ -137,6 +149,7 @@ nav ul li i{
 
 .deroulant ,.deroulant2 {
   position: relative;  /*Assurez-vous que le menu déroulant est positionné par rapport à son parent */
+  cursor: pointer;
 }
 
 /* .deroulant:hover .sub-menu {
@@ -187,6 +200,10 @@ video {
     left: 98px;
 }
 
+.back .M3 a{
+  text-decoration: none;
+}
+
 .back .M3 h1{
   font-family: 'Fugaz one', sans-serif;
   font-size: 40px;
@@ -227,7 +244,7 @@ text-decoration: none;
 
 .box-annonces{
   border-radius: 15px;
-  background-color: red;
+  background-color: rgb(241, 241, 241);
 }
 .box-annonces>a {
   overflow: hidden;
@@ -249,6 +266,71 @@ transition: transform .5s ease;
 
 }
 
+.container-mid {
+  width: auto;
+  height: auto;
+  position: relative;
+  background-color: #89BBF0;;
+}
+
+.newsletter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* padding-left: 340px;
+  padding-right: 240px; */
+  padding: 59px 88px 59px 240px;
+  gap: 146px;
+}
+
+.Nnom{
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    align-items: center;
+}
+#logo2{
+  width: 184px;
+}
+
+.Nnom p{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.Nimput{
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  align-items: start;
+}
+
+.Nimput p {
+  font-size: 20px;
+}
+
+.box-imput3{
+  border-radius: 8px;
+  height: 64px;
+  width: 405px;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 33px;
+}
+
+.box-imput3 label{
+  font-size: 16px;
+  font-family: 'Rubik';
+  font-weight: 700;
+  color: black;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+}
+
+
 .container-back{
   margin: auto;
   max-width: 1300px;
@@ -256,12 +338,23 @@ transition: transform .5s ease;
 
 .Mweek{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 145px;
 }
+
+.Mweek .nom{
+  margin-right: 150px;
+}
+
 
 .Mweek >img{
   width: 640px;
   border-radius: 15px;
+}
+
+.space{
+  display: grid;
+    gap: 50px;
 }
 
 /*---------------------- PAGE CONNECT -------------------------*/
@@ -313,7 +406,7 @@ transition: transform .5s ease;
   font-size: 16px;
   font-family: 'Rubik';
   font-weight: 700;
-   color: black; /*#888 */
+  color: black; /*#888 */
   pointer-events: none;
   transition: 0.2s ease-out;
 }
@@ -360,6 +453,7 @@ footer {
     background-color: black;
     width: 100%;
     padding: 20px;
+    margin-top: 100px;
   }
 
 
