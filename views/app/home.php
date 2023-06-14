@@ -136,13 +136,14 @@ include VIEWS . 'inc/header.php';
 
         <div class="Mweek">
             <div class="nom">
-                <h2>BMW M3 F80 CS</h2>
-                <p> Une berline F80 BMW M3 est revenue à la puissance 6 cylindres,
-                    cette fois avec turbo sur le moteur 3.0L S55.
-                    Le modèle a été produit de 2014 à 2018 et comportait soit une boîte manuelle à 6 vitesses,
-                    soit une transmission à double embrayage à 7 vitesses.</p>
+                <h2>BMW M3 E30</h2>
+                <p> Un châssis brillant, des fusées éclairantes appropriées,
+                    une ligne rouge à 7 000 tr / min et de la place pour quatre,
+                    la E30 M3 est définitivement l'une des meilleures candidates
+                    en lice pour la quintessence de la voiture de sport de tous les jours.
+                    La nôtre nous manque encore.</p>
             </div>
-            <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
+            <img src="<?= ROOT . "IMGM3/3e3010.jpg" ?>" alt="">
 
         </div>
 
