@@ -1,4 +1,6 @@
-<?php include VIEWS . 'inc/header.php'; ?>
+<?php
+$page = "other";
+include VIEWS . 'inc/header.php'; ?>
 
 
 <h1 class="text-center my-5">Ajout d'une voiture !</h1>

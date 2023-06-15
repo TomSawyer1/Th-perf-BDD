@@ -30,6 +30,7 @@ p{
 }
 
 
+
 /*---------------------- NAV ----------------------------- */
 nav{
   
@@ -65,6 +66,9 @@ nav{
 
 .other {
   background: black;
+  top: 0;
+
+  
 }
 
 #logo{
@@ -224,7 +228,7 @@ font-size: 16px;
 text-decoration: none;
 }
 
-/*---------------------- MAIN ---------------------------------*/
+/*---------------------- MAIN ACCEUILL---------------------------------*/
 .container{
   margin: auto;
   max-width: 1300px;
@@ -441,6 +445,128 @@ button:hover {
   text-align: center;
   margin-top: 20px;
   font-family: 'Rubik';
+}
+
+
+/*---------------------- PAGE PRODUIT -------------------*/
+
+.box-info1 {
+  margin: auto;
+  max-width: 1300px;
+
+
+  display: grid;
+  grid-template-rows: 546px 350px;
+  gap: 25px;
+}
+.imginfo img{
+
+  border-radius: 20px;
+}
+
+.box-info2 {
+  display: grid;
+  grid-template-columns: 735px 520px;
+  
+  justify-content: space-between
+
+}
+
+.box-infosbis{
+
+  border-radius: 20px;
+  background-color: #d9d9d9;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+}
+
+.sousbox1{
+  display: flex;
+  justify-content: center;
+}
+
+.sousbox1 ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 0;
+}
+
+.sousbox1 ul li{
+  list-style: none;
+}
+
+.box-info3{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-between;
+
+  padding: 32px 45px;
+
+
+  
+  border-radius: 20px;
+  background-color: #d9d9d9;
+}
+.caract{
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.caract-list{
+  display: grid;
+  grid-template-columns: 98px 105px 128px 90px;
+  justify-content: space-between;
+  padding-right: 220px;
+  
+}
+.caract-list ul{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 14px;
+
+}
+.caract-list ul li{
+  list-style: none;
+}
+
+
+
+.conctact{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-list{
+  display: grid;
+  grid-template-rows: 44px 60px;
+  gap: 49px;
+}
+
+.contact-list ul{
+  padding: 0;
+}
+
+.container-voiture{
+  margin: auto;
+  max-width: 1300px;
+}
+
+.annonces-v{
+  row-gap: 50px;
+    column-gap: 20px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    grid-template-rows: 1fr;
+    margin-bottom: 70px;
 }
 
 

@@ -9,7 +9,7 @@ const CONFIG = [
         'DB_PORT' => '3306',
         'DB_NAME' => '3pm',
         'DB_USER' => 'root',
-        'DB_PSWD' => 'root',
+        'DB_PSWD' => '',
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
@@ -44,7 +44,7 @@ const VIEWS = BASE_DIR . 'views/';
 const ROOT = CONFIG['app']['projectBaseUrl'] . 'public/';
 const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
-const PHOTO = BASE_DIR . 'public\\upload\\';
+const PHOTO = CONFIG['app']['projectBaseUrl'] . 'images/'; //BASE_DIR . 'public\\upload\\'; 
 const COVER = '../../public/upload/';
 
 
