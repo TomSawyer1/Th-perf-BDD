@@ -483,8 +483,8 @@ button:hover {
 }
 
 .sousbox1{
-  display: flex;
-  justify-content: center;
+  display: grid;
+  /* justify-content: center; */
 }
 
 .sousbox1 ul {
