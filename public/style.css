@@ -78,6 +78,8 @@ nav{
 nav ul{
   display: flex;
   gap: 35px;
+  padding: 0px;
+  margin: 0px;
   }
 
 .outil ul li{
@@ -140,7 +142,7 @@ nav ul li i{
   color: white;
   text-align: center;
   padding: 10px;
-  top: 248%; /* Place le menu déroulant juste en dessous de l'icône utilisateur */
+  top: 229%; /* Place le menu déroulant juste en dessous de l'icône utilisateur */
   left: 50%; /* Centre horizontalement le menu déroulant par rapport à son conteneur */
   transform: translateX(-50%); /* Ajuste le centrage horizontal exact du menu déroulant */
   width: 665%;
@@ -483,8 +485,13 @@ button:hover {
 }
 
 .sousbox1{
-  display: grid;
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+  margin-top: 39px;
+
 }
 
 .sousbox1 ul {
