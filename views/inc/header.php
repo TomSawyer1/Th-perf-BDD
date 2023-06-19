@@ -69,7 +69,7 @@ if ($connected == 'false') {
 			</ul>
 		</div>
 		<div class="outil">
-			<ul>
+			<ul style="display: flex; justify-content:end;">
 				<li><i class="fa-solid fa-magnifying-glass"></i></li>
 				<li><a href='panier'><?= !$connected == 'false' ? "" : ""; ?> <i class="fa-solid fa-cart-shopping"></i></a>
 
@@ -89,7 +89,7 @@ if ($connected == 'false') {
 						?>
 
 							<li><a href="#">Profil</a></li>
-							<li><a href="deconnexion">Se deconnecter</a></li>
+							<li><a href="deconnexion"> Deconnecter</a></li>
 						<?php
 						}
 						?>

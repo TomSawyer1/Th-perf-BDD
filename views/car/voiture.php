@@ -77,10 +77,21 @@ for ($i = 0; $i < count($allCars); $i++) {
                     <div class="sousbox2">
                         <div class="btx">
 
+                            <a href="#">
+                                <button class="button" id="blue">Message</button>
+                            </a>
+                            <a href="#">
+                                <button class="button" id="green">Acheter</button>
+                            </a>
+
                         </div>
-                        <li><b>Posibilité de finacement</b></li>
-                        <li><b>Livraison internationale</b></li>
-                        <li><b>Garantie 6 mois</b></li>
+                        <div class="infop">
+
+
+                            <li><b>Posibilité de finacement</b></li>
+                            <li><b>Livraison internationale</b></li>
+                            <li><b>Garantie 6 mois</b></li>
+                        </div>
                     </div>
 
                 </div>

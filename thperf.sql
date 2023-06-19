@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 15 mai 2023 à 16:51
+-- Généré le : lun. 19 juin 2023 à 16:51
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -42,16 +42,16 @@ CREATE TABLE `achat_car` (
 
 CREATE TABLE `car` (
   `id_car` int(11) NOT NULL,
-  `color` varchar(100) NOT NULL,
-  `nb_door` tinyint(4) NOT NULL,
-  `power` int(11) NOT NULL,
-  `miles` varchar(50) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `nb_door` tinyint(255) NOT NULL,
+  `power` int(255) NOT NULL,
+  `miles` varchar(255) NOT NULL,
   `fuel` enum('gazoil','essence','electric','ethanol','hybrid') NOT NULL,
-  `creation_year` int(11) NOT NULL,
+  `creation_year` int(100) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `price` int(11) NOT NULL,
-  `id_cat` int(11) NOT NULL,
+  `price` int(255) NOT NULL,
+  `id_cat` int(255) NOT NULL,
   `picture` varchar(200) DEFAULT NULL,
   `transmission` enum('Manual','Automatique') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -61,15 +61,13 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`, `picture`, `transmission`) VALUES
-(1, 'red', 4, 12, '12', 'essence', 0, 'BMW', 'top sprots car', 123, 1, '', 'Manual'),
+(1, 'red', 5, 54, '21', 'gazoil', 2012, 'mercedes', 'mercedes benz', 213, 1, '', 'Automatique'),
 (6, 'red', 4, 120, '120', 'essence', 0, 'BMW', 'top sport car', 120, 1, '', 'Manual'),
-(7, 'red', 120, 4, '120', 'essence', 0, 'BMW', 'top sport car', 120, 3, '', 'Manual'),
-(8, 'red', 120, 4, '120', 'essence', 0, 'BMW', 'top sport car', 120, 5, '', 'Manual'),
-(9, 'blue', 4, 325, '556', 'essence', 0, 'BMW', 'top sport car', 660, 2, '', 'Manual'),
-(10, 'red', 4, 12, '5000', 'gazoil', 0, 'BMW', 'top sport car', 90000, 5, '', 'Manual'),
-(12, 'blue', 4, 12, '7500', 'essence', 0, 'BMW', 'Top sport car', 66000, 5, '', 'Automatique'),
-(13, 'blue', 4, 12, '140', 'gazoil', 2020, 'BMW', 'Top sport car', 90000, 3, NULL, 'Manual'),
-(14, 'yellow', 4, 12, '140', 'gazoil', 2012, 'BMW', 'Top sport car', 90000, 5, NULL, 'Manual');
+(16, 'blue', 4, 245, '12', 'gazoil', 2012, 'ALPINA', 'Top sport car', 23000, 4, 'profil-1684773456-646b9a5089f96-Simulation01.jpg', 'Manual'),
+(17, 'blue', 5, 245, '12', 'gazoil', 2017, 'ALPINA', 'Deutch qualidad', 29000, 1, 'profil-1684848177-646cbe315b795-3e30.jpg', 'Manual'),
+(18, 'yellow', 3, 12, '140', 'gazoil', 1986, 'BMW', 'French qualité', 33000, 1, 'profil-1684848235-646cbe6bf13a6-3e302.jpg', 'Manual'),
+(22, 'Green', 5, 245, '1000', 'essence', 2013, 'Alpina', 'Top sport car', 29000, 5, 'profil-1684942545-646e2ed1020ad-3f90cs.jpeg', 'Automatique'),
+(23, 'yellow', 5, 123, '1000', 'essence', 1986, 'BMW', 'Voiture de sport', 23000, 1, 'profil-1685089800-64706e08ac596-3e303.jpg', 'Manual');
 
 -- --------------------------------------------------------
 
@@ -79,21 +77,21 @@ INSERT INTO `car` (`id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `crea
 
 CREATE TABLE `categorie` (
   `id_cat` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL
+  `name` varchar(20) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `categorie`
 --
 
-INSERT INTO `categorie` (`id_cat`, `name`) VALUES
-(1, 'M3 E30'),
-(2, 'M3 E36'),
-(3, 'M3 E46'),
-(4, 'M3 E90'),
-(5, 'M3 F80'),
-(6, 'M3 G80'),
-(7, 'M3 G90');
+INSERT INTO `categorie` (`id_cat`, `name`, `image`) VALUES
+(1, 'M3 E30', '3e30c.webp'),
+(2, 'M3 E36', ''),
+(3, 'M3 E46', ''),
+(4, 'M3 E90', ''),
+(5, 'M3 F80', ''),
+(6, 'M3 G80', '');
 
 -- --------------------------------------------------------
 
@@ -166,13 +164,13 @@ ALTER TABLE `achat_car`
 -- AUTO_INCREMENT pour la table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `user`

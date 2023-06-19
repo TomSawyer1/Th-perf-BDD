@@ -14,3 +14,12 @@ img,video {
     width:100%;
     vertical-align:middle
 }
+
+a {
+    text-decoration: none !important;
+    margin: 0px;
+}
+
+button{
+    margin: 0px;
+}

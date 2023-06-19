@@ -32,4 +32,39 @@
     </tbody>
 </table>
 
+<div class="catcontainer">
+
+    <?php
+
+    $allCategorie = categorie::showDb();
+    $compteur = 0;
+
+    foreach ($allCategorie as $categorie) {
+        $compteur++;
+    ?>
+
+        <div class="cat-1">
+            <div class="loop">
+
+
+                <h1><?= $categorie['name'] ?></h1>
+                <a href="#">
+                    <button class="button-cat" type="button">Voir Plus</button>
+                </a>
+            </div>
+            <img src="<?= ROOT . "IMGM3/" . $categorie['image'] ?>" alt="<?= $categorie['name'] ?>">
+        </div>
+
+
+    <?php
+        if ($compteur == 6) {
+            break;
+        }
+    }
+
+    ?>
+
+</div>
+
+
 <?php include VIEWS . 'inc/footer.php'; ?>

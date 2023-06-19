@@ -28,7 +28,7 @@ include VIEWS . 'inc/header.php';
         <label class="form-label" for="typePasswordX-2">Mot de passe</label>
         <input type="password" id="typePasswordX-2" onclick="effacerLabelmdp()" class="form-control form-control-lg" name="password" />
       </div>
-      <button type="submit">Se connecter</button>
+      <button class="button-connect" type="submit">Se connecter</button>
       <p class="message">Pas encore inscrit ? <a href="#">S'inscrire</a></p>
     </form>
   </div>
