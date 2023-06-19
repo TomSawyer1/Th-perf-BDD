@@ -1,4 +1,6 @@
-<?php include VIEWS . 'inc/header.php'; ?>
+<?php
+$page = "other";
+include VIEWS . 'inc/header.php'; ?>
 
 <h1 class="text-center my-5"> Page profil de <?= !empty($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : ""; ?></h1>
 

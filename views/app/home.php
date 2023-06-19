@@ -2,6 +2,8 @@
 $page = "home";
 include VIEWS . 'inc/header.php';
 
+$car = Car::showDb();
+
 // if (isset($_SESSION['id'])) {
 //     $var = "Bonjour " . $_SESSION['mail'];
 // } else {
@@ -33,73 +35,35 @@ include VIEWS . 'inc/header.php';
 <div class="container">
     <h2>DERNIERES ANNONCES</h2>
     <div class="annonces">
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
+
+        <?php
+        //melange le tableau
+        shuffle($car);
+        $cpt = 0;
+        foreach ($car as $cars) {
+            $cpt++
+        ?>
+
+            <div class="box-annonces">
+                <a href="#">
+                    <img src="<?= PHOTO . $cars['picture']  ?>" alt="">
+                </a>
+                <div class="nom_prix">
+                    <p><?= $cars['title'] ?></p>
+                    <p><?= $cars['price'] ?> €</p>
+                </div>
             </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
+
+        <?php
+            if ($cpt == 6) {
+                break;
+            }
+        }
+        ?>
 
     </div>
 </div>
 
-<!-- <div class="container-mid">
-
-    <div class="newsletter">
-        <h2 id="title-newsletter">Notre newsletter</h2>
-        <form class="form-newsletter">
-            <input id="newsletter-input" type="email" placeholder="Saisir votre adresse email" name="newsletter">
-            <a href="#"><iconify-icon id="icn-send" icon="iconamoon:send-light" width="24" height="24" rotate="315deg"></iconify-icon></a>
-        </form>
-    </div> -->
 
 <div class="container-mid">
     <div class="newsletter">

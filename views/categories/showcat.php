@@ -1,6 +1,8 @@
-<?php include VIEWS . 'inc/header.php'; ?>
+<?php
+$page = "other";
+include VIEWS . 'inc/header.php'; ?>
 
-<h1 class="text-center my-5">Categorie</h1>
+<!-- <h1 class="text-center my-5">Categorie</h1>
 
 <table class="table table-striped container">
 
@@ -30,7 +32,27 @@
         }
         ?>
     </tbody>
-</table>
+</table> -->
+
+<div class="back">
+    <!-- <div class="imgbaca">
+        <img src="<?= ROOT . "IMGM3/3e36gt.webp" ?>" alt="voiture">
+    </div> -->
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <!-- <source src="Seq M3.mp4" type="video/mp4"> -->
+            <source src="<?= ROOT . "videos/BMWMAnimation.mp4" ?>" type="video/mp4">
+        </video>
+
+    </div>
+    <div class="M3">
+        <h1>Tous nos modèles M3</h1>
+
+    </div>
+
+
+</div>
 
 <div class="catcontainer">
 
@@ -48,7 +70,7 @@
 
 
                 <h1><?= $categorie['name'] ?></h1>
-                <a href="#">
+                <a href="listcar?id=<?= $categorie["id_cat"] ?>">
                     <button class="button-cat" type="button">Voir Plus</button>
                 </a>
             </div>

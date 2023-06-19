@@ -76,6 +76,7 @@ nav{
 .other {
   background: black;
   top: 0;
+  position: relative;
 
   
 }
@@ -226,7 +227,7 @@ video {
 }
 
 .button{
-height: auto;
+height: 38px;
 width: 142px;
 background-color: transparent;
 color: white;
@@ -269,7 +270,11 @@ text-decoration: none;
 .box-annonces>a>img{
 transition: transform .5s ease;
   border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  height: 308px;
 }
+
+
 
 .box-annonces>a>img:hover{
   transform: scale(1.1);
@@ -375,13 +380,22 @@ transition: transform .5s ease;
 /*---------------------- PAGE LIST CATEGORIE -------------------*/
 
 
+.imgbaca{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
 .catcontainer{
-  margin: auto;
+  margin: 100px auto 0px auto;
   max-width: 1300px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 146px;
 
 }
@@ -406,6 +420,15 @@ transition: transform .5s ease;
   border-radius: 5px;
   cursor: pointer;
 }
+
+/*---------------------- PAGE LIST CAR [CATEGORIE]--------------*/
+
+.box-annonces>a .backlist{
+  transition: transform .5s ease;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    height: 308px;
+  }
 
 
 /*---------------------- PAGE CONNECT -------------------------*/
@@ -498,7 +521,7 @@ button:hover {
 /*---------------------- PAGE PRODUIT -------------------*/
 
 .box-info1 {
-  margin: auto;
+  margin: 100px auto;
   max-width: 1300px;
 
 
@@ -639,14 +662,14 @@ button:hover {
   background-color: #4171A3;
   border: 2px solid #4171A3;
   width: 181px;
-    height: auto;
+  
   
 }
 #green{
   background-color: #6DD177;
   border: 2px solid #6DD177;
   width: 181px;
-    height: auto;
+  
 }
 
 

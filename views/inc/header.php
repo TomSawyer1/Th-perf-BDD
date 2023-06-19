@@ -47,15 +47,16 @@ if ($connected == 'false') {
 						Models
 					</a>
 					<ul class="sub-menu">
-						<li><a href="#">Tous les modèles </a></li>
-						<li><a href="#">M3 E30</a></li>
-						<li><a href="#">M3 E36</a></li>
-						<li><a href="#">M3 E46</a></li>
-						<li><a href="#">M3 E90</a></li>
-						<li><a href="#">M3 F80</a></li>
+						<li><a href="showcat">Tous les modèles </a></li>
+						<li><a href="listcar?id=1">M3 E30</a></li>
+						<li><a href="listcar?id=2">M3 E36</a></li>
+						<li><a href="listcar?id=3">M3 E46</a></li>
+						<li><a href="listcar?id=4">M3 E90</a></li>
+						<li><a href="listcar?id=5">M3 F80</a></li>
+						<li><a href="listcar?id=6">M3 G80</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Acheter</a></li>
+				<li><a href="showcat">Acheter</a></li>
 				<li><a href="#">3PM ?</a></li>
 				<?php
 				if ($connected == 'false') {
@@ -88,7 +89,7 @@ if ($connected == 'false') {
 
 						?>
 
-							<li><a href="#">Profil</a></li>
+							<li><a href="profil"><?= $_SESSION['user']['first_name'] ?></a></li>
 							<li><a href="deconnexion"> Deconnecter</a></li>
 						<?php
 						}
