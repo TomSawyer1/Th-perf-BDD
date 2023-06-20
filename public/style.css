@@ -382,14 +382,31 @@ transition: transform .5s ease;
   height: 40px;
   width: 100%;
 
-  background-color: #4171A3;
+  background-color: #4171A3; 
   color: #fff;
   display: flex;
   align-items: center;
 
+ 
+
+}
+
+.chemin ul li{
+  list-style: none;
 }
 .chemin p {
   margin: 0px;
+}
+
+.chemin a{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+.breadcrumb{
+  margin: 0px;
+
 }
 
 /*---------------------- PAGE LIST CATEGORIE -------------------*/

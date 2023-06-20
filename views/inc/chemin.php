@@ -1,29 +1,31 @@
 <div class="chemin <?php echo $page === "home" ? "home_nav" : "other"; ?>">
-    <ul>
-        <?php
 
-        switch (basename($_SERVER["PHP_SELF"])) {
-            case 'showcat.php':
-                echo '<li><a href="home.php">Home</a></li>
-                      <li>/</li>
-                      <li>Tous nos modèles</li>';
-                break;
+    <?php
 
-            case 'listcar.php':
-                echo '<li><a href="home.php">Home</a></li>
-                <li>/</li>
-                <li>Tous nos modèles</li>
-                <li>/</li>
-                <li>' . ucwords($selecPro[""]) . '</li>';
+    $breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
+    unset($breadcrumb['Liste voitures']);
+    // Début du fil d'Ariane
+    echo '<ul class="breadcrumb">';
 
-            default:
-                echo '<li><a href="home.php">Home</a></li>';
-                break;
+    // Parcours des éléments du fil d'Ariane
+    foreach ($breadcrumb as $title => $url) {
+        // Lien actif (dernier élément du fil d'Ariane)
+        if ($url == '#') {
+            echo '<li class="active">' . $title . '</li>';
         }
-        ?>
+        // Liens normaux
+        else {
+            echo '<li><a href="' . $url . '">' . $title . '</a></li>';
+        }
+    }
+
+    // Fin du fil d'Ariane
+    echo '</ul>';
+
+    ?>
 
 
 
-    </ul>
-    <!-- <p>Ahhhhhhhhhhhhhh/Ahhhhhhhhhhhhhh</p> -->
+
+
 </div>

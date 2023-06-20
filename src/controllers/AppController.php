@@ -161,4 +161,14 @@ class AppController extends Db
             return true;
         }
     }
+
+    public static function actionPage()
+    {
+        // Récupération de l'URL actuelle
+        $currentUrl = $_SERVER['REQUEST_URI'];
+
+        // Extraction des informations pour le fil d'Ariane à partir du modèle
+        $breadcrumbData = App::getBreadcrumbData($currentUrl);
+        // Passer les données à la vue
+    }
 }

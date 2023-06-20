@@ -29,7 +29,7 @@ include VIEWS . 'inc/header.php';
         <input type="password" id="typePasswordX-2" onclick="effacerLabelmdp()" class="form-control form-control-lg" name="password" />
       </div>
       <button class="button-connect" type="submit">Se connecter</button>
-      <p class="message">Pas encore inscrit ? <a href="#">S'inscrire</a></p>
+      <p class="message">Pas encore inscrit ? <a href="inscription">S'inscrire</a></p>
     </form>
   </div>
 

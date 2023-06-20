@@ -26,4 +26,34 @@ class App
 			return false;
 		}
 	}
+
+	public static function getBreadcrumbData($currentUrl)
+	{
+		// Tableau multidimensionnel contenant les informations des pages
+
+		$pages = array(
+			'Home' => '&nbsp;',
+			'Catégorie' => 'showcat',
+			// 'BMW M' => 'voiture',
+			'Ajouter un véhicule' => 'ajoutcar'
+		);
+		if (isset($_GET['cat'])) {
+			$pages['Liste voitures'] = 'listcar?id=' . $_GET['cat'];
+			$pages['BMW M'] = ' ';
+		}
+
+
+		// Vérification de correspondance et construction du fil d'Ariane
+		$breadcrumb = array();
+		foreach ($pages as $title => $url) {
+			if ($url == $currentUrl) {
+				$breadcrumb[$title] = '#';
+				break;
+			} else {
+				$breadcrumb[$title] = $url;
+			}
+		}
+
+		return $breadcrumb;
+	}
 }

@@ -1,8 +1,36 @@
 <?php
 $page = "other";
 include VIEWS . 'inc/header.php';
-include VIEWS . 'inc/chemin.php';
 
+?>
+<div class="chemin <?php echo $page === "home" ? "home_nav" : "other"; ?>">
+
+    <?php
+
+    $breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
+    unset($breadcrumb['Liste voitures']);
+    unset($breadcrumb['Ajouter un véhicule']);
+    // Début du fil d'Ariane
+    echo '<ul class="breadcrumb">';
+
+    // Parcours des éléments du fil d'Ariane
+    foreach ($breadcrumb as $title => $url) {
+        // Lien actif (dernier élément du fil d'Ariane)
+        if ($url == '#') {
+            echo '<li class="active">' . $title . '</li>';
+        }
+        // Liens normaux
+        else {
+            echo '<li><a href="' . $url . '">' . $title . '</a></li>';
+        }
+    }
+
+    // Fin du fil d'Ariane
+    echo '</ul>';
+
+    ?>
+</div>
+<?php
 $car = Car::showDb();
 
 if ($_GET['id'] == '1') {
@@ -14,7 +42,7 @@ if ($_GET['id'] == '1') {
 } elseif ($_GET['id'] == '4') {
     $categorie = 'M3 E90';
 } elseif ($_GET['id'] == '5') {
-    $categorie = 'M3 F';
+    $categorie = 'M3 F80';
 } elseif ($_GET['id'] == '6') {
     $categorie = 'M3 G80';
 }
@@ -35,7 +63,7 @@ if ($_GET['id'] == '1') {
 
 
                     <div class="box-annonces">
-                        <a href="voircar?id=<?= $produit[$y]["id_car"] ?>">
+                        <a href="voircar?id=<?= $produit[$y]["id_car"] ?>&cat=<?= $produit[$y]["id_cat"] ?>">
                             <img src="<?= PHOTO . $produit[$y]['picture'] ?>" class="backlist" alt="<?= $produit[$y]['title'] ?>">
                         </a>
                         <div class="nom_prix">
