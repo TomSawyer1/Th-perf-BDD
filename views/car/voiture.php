@@ -1,6 +1,9 @@
 <?php
 $page = "other";
-include VIEWS . 'inc/header.php'; ?>
+include VIEWS . 'inc/header.php';
+include VIEWS . 'inc/chemin.php';
+$car = Car::showDb();
+?>
 <?php $allCars = car::showDb(); ?>
 
 
@@ -146,33 +149,30 @@ include VIEWS . 'inc/header.php'; ?>
     <h2>AUTRES ANNONCES</h2>
 
     <div class="annonces-v">
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
+        <?php
+        //melange le tableau
+        shuffle($car);
+        $cpt = 0;
+        foreach ($car as $cars) {
+            $cpt++
+        ?>
+
+            <div class="box-annonces">
+                <a href="#">
+                    <img src="<?= PHOTO . $cars['picture']  ?>" alt="">
+                </a>
+                <div class="nom_prix">
+                    <p><?= $cars['title'] ?></p>
+                    <p><?= $cars['price'] ?> €</p>
+                </div>
             </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
-        <div class="box-annonces">
-            <a href="#">
-                <img src="<?= ROOT . "IMGM3/3e30c.webp" ?>" alt="">
-            </a>
-            <div class="nom_prix">
-                <p>lorem</p>
-                <p>ipsum</p>
-            </div>
-        </div>
+
+        <?php
+            if ($cpt == 3) {
+                break;
+            }
+        }
+        ?>
 
     </div>
 </div>

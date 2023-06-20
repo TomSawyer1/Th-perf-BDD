@@ -1,7 +1,7 @@
 <?php
 $page = "other";
 include VIEWS . 'inc/header.php';
-
+include VIEWS . 'inc/chemin.php';
 
 $car = Car::showDb();
 
@@ -40,7 +40,7 @@ if ($_GET['id'] == '1') {
                         </a>
                         <div class="nom_prix">
                             <p><?= $produit[$y]['title'] ?></p>
-                            <p><?= $produit[$y]['price'] ?></p>
+                            <p><?= $produit[$y]['price'] ?> €</p>
                         </div>
                     </div>
 

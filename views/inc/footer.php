@@ -8,7 +8,6 @@
             <h3>A Propos</h3>
             <ul>
                 <li>Qui sommes-nous ?</li>
-                <li>Qui sommes-nous ?</li>
                 <li>Contactez-nous</li>
                 <li>Nous rejoindre</li>
                 <li>Newsletter</li>

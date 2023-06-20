@@ -100,6 +100,7 @@ if ($connected == 'false') {
 		</div>
 	</nav>
 
+
 </header>
 
 <body>

@@ -377,6 +377,21 @@ transition: transform .5s ease;
     gap: 97px;
 }
 
+.chemin{
+  padding: 0 98px;
+  height: 40px;
+  width: 100%;
+
+  background-color: #4171A3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+}
+.chemin p {
+  margin: 0px;
+}
+
 /*---------------------- PAGE LIST CATEGORIE -------------------*/
 
 
@@ -612,10 +627,14 @@ button:hover {
 
 
 
-.conctact{
+.contact{
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 27px;
+}
+
+.contact h3{
+  margin: 0;
 }
 
 .contact-list{

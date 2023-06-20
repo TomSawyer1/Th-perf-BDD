@@ -1,6 +1,8 @@
 <?php
 $page = "other";
-include VIEWS . 'inc/header.php'; ?>
+include VIEWS . 'inc/header.php';
+include VIEWS . 'inc/chemin.php';
+?>
 
 
 <h1 class="text-center my-5">Vous êtes au bon endroit pour vous enregistrez !</h1>
