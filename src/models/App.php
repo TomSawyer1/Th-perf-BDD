@@ -33,7 +33,7 @@ class App
 
 		$pages = array(
 			'Home' => '&nbsp;',
-			'Catégorie' => 'showcat',
+			' / Catégorie' => 'showcat',
 			// 'BMW M' => 'voiture',
 			'Ajouter un véhicule' => 'ajoutcar'
 		);

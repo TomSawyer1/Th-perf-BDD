@@ -465,12 +465,19 @@ transition: transform .5s ease;
 
 /*---------------------- PAGE CONNECT -------------------------*/
 
+
+#connect{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .login-box {
   position: absolute;
   width: 615px;
   height: auto;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.7);;
@@ -479,7 +486,8 @@ transition: transform .5s ease;
 
 .login-box h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 44px;
+  margin-bottom: 41px;
   font-family: 'Rubik';
   font-weight: 700;
   font-size: 30px;
@@ -491,8 +499,8 @@ transition: transform .5s ease;
 }
 
 .user-box input {
-  width: 100%;
-  height: 50px;
+  width: 405px;
+  height: 64px;
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -500,13 +508,20 @@ transition: transform .5s ease;
   border-radius: 8px;
 }
 
+/* .user-box input::placeholder {
+  align-self: center;
+  color: red;
+} */
+#typePasswordX-2::placeholder{
+  color: red;
+}
 .user-box input:focus label {
   color: transparent;
 }
 
 .user-box label {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   padding: 10px;
   font-size: 16px;
@@ -548,6 +563,142 @@ button:hover {
   margin-top: 20px;
   font-family: 'Rubik';
 }
+
+/*---------------------- PAGE INSCRIPTION ----------------*/
+
+#inscription{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inscrip-box{
+    padding: 20px 80px 80px 80px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+.form-inscription{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.inscrip-box h2{
+  text-align: center;
+  margin-top: 44px;
+  margin-bottom: 41px;
+  font-family: 'Rubik';
+  font-weight: 700;
+  font-size: 30px;
+}
+
+
+.user-box2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.sous-user-box{
+
+  position: relative;
+  margin-bottom: 20px;
+  
+}
+
+.sous-user-box input{
+  width: 405px;
+  height: 64px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;
+}
+.sous-user-box label{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Rubik';
+  font-weight: 700;
+  color: black;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+}
+.sous-user-box input:focus ~label,
+.sous-user-box input:valid~ label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.sous-user-box input:focus label {
+  color: transparent;
+}
+
+.i-box{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.i-box input{
+  width: 825px;
+  height: 64px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.i-box label{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Rubik';
+  font-weight: 700;
+  color: black;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+
+}
+
+.i-box input:focus ~ label,
+.i-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.i-box input:focus label {
+  color: transparent;
+}
+
+
+.button-inscrip {
+  display: block;
+  width: 142px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Rubik';
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
 
 
 /*---------------------- PAGE PRODUIT -------------------*/
