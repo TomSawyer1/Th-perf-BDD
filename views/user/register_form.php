@@ -55,13 +55,13 @@ $_SESSION["message"] = "";
 			<div class="user-box2">
 
 				<div class="sous-user-box">
-					<label for="prenom"> Prenom</label>
+					<label for="prenom"> PRENOM</label>
 					<input type="text" class="form-control" id="prenom" onclick="effacerLabelfirst_name()" name="first_name">
 
 
 				</div>
 				<div class="sous-user-box">
-					<label for="nom"> Nom</label>
+					<label for="nom"> NOM</label>
 					<input type="text" class="form-control" id="nom" name="last_name">
 
 
@@ -70,21 +70,21 @@ $_SESSION["message"] = "";
 			</div>
 
 			<div class="i-box">
-				<label for="user">Mail</label>
+				<label for="user">MAIL</label>
 				<input type="mail" class="form-control" id="mail" name="mail">
 
 
 			</div>
 
 			<div class="i-box">
-				<label for="floatingPassword">Password</label>
+				<label for="floatingPassword">PASSWORD</label>
 				<input type="password" class="form-control" id="password" name="password">
 
 
 			</div>
 
 			<div class="i-box">
-				<label for="floatingPassword">Address</label>
+				<label for="floatingPassword">ADRESSE</label>
 				<input type="tel" class="form-control" id="address" name="address">
 
 
