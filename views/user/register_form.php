@@ -1,8 +1,49 @@
 <?php
 $page = "other";
 include VIEWS . 'inc/header.php';
-include VIEWS . 'inc/chemin.php';
+
 ?>
+<div class="chemin <?php echo $page === "home" ? "home_nav" : "other"; ?>">
+
+	<?php
+
+	$breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
+
+	unset($breadcrumb['Catégorie']);
+	unset($breadcrumb['Connexion']);
+	unset($breadcrumb['Ajouter un véhicule']);
+	unset($breadcrumb['Liste voitures']);
+	unset($breadcrumb['Profil']);
+
+
+
+
+	// Début du fil d'Ariane
+	echo '<ul class="breadcrumb">';
+
+	// Parcours des éléments du fil d'Ariane
+	foreach ($breadcrumb as $title => $url) {
+		// Lien actif (dernier élément du fil d'Ariane)
+		if ($url == '#') {
+			$breadcrumbHtml[] = '<li class="active">' . $title . '</li>';
+		}
+		// Liens normaux
+		else {
+			$breadcrumbHtml[] = '<li><a href="' . $url . '">' . $title . '</a></li>';
+		}
+	}
+
+	// Concaténation avec des slashs
+	$breadcrumbString = implode(' / ', $breadcrumbHtml);
+
+	// Affichage du fil d'Ariane
+	echo $breadcrumbString;
+
+	// Fin du fil d'Ariane
+	echo '</ul>';
+
+	?>
+</div>
 
 
 
@@ -10,39 +51,6 @@ include VIEWS . 'inc/chemin.php';
 
 $_SESSION["message"] = "";
 ?>
-<!-- <form method="post" action="" class="w-50 mx-auto">
-
-	<div class="row g-3">
-		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="prenom" placeholder="Prenom" name="first_name">
-			<label for="prenom"> Prenom</label>
-		</div>
-
-		<div class="form-floating col-md-6 mb-3">
-			<input type="text" class="form-control" id="nom" placeholder="Nom" name="last_name">
-			<label for="nom"> Nom</label>
-		</div>
-	</div>
-
-
-
-	<div class="form-floating mb-3">
-		<input type="mail" class="form-control" id="mail" placeholder="mail" name="mail">
-		<label for="user">Mail</label>
-	</div>
-
-	<div class="form-floating mb-3">
-		<input type="password" class="form-control" id="password" placeholder="Password" name="password">
-		<label for="floatingPassword">Password</label>
-	</div>
-
-	<div class="form-floating mb-3">
-		<input type="tel" class="form-control" id="address" placeholder="Address" name="address">
-		<label for="floatingPassword">Address</label>
-	</div>
-
-	<input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
-</form> -->
 
 <div class="form-inscription">
 

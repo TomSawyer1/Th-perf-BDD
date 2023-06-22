@@ -1,4 +1,6 @@
 <?php
+
+$page = "other";
 $title = "Modification";
 include VIEWS . 'inc/header.php';
 $userFromBdd = user::modifier();
@@ -34,17 +36,17 @@ $_SESSION["message"] = "";
 
 	<div class="form-floating mb-3">
 		<input type="mail" class="form-control" id="mail" placeholder="mail" name="mail" value="<?= !empty($userFromBdd['mail']) ? $userFromBdd['mail'] : ""; ?>">
-		<label for="user">Mail</label>
+		<label for="user">Email</label>
 	</div>
 
 	<div class="form-floating mb-3">
 		<input type="password" class="form-control" id="password" placeholder="Password" name="password" value="<?= !empty($userFromBdd['password']) ? $userFromBdd['password'] : ""; ?>">
-		<label for="floatingPassword">Password</label>
+		<label for="floatingPassword">Mot de passe</label>
 	</div>
 
 	<div class="form-floating mb-3">
 		<input type="tel" class="form-control" id="address" placeholder="Address" name="address" value="<?= !empty($userFromBdd['address']) ? $userFromBdd['address'] : ""; ?>">
-		<label for="floatingPassword">Address</label>
+		<label for="floatingPassword">Adresse</label>
 	</div>
 
 	<input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">

@@ -18,13 +18,19 @@ include VIEWS . 'inc/header.php';
     foreach ($breadcrumb as $title => $url) {
         // Lien actif (dernier élément du fil d'Ariane)
         if ($url == '#') {
-            echo '<li class="active">' . $title . '</li>';
+            $breadcrumbHtml[] = '<li class="active">' . $title . '</li>';
         }
         // Liens normaux
         else {
-            echo '<li><a href="' . $url . '">' . $title . '</a></li>';
+            $breadcrumbHtml[] = '<li><a href="' . $url . '">' . $title . '</a></li>';
         }
     }
+
+    // Concaténation avec des slashs
+    $breadcrumbString = implode(' / ', $breadcrumbHtml);
+
+    // Affichage du fil d'Ariane
+    echo $breadcrumbString;
 
     // Fin du fil d'Ariane
     echo '</ul>';
@@ -34,82 +40,111 @@ include VIEWS . 'inc/header.php';
 
 
 
-<h1 class="text-center my-5">Ajout d'une voiture !</h1>
+
 <?= isset($_SESSION["message"]) ? $_SESSION["message"] : "";
 
 $_SESSION["message"] = "";
 ?>
-<form action="" method="post" enctype="multipart/form-data" class="w-50 mx-auto">
+
+<div class="form-inscription">
 
 
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="title" placeholder="Title" name="title">
-        <label for="title"> Title</label>
+    <div class="inscrip-box">
+        <h2>AJOUTER UNE VOITURE</h2>
+
+        <form method="post" action="" enctype="multipart/form-data" id="inscription">
+
+            <div class="i-box">
+
+                <label for="title"> TITRE</label>
+                <input type="text" class="form-control" id="title" onclick="effacerLabeltitle()" name="title">
+
+            </div>
+            <div class="i-box">
+
+                <label for="description"> DESCRIPTION</label>
+                <input type="text" class="form-control" id="description" onclick="effacerLabeldescription()" name="description">
+
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Model</label>
+                </div>
+                <?php $allCategorie = CatController::fetchAllCategorie(); ?>
+                <select class="custom-select" id="inputGroupSelect01" name="id_cat">
+                    <option value="">Choose an Model</option>
+                    <?php foreach ($allCategorie as $value) { ?>
+                        <option value='<?= $value["id_cat"] ?>'><?= $value["name"] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="i-box">
+
+                <label for="transmission">TRANSMISSION</label>
+                <input type="text" class="form-control" id="transmission" onclick="effacerLabeltransmission()" name="transmission">
+
+            </div>
+            <div class="i-box">
+
+                <label for="price">PRIX</label>
+                <input type="text" class="form-control" id="price" onclick="effacerLabelprice()" name="price">
+
+            </div>
+            <div class="i-box">
+
+                <label for="color">COULEUR</label>
+                <input type="text" class="form-control" id="color" onclick="effacerLabelcolor()" name="color">
+
+            </div>
+
+            <div class="i-box">
+
+                <label for="miles">KILOMETRES</label>
+                <input type="text" class="form-control" id="miles" onclick="effacerLabelmiles()" name="miles">
+
+
+
+            </div>
+
+            <div class="i-box">
+
+                <label for="power">PUISSANCE FISCAUX</label>
+                <input type="text" class="form-control" id="power" onclick="effacerLabelpower()" name="power">
+
+            </div>
+
+            <div class="i-box">
+
+                <label for="fuel">CARBURANT</label>
+                <input type="text" class="form-control" id="fuel" onclick="effacerLabelfuel()" name="fuel">
+
+            </div>
+
+            <div class="user-box2">
+
+                <div class="sous-user-box">
+                    <label for="creation_year"> ANNÉE DE CRÉATION</label>
+                    <input type="text" class="form-control" id="creation_year" onclick="effacerLabelcreation_year()" name="creation_year">
+
+
+                </div>
+                <div class="sous-user-box">
+                    <label for="nb_door"> N° PORTE</label>
+                    <input type="text" class="form-control" id="nb_door" onclick="effacerLabelnb_door()" name="nb_door">
+
+
+                </div>
+
+            </div>
+
+            <label for="picture">Picture</label>
+            <input type="file" name="picture" id="picture">
+
+            <button class="button-val" type="submit" name="submit">Valider</button>
+        </form>
     </div>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="description" placeholder="Description" name="description">
-        <label for="description"> Description</label>
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Model</label>
-        </div>
-        <?php $allCategorie = CatController::fetchAllCategorie(); ?>
-        <select class="custom-select" id="inputGroupSelect01" name="id_cat">
-            <option value="">Choose an Model</option>
-            <?php foreach ($allCategorie as $value) { ?>
-                <option value='<?= $value["id_cat"] ?>'><?= $value["name"] ?></option>
-            <?php } ?>
-        </select>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="transmission" placeholder="transmission" name="transmission">
-        <label for="transmission">Transmission</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="price" placeholder="price" name="price">
-        <label for="price">Price</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="color" placeholder="color" name="color">
-        <label for="color">Color</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="miles" placeholder="Miles" name="miles">
-        <label for="miles">Miles</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="power" placeholder="Power" name="power">
-        <label for="power">Power</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="fuel" placeholder="Fuel" name="fuel">
-        <label for="fuel">Fuel</label>
-    </div>
-
-    <div class="row g-3">
-        <div class="form-floating col-md-6 mb-3">
-            <input type="text" class="form-control" id="creation_year" placeholder="Date" name="creation_year">
-            <label for="creation_year"> Creation Year</label>
-        </div>
-
-        <div class="form-floating col-md-6 mb-3">
-            <input type="text" class="form-control" id="nb_door" placeholder="Nb_door" name="nb_door">
-            <label for="nb_door"> N° Door</label>
-        </div>
-    </div>
-    <label for="picture">Picture</label>
-    <input type="file" name="picture" id="picture">
-
-    <br>
-    <input type="submit" class="btn btn-primary mt-3" value="Submit" name="submit">
-</form>
+</div>
 
 <?php include VIEWS . 'inc/footer.php'; ?>

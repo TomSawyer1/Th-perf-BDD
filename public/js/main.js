@@ -60,6 +60,66 @@ function effacerLabelmdp() {
   label.textContent = "";
 } 
 
+function effacerLabelnb_door() {
+  var label = document.querySelector("label[for='nb_door']");
+  label.textContent = "";
+  
+}
+
+function effacerLabelcreation_year() {
+  var label = document.querySelector("label[for='creation_year']");
+  label.textContent = "";
+  
+}
+function effacerLabelfuel() {
+  var label = document.querySelector("label[for='fuel']");
+  label.textContent = "";
+  
+}
+function effacerLabelpower() {
+  var label = document.querySelector("label[for='power']");
+  label.textContent = "";
+  
+}
+function effacerLabelmiles() {
+  var label = document.querySelector("label[for='miles']");
+  label.textContent = "";
+  
+}
+function effacerLabelcolor() {
+  var label = document.querySelector("label[for='color']");
+  label.textContent = "";
+  
+}
+function effacerLabelprice() {
+  var label = document.querySelector("label[for='price']");
+  label.textContent = "";
+  
+}
+function effacerLabeltransmission() {
+  var label = document.querySelector("label[for='transmission']");
+  label.textContent = "";
+  
+}
+function effacerLabeltitle() {
+  var label = document.querySelector("label[for='title']");
+  label.textContent = "";
+  
+}
+function effacerLabeldescription() {
+  var label = document.querySelector("label[for='description']");
+  label.textContent = "";
+  
+}
+
+function effacerLabelusr() {
+  var label = document.querySelector("label[for='usr']");
+  label.textContent = "";
+  
+}
+
+
+
  
 // document.querySelector('.outil').addEventListener('mousover',function(){
 //   document.querySelector('.deroulant').style.display = 'block';

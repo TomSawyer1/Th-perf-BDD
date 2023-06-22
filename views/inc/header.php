@@ -37,33 +37,35 @@ if ($connected == 'false') {
 <header>
 	<nav id="nav1" class="wrapper <?php echo $page === "home" ? "home_nav" : "other"; ?>">
 		<div class="logo">
-			<a href="index.html"><img src="<?= ROOT . "Logo/logo3pm1.png" ?>" id="logo" alt="logo"></a>
+			<a href="<?= CONFIG['app']['projectBaseUrl'] . "public" ?>"><img src="<?= ROOT . "Logo/logo3pm1.png" ?>" id="logo" alt="logo"></a>
 		</div>
 		<div class="menu">
 			<ul>
-				<li><a href="#">Histoire</a></li>
+				<li><a href="<?= BASE_PATH . "histoire" ?>">Histoire</a></li>
 				<li class="deroulant">
 					<a href="#">
 						Models
 					</a>
 					<ul class="sub-menu">
-						<li><a href="showcat">Tous les modèles </a></li>
-						<li><a href="listcar?id=1">M3 E30</a></li>
-						<li><a href="listcar?id=2">M3 E36</a></li>
-						<li><a href="listcar?id=3">M3 E46</a></li>
-						<li><a href="listcar?id=4">M3 E90</a></li>
-						<li><a href="listcar?id=5">M3 F80</a></li>
-						<li><a href="listcar?id=6">M3 G80</a></li>
+						<li><a href="<?= BASE_PATH . "showcat" ?>">Tous les modèles </a></li>
+
+						<li><a href="<?= BASE_PATH . "listcar?id=1" ?>">M3 E30</a></li>
+						<li><a href="<?= BASE_PATH . "listcar?id=2" ?>">M3 E36</a></li>
+						<li><a href="<?= BASE_PATH . "listcar?id=3" ?>">M3 E46</a></li>
+						<li><a href="<?= BASE_PATH . "listcar?id=4" ?>">M3 E90</a></li>
+						<li><a href="<?= BASE_PATH . "listcar?id=5" ?>">M3 F80</a></li>
+						<li><a href="<?= BASE_PATH . "listcar?id=6" ?>">M3 G80</a></li>
+
 					</ul>
 				</li>
-				<li><a href="showcat">Acheter</a></li>
-				<li><a href="#">3PM ?</a></li>
+				<li><a href="<?= BASE_PATH . "showcat" ?>">Acheter</a></li>
+				<li><a href="<?= BASE_PATH . "quisommenous" ?>">3PM ?</a></li>
 				<?php
 				if ($connected == 'false') {
 
 
 				?>
-					<li><a href='ajoutcar'>Vendre</a></li>
+					<li><a href='<?= BASE_PATH . "ajoutcar" ?>'>Vendre</a></li>
 				<?php
 				}
 				?>
@@ -72,7 +74,7 @@ if ($connected == 'false') {
 		<div class="outil">
 			<ul style="display: flex; justify-content:end;">
 				<li><i class="fa-solid fa-magnifying-glass"></i></li>
-				<li><a href='panier'><?= !$connected == 'false' ? "" : ""; ?> <i class="fa-solid fa-cart-shopping"></i></a>
+				<li><a href='<?= BASE_PATH . "panier" ?>'><?= !$connected == 'false' ? "" : ""; ?> <i class="fa-solid fa-cart-shopping"></i></a>
 
 
 				</li>
@@ -82,15 +84,16 @@ if ($connected == 'false') {
 						</i>
 					</div>
 					<ul class="sub-menu2">
-						<li><a href='connexion'><?= !$connected == 'false' ? "Connexion" : ""; ?></a></li>
-						<li><a href='inscription'><?= !$connected == 'false' ? "Inscription" : ""; ?></a></li>
+
+						<li><a href='<?= BASE_PATH . "connexion" ?>'><?= !$connected == 'false' ? "Connexion" : ""; ?></a></li>
+						<li><a href='<?= BASE_PATH . "inscription" ?>'><?= !$connected == 'false' ? "Inscription" : ""; ?></a></li>
 						<?php
 						if ($connected == 'false') {
 
 						?>
 
-							<li><a href="profil"><?= $_SESSION['user']['first_name'] ?></a></li>
-							<li><a href="deconnexion"> Deconnecter</a></li>
+							<li><a href="<?= BASE_PATH . "profil" ?>"><?= $_SESSION['user']['first_name'] ?></a></li>
+							<li><a href="<?= BASE_PATH . "deconnexion" ?>"> Deconnecter</a></li>
 						<?php
 						}
 						?>

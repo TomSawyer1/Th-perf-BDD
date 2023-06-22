@@ -129,6 +129,7 @@ class UserController extends Db
 
 		//header location vers le front 
 		include VIEWS . "user/modification.php";
+		include VIEWS . "user/profil.php";
 	}
 
 	public static function profil()

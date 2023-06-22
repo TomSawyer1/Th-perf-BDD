@@ -1,4 +1,6 @@
-<?php include VIEWS . 'inc/header.php';
+<?php
+$page = "other";
+include VIEWS . 'inc/header.php';
 if (!App::isconnect()) {
       header("Location:" . BASE_PATH . "");
 }

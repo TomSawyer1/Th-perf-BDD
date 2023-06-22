@@ -696,6 +696,50 @@ button:hover {
   cursor: pointer;
 }
 
+/*----------------------- PAGE PROFIL --------------------*/
+.profil{
+  margin: auto;
+  max-width: 1300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.profil-bis{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.contactdetail{
+  padding: 20px 80px 80px 80px;
+  background-color: #D9D9D9;
+  border-radius: 15px;
+
+}
+
+.onwer{
+  padding: 20px 80px 80px 80px;
+  background-color: #D9D9D9;
+  border-radius: 15px;
+}
+/*----------------------- PAGE AJOUT VOITURE -------------*/
+
+.button-val {
+  display: block;
+  width: 142px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Rubik';
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 
 
