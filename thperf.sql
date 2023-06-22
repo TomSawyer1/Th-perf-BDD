@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 22 juin 2023 à 07:50
+-- Généré le : jeu. 22 juin 2023 à 22:41
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -61,21 +61,33 @@ CREATE TABLE IF NOT EXISTS `car` (
   `transmission` enum('Manual','Automatique') NOT NULL,
   PRIMARY KEY (`id_car`),
   KEY `id_cat` (`id_cat`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `car`
 --
 
 INSERT INTO `car` (`id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `creation_year`, `title`, `description`, `price`, `id_cat`, `picture`, `transmission`) VALUES
-(1, 'red', 5, 54, '21', 'gazoil', 2012, 'mercedes', 'mercedes benz', 213, 1, '', 'Automatique'),
-(6, 'red', 4, 120, '120', 'essence', 0, 'BMW', 'top sport car', 120, 1, '', 'Manual'),
-(16, 'blue', 4, 245, '12', 'gazoil', 2012, 'ALPINA', 'Top sport car', 23000, 4, 'profil-1684773456-646b9a5089f96-Simulation01.jpg', 'Manual'),
-(17, 'blue', 5, 245, '12', 'gazoil', 2017, 'ALPINA', 'Deutch qualidad', 29000, 1, 'profil-1684848177-646cbe315b795-3e30.jpg', 'Manual'),
-(18, 'yellow', 3, 12, '140', 'gazoil', 1986, 'BMW', 'French qualité', 33000, 1, 'profil-1684848235-646cbe6bf13a6-3e302.jpg', 'Manual'),
-(22, 'Green', 5, 245, '1000', 'essence', 2013, 'Alpina', 'Top sport car', 29000, 5, 'profil-1684942545-646e2ed1020ad-3f90cs.jpeg', 'Automatique'),
-(23, 'yellow', 5, 123, '1000', 'essence', 1986, 'BMW', 'Voiture de sport', 23000, 1, 'profil-1685089800-64706e08ac596-3e303.jpg', 'Manual'),
-(24, 'Jaune', 5, 245, '1000', 'essence', 2012, 'BMW M3 F80', 'Top sport car', 100000, 5, 'profil-1687295803-6492173bee7b1-3f807.webp', 'Automatique');
+(24, 'Jaune', 5, 245, '1000', 'essence', 2012, 'BMW M3 F80', 'Top sport car', 100000, 5, 'profil-1687295803-6492173bee7b1-3f807.webp', 'Automatique'),
+(25, 'red', 5, 245, '78', 'essence', 2018, 'BMW M3 G80', 'Top sport car', 90000, 6, 'profil-1687438490-6494449accc88-3g803.webp', 'Automatique'),
+(26, 'Blanc', 5, 245, '470', 'gazoil', 2006, 'BMW', 'Deutch qualidad', 23000, 4, 'profil-1687454991-6494850f3d749-3e9014.webp', 'Automatique'),
+(27, 'Vert', 3, 88, '140', 'gazoil', 2008, 'BMW M3 E93', 'Deutch qualidad', 42000, 4, 'profil-1687455477-649486f5f3ce2-3e93.webp', 'Automatique'),
+(28, 'Blue', 3, 123, '110030', 'gazoil', 2012, 'M3 E92', 'Top sport car', 19000, 4, 'profil-1687455706-649487dab1e99-3e9210.webp', 'Automatique'),
+(29, 'Rouge', 3, 245, '51000', 'essence', 1986, 'M3 E30', 'Top sport car', 23000, 1, 'profil-1687456313-64948a399373f-3e306.webp', 'Manual'),
+(30, 'Gris', 3, 245, '30000', 'essence', 1986, 'BMW E30', 'Top sport car', 32000, 1, 'profil-1687456690-64948bb29b4f8-3e301.webp', 'Manual'),
+(31, 'Bleu', 5, 185, '28000', 'essence', 2018, 'BMW M3 F80 C', 'Top sport car', 46000, 5, 'profil-1687457009-64948cf1c96b5-3f803.webp', 'Automatique'),
+(32, 'Blanc', 3, 245, '60518', 'essence', 1986, 'BMW E30 M3 C', 'Top sport car', 26000, 1, 'profil-1687457610-64948f4a73805-3e30c.webp', 'Manual'),
+(34, 'Blanc', 3, 245, '32000', 'essence', 2012, 'M3 E92 Compétitions', 'Top sport car', 71620, 4, 'profil-1687457904-64949070ab362-3e92c.webp', 'Manual'),
+(35, 'Jaune', 3, 245, '9230', 'gazoil', 1992, 'BMW E46 M3', 'Top sport car', 46000, 2, 'profil-1687458153-64949169c93e9-3e36.webp', 'Manual'),
+(36, 'Gris', 3, 245, '16000', 'essence', 2000, 'E46 Gris', 'Top sport car', 32000, 3, 'profil-1687458397-6494925d29ef3-3e46.webp', 'Manual'),
+(37, 'gris', 3, 110, '48000', 'gazoil', 2003, 'BMW M3 Convertible', 'Top sport car', 28000, 3, 'profil-1687459587-64949703357ce-3e463.webp', 'Manual'),
+(38, 'Bleu', 3, 245, '23000', 'gazoil', 2000, 'M3 E46', 'Top sport car', 31000, 3, 'profil-1687459771-649497bbf10e3-3e461.webp', 'Automatique'),
+(39, 'red', 3, 300, '43000', 'gazoil', 1992, 'M3 GT', 'Top sport car', 96000, 2, 'profil-1687460683-64949b4bd24c6-3e3641.webp', 'Manual'),
+(40, 'Blanc', 3, 300, '55000', 'gazoil', 1993, 'BMW E36 GT', 'Top sport car', 84000, 2, 'profil-1687460774-64949ba6d5c64-3e36gt.webp', 'Manual'),
+(41, 'Noir', 5, 236, '88000', 'gazoil', 2017, 'M3 Batman F80', 'Top sport car', 66000, 5, 'profil-1687461034-64949caa2846a-3f80b.webp', 'Automatique'),
+(42, 'Gris', 5, 187, '49030', 'gazoil', 2016, 'F80 Compétition', 'Top sport car', 80000, 5, 'profil-1687461211-64949d5b4e34e-3f80csable.webp', 'Automatique'),
+(43, 'Orange', 5, 160, '1003', 'gazoil', 2022, 'M3 Jahr', 'Top sport car', 86000, 6, 'profil-1687461419-64949e2bbd2f3-3g809.webp', 'Automatique'),
+(44, 'Jaune', 5, 200, '3000', 'gazoil', 2021, 'BMW M3 6-Speed', 'Top sport car', 86000, 6, 'profil-1687461594-64949eda155fc-3g8010.webp', 'Automatique');
 
 -- --------------------------------------------------------
 
