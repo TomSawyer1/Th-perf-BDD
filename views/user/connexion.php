@@ -48,7 +48,7 @@ include VIEWS . 'inc/header.php';
 
 <div class="container-connect">
   <div class="img">
-    <img src="<?= ROOT . "IMGM3/3f90cs.jpeg" ?>" alt="3F90">
+    <img src="<?= ASSET . "IMGM3/3f90cs.jpeg" ?>" alt="3F90">
   </div>
   <div class="login-box">
     <h2>CONNEXION</h2>

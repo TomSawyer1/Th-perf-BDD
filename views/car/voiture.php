@@ -62,7 +62,7 @@ $car = Car::showDb();
                 <div class="imginfo">
 
 
-                    <img src="<?= PHOTO . $allCars[$i]['picture'] ?>" alt="voiture" height="546px">
+                    <img src="<?= IMAGES . $allCars[$i]['picture'] ?>" alt="voiture" height="546px">
                 </div>
 
 
@@ -199,7 +199,7 @@ $car = Car::showDb();
 
             <div class="box-annonces">
                 <a href="#">
-                    <img src="<?= PHOTO . $cars['picture']  ?>" alt="">
+                    <img src="<?= IMAGES . $cars['picture']  ?>" alt="">
                 </a>
                 <div class="nom_prix">
                     <p><?= $cars['title'] ?></p>

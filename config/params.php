@@ -9,7 +9,7 @@ const CONFIG = [
         'DB_PORT' => '3306',
         'DB_NAME' => '3pm',
         'DB_USER' => 'root',
-        'DB_PSWD' => '',
+        'DB_PSWD' => 'root',
     ],
     'app' => [
         'name' => 'TH-PERF-BDD',
@@ -31,8 +31,10 @@ const VIEWS = BASE_DIR . 'views/';
 const ROOT = CONFIG['app']['projectBaseUrl'] . 'public/';
 const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
-const PHOTO = CONFIG['app']['projectBaseUrl'] . 'images/';
+// const PHOTO = CONFIG['app']['projectBaseUrl'] . 'images/';
 const COVER = '../../public/upload/';
+const ASSET = CONFIG['app']['projectBaseUrl'] . '/assets/';
+const IMAGES = CONFIG['app']['projectBaseUrl'] . '/assets/images/';
 
 
 //---------------------------- WINDOWS ---------------------------//
@@ -46,6 +48,8 @@ const MODELS = BASE_DIR . 'src/models/';
 const CONTROLLERS = BASE_DIR . 'src/controllers/';
 const PHOTO = CONFIG['app']['projectBaseUrl'] . 'images/'; //BASE_DIR . 'public\\upload\\'; 
 const COVER = '../../public/upload/';
+const ASSET = CONFIG['app']['projectBaseUrl'] . '/assets/';
+const IMAGES = CONFIG['app']['projectBaseUrl'] . '/assets/images/';
 */
 
 /**

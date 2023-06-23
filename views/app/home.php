@@ -16,7 +16,7 @@ $car = Car::showDb();
     <div class="video-container">
         <video autoplay loop muted>
             <!-- <source src="Seq M3.mp4" type="video/mp4"> -->
-            <source src="<?= ROOT . "videos/Seq M3.mp4" ?>" type="video/mp4">
+            <source src="<?= ASSET; ?>videos/Seq M3.mp4" type="video/mp4">
         </video>
 
     </div>
@@ -46,7 +46,7 @@ $car = Car::showDb();
 
             <div class="box-annonces">
                 <a href="#">
-                    <img src="<?= PHOTO . $cars['picture']  ?>" alt="">
+                    <img src="<?= IMAGES . $cars['picture']  ?>" alt="">
                 </a>
                 <div class="nom_prix">
                     <p><?= $cars['title'] ?></p>
@@ -69,7 +69,7 @@ $car = Car::showDb();
     <div class="newsletter">
         <div class="Nnom">
             <h3>ENTREZ DANS LA COMMUNAUTÉ</h3>
-            <img src="<?= ROOT . "Logo/blacklogo.svg" ?>" id="logo2" alt="logo">
+            <img src="<?= ASSET; ?>Logo/blacklogo.svg" id="logo2" alt="logo">
         </div>
         <div class="Nimput">
             <p> Soyez alerté de nos exclusivités</p>
@@ -88,7 +88,7 @@ $car = Car::showDb();
 
 
         <div class="Mweek">
-            <img src="<?= ROOT . "IMGM3/3f80cs.webp" ?>" alt="">
+            <img src=" <?= ASSET; ?>IMGM3/3f80cs.webp" alt="">
             <div class="nom">
                 <h2>BMW M3 F80 CS</h2>
                 <p> Une berline F80 BMW M3 est revenue à la puissance 6 cylindres,
@@ -107,7 +107,7 @@ $car = Car::showDb();
                     en lice pour la quintessence de la voiture de sport de tous les jours.
                     La nôtre nous manque encore.</p>
             </div>
-            <img src="<?= ROOT . "IMGM3/3e3010.jpg" ?>" alt="">
+            <img src="<?= ASSET; ?>IMGM3/3e3010.jpg" alt="">
 
         </div>
 

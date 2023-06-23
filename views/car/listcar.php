@@ -73,7 +73,7 @@ if ($_GET['id'] == '1') {
 
                     <div class="box-annonces">
                         <a href="voircar?id=<?= $produit[$y]["id_car"] ?>&cat=<?= $produit[$y]["id_cat"] ?>">
-                            <img src="<?= PHOTO . $produit[$y]['picture'] ?>" class="backlist" alt="<?= $produit[$y]['title'] ?>">
+                            <img src="<?= IMAGES . $produit[$y]['picture'] ?>" class="backlist" alt="<?= $produit[$y]['title'] ?>">
                         </a>
                         <div class="nom_prix">
                             <p><?= $produit[$y]['title'] ?></p>

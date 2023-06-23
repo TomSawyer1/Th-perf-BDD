@@ -46,7 +46,7 @@ include VIEWS . 'inc/header.php';
     <div class="video-container">
         <video autoplay loop muted>
 
-            <source src="<?= ROOT . "videos/BMWMAnimation.mp4" ?>" type="video/mp4">
+            <source src="<?= ASSET .  "videos/BMWMAnimation.mp4" ?>" type="video/mp4">
         </video>
 
     </div>
@@ -78,7 +78,7 @@ include VIEWS . 'inc/header.php';
                     <button class="button-cat" type="button">Voir Plus</button>
                 </a>
             </div>
-            <img src="<?= ROOT . "IMGM3/" . $categorie['image'] ?>" alt="<?= $categorie['name'] ?>">
+            <img src="<?= ASSET . "IMGM3/" . $categorie['image'] ?>" alt="<?= $categorie['name'] ?>">
         </div>
 
 

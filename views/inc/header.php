@@ -24,9 +24,9 @@ if ($connected == 'false') {
 	<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a67ce56d07.js" crossorigin="anonymous"></script>
 	<!-- <script src="main.js" defer></script> -->
-	<link rel="stylesheet" href="<?= ROOT . "reset.css" ?>">
-	<link rel="stylesheet" href="<?= ROOT . "style.css" ?>">
-	<script src="<?= ROOT . "js/main.js" ?>" defer></script>
+	<link rel="stylesheet" href="<?= ASSET; ?>css/reset.css">
+	<link rel="stylesheet" href="<?= ASSET; ?>css/style.css">
+	<script src="<?= ASSET; ?>js/main.js" defer></script>
 
 
 
@@ -37,7 +37,7 @@ if ($connected == 'false') {
 <header>
 	<nav id="nav1" class="wrapper <?php echo $page === "home" ? "home_nav" : "other"; ?>">
 		<div class="logo">
-			<a href="<?= CONFIG['app']['projectBaseUrl'] . "public" ?>"><img src="<?= ROOT . "Logo/logo3pm1.png" ?>" id="logo" alt="logo"></a>
+			<a href="index.html"><img src="<?= ASSET; ?>Logo/logo3pm1.png" id="logo" alt="logo"></a>
 		</div>
 		<div class="menu">
 			<ul>
