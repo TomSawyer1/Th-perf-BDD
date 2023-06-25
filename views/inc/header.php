@@ -22,6 +22,7 @@ if ($connected == 'false') {
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a67ce56d07.js" crossorigin="anonymous"></script>
 	<!-- <script src="main.js" defer></script> -->
 	<link rel="stylesheet" href="<?= ASSET; ?>css/reset.css">
@@ -59,7 +60,7 @@ if ($connected == 'false') {
 					</ul>
 				</li>
 				<li><a href="<?= BASE_PATH . "showcat" ?>">Acheter</a></li>
-				<li><a href="<?= BASE_PATH . "quisommenous" ?>">3PM ?</a></li>
+				<li><a href="<?= ROOT . "404" ?>">3PM ?</a></li>
 				<?php
 				if ($connected == 'false') {
 
