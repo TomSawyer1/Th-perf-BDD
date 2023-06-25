@@ -59,8 +59,7 @@ $routes = [
     ''                  => ['AppController', 'index'],
     '/enregistrement'   => ['AppController', 'enregistrement'],
 
-    //Page 404
-    '404'               => ['ErrController', 'pageerr'],
+
 
     //j'appelle la methode registre() qui est dans le fichier UserController
     '/inscription'      => ['UserController', 'register'],
