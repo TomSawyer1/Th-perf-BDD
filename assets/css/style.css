@@ -38,6 +38,11 @@ p{
   line-height: 28px;
 }
 
+.breadcrumb {
+  display: flex;
+  gap: 15px;
+}
+
 
 
 /*---------------------- NAV ----------------------------- */
