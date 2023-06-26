@@ -9,7 +9,13 @@ include VIEWS . 'inc/header.php';
     $breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
 
     unset($breadcrumb['Catégorie']);
-    unset($breadcrumb['Ajouter un véhicule']);
+    unset($breadcrumb['Liste voitures']);
+    unset($breadcrumb['Connexion']);
+    unset($breadcrumb['Inscription']);
+    unset($breadcrumb['Profil']);
+
+
+
 
     // Début du fil d'Ariane
     echo '<ul class="breadcrumb">';

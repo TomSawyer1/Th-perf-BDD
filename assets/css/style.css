@@ -193,6 +193,11 @@ nav ul li i{
   /* background-color: RGBa(200,200,200,0.1); */
 }
 
+.breadcrumb{
+  display: flex;
+  gap: 15px;
+}
+
 
 /*---------------------- HOME PAGE ---------------------------- */
 

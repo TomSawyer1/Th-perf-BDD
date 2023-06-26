@@ -78,14 +78,14 @@ $_SESSION["message"] = "";
 			</div>
 
 			<div class="i-box">
-				<label for="user">MAIL</label>
+				<label for="user">EMAIL</label>
 				<input type="mail" class="form-control" id="mail" name="mail">
 
 
 			</div>
 
 			<div class="i-box">
-				<label for="floatingPassword">PASSWORD</label>
+				<label for="floatingPassword">MOT DE PASSE</label>
 				<input type="password" class="form-control" id="password" name="password">
 
 
