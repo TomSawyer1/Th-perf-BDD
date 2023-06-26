@@ -39,25 +39,28 @@ include VIEWS . 'inc/header.php';
     ?>
 </div>
 
-<?php
-$cart = $controller->getCart();
-$items = $cart->getItems();
-?>
 
-<h2>Mon panier</h2>
+<div>
+    <div>
+        <p></p>
+        <div>
 
-<?php if ($cart->getTotalItems() > 0) : ?>
-    <ul>
-        <?php foreach ($items as $product => $quantity) : ?>
-            <li><?php echo $product; ?> (<?php echo $quantity; ?>)</li>
-        <?php endforeach; ?>
-    </ul>
-    <p>Total d'articles : <?php echo $cart->getTotalItems(); ?></p>
-    <p>Total de quantité : <?php echo $cart->getTotalQuantity(); ?></p>
-<?php else : ?>
-    <p>Le panier est vide.</p>
-<?php endif; ?>
+        </div>
 
-<h1 class="text-center my-5"> Panier</h1>
+    </div>
+
+    <div>
+        <div>
+            <p></p>
+
+            <a href="#">
+                <button type=""></button>
+            </a>
+        </div>
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
+</div>
 
 <?php include VIEWS . 'inc/footer.php'; ?>
