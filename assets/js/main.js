@@ -19,12 +19,6 @@ navigation.addEventListener('mouseout', function() {
   }
 });
 
-/*navigation2.addEventListener('mouseout', function() {
-  if (!isSubMenuVisible && !isSubMenuVisible2) {
-    navigation.style.backgroundColor = 'transparent';
-  }
-});*/
-
 
 deroulant.addEventListener('click', function() {
   isSubMenuVisible = !isSubMenuVisible;
@@ -50,81 +44,27 @@ deroulant2.addEventListener('click', function() {
   }
 });
 
-function effacerLabelmail() {
-  var label = document.querySelector("label[for='typeEmailX-2']");
-  label.textContent = "";
+
+function effacerLabel(elementId) {
+  var label = document.querySelector("label[for='" + elementId + "']");
+  label.style.display = "none";
 }
 
-function effacerLabelmdp() {
-  var label = document.querySelector("label[for='typePasswordX-2']");
-  label.textContent = "";
-} 
+document.addEventListener("DOMContentLoaded", function() {
+  var labels = document.querySelectorAll("label");
 
-function effacerLabelnb_door() {
-  var label = document.querySelector("label[for='nb_door']");
-  label.textContent = "";
-  
-}
+  labels.forEach(function(label) {
+      var inputId = label.getAttribute("for");
+      var input = document.getElementById(inputId);
 
-function effacerLabelcreation_year() {
-  var label = document.querySelector("label[for='creation_year']");
-  label.textContent = "";
-  
-}
-function effacerLabelfuel() {
-  var label = document.querySelector("label[for='fuel']");
-  label.textContent = "";
-  
-}
-function effacerLabelpower() {
-  var label = document.querySelector("label[for='power']");
-  label.textContent = "";
-  
-}
-function effacerLabelmiles() {
-  var label = document.querySelector("label[for='miles']");
-  label.textContent = "";
-  
-}
-function effacerLabelcolor() {
-  var label = document.querySelector("label[for='color']");
-  label.textContent = "";
-  
-}
-function effacerLabelprice() {
-  var label = document.querySelector("label[for='price']");
-  label.textContent = "";
-  
-}
-function effacerLabeltransmission() {
-  var label = document.querySelector("label[for='transmission']");
-  label.textContent = "";
-  
-}
-function effacerLabeltitle() {
-  var label = document.querySelector("label[for='title']");
-  label.textContent = "";
-  
-}
-function effacerLabeldescription() {
-  var label = document.querySelector("label[for='description']");
-  label.textContent = "";
-  
-}
+      input.addEventListener("focus", function() {
+          label.style.display = "none";
+      });
 
-function effacerLabelusr() {
-  var label = document.querySelector("label[for='usr']");
-  label.textContent = "";
-  
-}
-
-
-
- 
-// document.querySelector('.outil').addEventListener('mousover',function(){
-//   document.querySelector('.deroulant').style.display = 'block';
-//   console.log('test')
-// })
-// document.querySelector('.test').addEventListener('mouseover', () => {
-//   console.log('hello');
-// });
+      input.addEventListener("blur", function() {
+          if (input.value === "") {
+              label.style.display = "block";
+          }
+      });
+  });
+});

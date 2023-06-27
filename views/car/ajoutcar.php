@@ -65,13 +65,13 @@ $_SESSION["message"] = "";
             <div class="i-box">
 
                 <label for="title"> TITRE</label>
-                <input type="text" class="form-control" id="title" onclick="effacerLabeltitle()" name="title">
+                <input type="text" class="form-control" id="title" onclick="effacerLabel('title')" name="title">
 
             </div>
             <div class="i-box">
 
                 <label for="description"> DESCRIPTION</label>
-                <input type="text" class="form-control" id="description" onclick="effacerLabeldescription()" name="description">
+                <input type="text" class="form-control" id="description" onclick="effacerLabel('description')" name="description">
 
             </div>
 
@@ -91,26 +91,26 @@ $_SESSION["message"] = "";
             <div class="i-box">
 
                 <label for="transmission">TRANSMISSION</label>
-                <input type="text" class="form-control" id="transmission" onclick="effacerLabeltransmission()" name="transmission">
+                <input type="text" class="form-control" id="transmission" onclick="effacerLabel('transmission')" name="transmission">
 
             </div>
             <div class="i-box">
 
                 <label for="price">PRIX</label>
-                <input type="text" class="form-control" id="price" onclick="effacerLabelprice()" name="price">
+                <input type="text" class="form-control" id="price" onclick="effacerLabel('price')" name="price">
 
             </div>
             <div class="i-box">
 
                 <label for="color">COULEUR</label>
-                <input type="text" class="form-control" id="color" onclick="effacerLabelcolor()" name="color">
+                <input type="text" class="form-control" id="color" onclick="effacerLabel('color')" name="color">
 
             </div>
 
             <div class="i-box">
 
                 <label for="miles">KILOMETRES</label>
-                <input type="text" class="form-control" id="miles" onclick="effacerLabelmiles()" name="miles">
+                <input type="text" class="form-control" id="miles" onclick="effacerLabel('miles')" name="miles">
 
 
 
@@ -119,14 +119,14 @@ $_SESSION["message"] = "";
             <div class="i-box">
 
                 <label for="power">PUISSANCE FISCAUX</label>
-                <input type="text" class="form-control" id="power" onclick="effacerLabelpower()" name="power">
+                <input type="text" class="form-control" id="power" onclick="effacerLabel('power')" name="power">
 
             </div>
 
             <div class="i-box">
 
                 <label for="fuel">CARBURANT</label>
-                <input type="text" class="form-control" id="fuel" onclick="effacerLabelfuel()" name="fuel">
+                <input type="text" class="form-control" id="fuel" onclick="effacerLabel('fuel')" name="fuel">
 
             </div>
 
@@ -134,13 +134,13 @@ $_SESSION["message"] = "";
 
                 <div class="sous-user-box">
                     <label for="creation_year"> ANNÉE DE CRÉATION</label>
-                    <input type="text" class="form-control" id="creation_year" onclick="effacerLabelcreation_year()" name="creation_year">
+                    <input type="text" class="form-control" id="creation_year" onclick="effacerLabel('creation_year')" name="creation_year">
 
 
                 </div>
                 <div class="sous-user-box">
                     <label for="nb_door"> N° PORTE</label>
-                    <input type="text" class="form-control" id="nb_door" onclick="effacerLabelnb_door()" name="nb_door">
+                    <input type="text" class="form-control" id="nb_door" onclick="effacerLabel('nb_door')" name="nb_door">
 
 
                 </div>

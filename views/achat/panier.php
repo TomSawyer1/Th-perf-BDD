@@ -22,6 +22,9 @@ if (!App::isadmin()) {
     unset($breadcrumb['Inscription']);
     unset($breadcrumb['Profil']);
     unset($breadcrumb['Ajouter un véhicule']);
+    unset($breadcrumb['Liste voitures']);
+    unset($breadcrumb['Catégorie']);
+    unset($breadcrumb['BMW M']);
     // Début du fil d'Ariane
     echo '<ul class="breadcrumb">';
 

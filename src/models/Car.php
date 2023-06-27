@@ -53,7 +53,7 @@ class Car extends Db
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
             $this->setPicture($name);
-            $destination = $_SERVER["DOCUMENT_ROOT"] . "/PHP/Th-perf-BDD/assets/images/" . $name;
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "/dv22andrade/assets/images/" . $name;
 
             if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
                 echo "L'image est bien enregistré, voila sa destination : $destination<br>";

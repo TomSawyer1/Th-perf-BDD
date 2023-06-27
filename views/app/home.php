@@ -4,18 +4,14 @@ include VIEWS . 'inc/header.php';
 
 $car = Car::showDb();
 
-// if (isset($_SESSION['id'])) {
-//     $var = "Bonjour " . $_SESSION['mail'];
-// } else {
-//     $var = "Bonjour a tous";
-// }
+
 
 ?>
 <div class="back">
 
     <div class="video-container">
         <video autoplay loop muted>
-            <!-- <source src="Seq M3.mp4" type="video/mp4"> -->
+
             <source src="<?= ASSET; ?>videos/Seq M3.mp4" type="video/mp4">
         </video>
 
@@ -26,8 +22,7 @@ $car = Car::showDb();
             <button class="button">En savoir plus</button>
         </a>
     </div>
-    <!-- <h1 class="text-center my-5">3PM</h1> -->
-    <!-- <h1 class="text-center my-5"><?= $var ?> </h1> -->
+
     <h1 class="text-center my-5"><?= $connected == 'false' ? "Bienvenue " . $_SESSION['user']['first_name'] : ""; ?></h1>
 
 </div>
@@ -74,7 +69,8 @@ $car = Car::showDb();
         <div class="Nimput">
             <p> Soyez alerté de nos exclusivités</p>
             <div class="box-imput3">
-                <label for="">EMAIL@MAIL.COM</label>
+                <label for="newslet">EMAIL@MAIL.COM</label>
+                <input type="text" name="newslet" id="newslet" onclick="effacerLabel('newslet')">
             </div>
         </div>
     </div>

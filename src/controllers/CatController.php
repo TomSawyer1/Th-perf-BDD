@@ -92,7 +92,7 @@ class CatController extends Db
 
     public static function fetchAllCategorie()
     {
-        $categorie = new categorie();
+        $categorie = new Categorie();
         $allCategorie = $categorie->showDb();
         return $allCategorie;
     }

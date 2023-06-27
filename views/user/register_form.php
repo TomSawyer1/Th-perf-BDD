@@ -63,39 +63,34 @@ $_SESSION["message"] = "";
 		<form method="post" action="" id="inscription">
 
 			<div class="user-box2">
-
 				<div class="sous-user-box">
-					<label for="prenom"> PRENOM</label>
-					<input type="text" class="form-control" id="prenom" onclick="effacerLabelfirst_name()" name="first_name">
-
-
+					<label for="prenom" id="label-prenom">PRENOM</label>
+					<input type="text" class="form-control" id="prenom" onclick="effacerLabel('prenom')" name="first_name">
 				</div>
 				<div class="sous-user-box">
-					<label for="nom"> NOM</label>
-					<input type="text" class="form-control" id="nom" name="last_name">
-
-
+					<label for="nom" id="label-nom">NOM</label>
+					<input type="text" class="form-control" id="nom" onclick="effacerLabel('nom')" name="last_name">
 				</div>
-
 			</div>
 
-			<div class="i-box">
-				<label for="user">EMAIL</label>
-				<input type="mail" class="form-control" id="mail" name="mail">
-
-
-			</div>
 
 			<div class="i-box">
-				<label for="floatingPassword">MOT DE PASSE</label>
-				<input type="password" class="form-control" id="password" name="password">
+				<label for="mail" id="label-mail">EMAIL</label>
+				<input type="text" class="form-control" id="mail" onclick="effacerLabel('mail')" name="mail">
 
 
 			</div>
 
 			<div class="i-box">
-				<label for="floatingPassword">ADRESSE</label>
-				<input type="tel" class="form-control" id="address" name="address">
+				<label for="password" id="label-password">MOT DE PASSE</label>
+				<input type="text" class="form-control" id="password" onclick="effacerLabel('password')" name="password">
+
+
+			</div>
+
+			<div class="i-box">
+				<label for="address">ADRESSE</label>
+				<input type="text" class="form-control" id="address" onclick="effacerLabel('address')" name="address">
 
 
 			</div>

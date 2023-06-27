@@ -4,7 +4,7 @@ $page = "other";
 $title = "Modification";
 include VIEWS . 'inc/header.php';
 $userFromBdd = user::modifier();
-// app::showArray($userFromBdd);
+
 if (!App::isconnect()) {
 	header("Location:" . BASE_PATH . "");
 }

@@ -7,37 +7,37 @@
 
             <h3>A Propos</h3>
             <ul>
-                <li>Qui sommes-nous ?</li>
-                <li>Contactez-nous</li>
-                <li>Nous rejoindre</li>
-                <li>Newsletter</li>
+                <li><a href="#">Qui sommes-nous ?</a></li>
+                <li><a href="#">Contactez-nous</a></li>
+                <li><a href="#">Nous rejoindre</a></li>
+                <li><a href="#">Newsletter</a></li>
 
             </ul>
         </div>
         <div class="footer-column">
             <h3>Achat</h3>
             <ul>
-                <li>Trouvez votre m3</li>
-                <li>Aide a l'achat</li>
-                <li>Nos conseils</li>
-                <li>Financements</li>
-                <li>Tous nos modèles</li>
+                <li><a href="#">Trouvez votre m3</a></li>
+                <li><a href="#">Aide a l'achat</a></li>
+                <li><a href="#">Nos conseils</a></li>
+                <li><a href="#">Financements</a></li>
+                <li><a href="<?= BASE_PATH . "showcat" ?>">Tous nos modèles</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h3>Aide & Assistance</h3>
             <ul>
-                <li>Questions fréquentes</li>
-                <li>Nous contacter</li>
+                <li><a href="#">Questions fréquentes</a></li>
+                <li><a href="#">Nous contacter</a></li>
                 <li>Service clients : 01 02 03 04 05</li>
             </ul>
         </div>
         <div class="footer-column">
             <h3>Suivez nous </h3>
             <ul id="Social">
-                <li> <a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><i class="fa-brands fa-instagram"></i></li>
-                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
             </ul>
         </div>
     </div>
