@@ -35,17 +35,20 @@ class App
 			'Home' => '&nbsp;',
 			'Catégorie' => 'showcat',
 			'Liste voitures' => 'listcar',
+			'BMW M' => 'voiture',
 
 			'Connexion' => 'connexion',
 			'Inscription' => 'register_form',
 
 			'Profil' => 'profil',
-			// 'BMW M' => 'voiture',
-			'Ajouter un véhicule' => 'ajoutcar'
+
+			'Ajouter un véhicule' => 'ajoutcar',
+
+			'Panier' => 'panier'
 		);
 		if (isset($_GET['cat'])) {
 			$pages['Liste voitures'] = 'listcar?id=' . $_GET['cat'];
-			$pages['BMW M'] = ' ';
+			$pages['Panier'] = 'panier';
 		}
 
 

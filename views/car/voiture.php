@@ -13,6 +13,7 @@ include VIEWS . 'inc/header.php';
     unset($breadcrumb['Inscription']);
     unset($breadcrumb['Profil']);
     unset($breadcrumb['Ajouter un véhicule']);
+    unset($breadcrumb['Panier']);
 
     // Début du fil d'Ariane
     echo '<ul class="breadcrumb">';
@@ -100,8 +101,8 @@ $car = Car::showDb();
                             <a href="#">
                                 <button class="button" id="blue">Message</button>
                             </a>
-                            <a href="#">
-                                <button class="button" id="green">Acheter</button>
+                            <a href="add_panier?id=<?= $allCars[$i]['id_car'] ?>">
+                                <button class="button" id="green">Ajouter au panier</button>
                             </a>
 
                         </div>

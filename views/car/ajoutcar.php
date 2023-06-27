@@ -13,6 +13,8 @@ include VIEWS . 'inc/header.php';
     unset($breadcrumb['Connexion']);
     unset($breadcrumb['Inscription']);
     unset($breadcrumb['Profil']);
+    unset($breadcrumb['Panier']);
+    unset($breadcrumb['BMW M']);
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 22 juin 2023 à 22:41
+-- Généré le : mar. 27 juin 2023 à 11:51
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `car` (
   `transmission` enum('Manual','Automatique') NOT NULL,
   PRIMARY KEY (`id_car`),
   KEY `id_cat` (`id_cat`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `car`
@@ -87,7 +87,9 @@ INSERT INTO `car` (`id_car`, `color`, `nb_door`, `power`, `miles`, `fuel`, `crea
 (41, 'Noir', 5, 236, '88000', 'gazoil', 2017, 'M3 Batman F80', 'Top sport car', 66000, 5, 'profil-1687461034-64949caa2846a-3f80b.webp', 'Automatique'),
 (42, 'Gris', 5, 187, '49030', 'gazoil', 2016, 'F80 Compétition', 'Top sport car', 80000, 5, 'profil-1687461211-64949d5b4e34e-3f80csable.webp', 'Automatique'),
 (43, 'Orange', 5, 160, '1003', 'gazoil', 2022, 'M3 Jahr', 'Top sport car', 86000, 6, 'profil-1687461419-64949e2bbd2f3-3g809.webp', 'Automatique'),
-(44, 'Jaune', 5, 200, '3000', 'gazoil', 2021, 'BMW M3 6-Speed', 'Top sport car', 86000, 6, 'profil-1687461594-64949eda155fc-3g8010.webp', 'Automatique');
+(44, 'Jaune', 5, 200, '3000', 'gazoil', 2021, 'BMW M3 6-Speed', 'Top sport car', 86000, 6, 'profil-1687461594-64949eda155fc-3g8010.webp', 'Automatique'),
+(47, 'red', 3, 325, '7090', 'essence', 1986, 'BMW E30', 'top sport car', 66000, 1, 'profil-1687713818-6498781a5a12e-3e309.webp', 'Automatique'),
+(49, 'Blanc', 5, 300, '21', 'essence', 2008, 'Thomas BMW M', 'C\'est la voiture a Thomas !!!', 1, 4, 'profil-1687865846-649ac9f614229-3e90T.webp', 'Manual');
 
 -- --------------------------------------------------------
 

@@ -13,10 +13,13 @@ include VIEWS . 'inc/header.php';
     $breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
 
     unset($breadcrumb['Catégorie']);
+    unset($breadcrumb['BMW M']);
+    unset($breadcrumb['Connexion']);
+    unset($breadcrumb['Inscription']);
     unset($breadcrumb['Ajouter un véhicule']);
     unset($breadcrumb['Liste voitures']);
-    unset($breadcrumb['Inscription']);
-    unset($breadcrumb['Connexion']);
+    unset($breadcrumb['Panier']);
+
 
 
     // Début du fil d'Ariane

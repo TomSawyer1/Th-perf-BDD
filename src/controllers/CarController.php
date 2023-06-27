@@ -20,11 +20,17 @@ class CarController extends Db
 
 
                 if (empty($_SESSION["message"])) {
-                    $_SESSION["message"] .= "Ca a marché<br>";
-                    header("Location:" . BASE_PATH . "home");
+                    $_SESSION["message"] .= $_SESSION["message"] .= "<div class=\"alert alert-success w-50 mx-auto\" role=\"alert\">
+                    La BMW a bien été enregistré !
+              </div>";
+                    header("Location:" . BASE_PATH . "ajoutcar");
                     exit;
                 } else {
-                    $_SESSION["message"] .= "Ca a pas marché<br>";
+                    $_SESSION["message"] .= "<div class=\"alert alert-danger w-50 mx-auto\" role=\"alert\">
+                    La requete ne s'est pas déroulé correctement
+              </div>";
+                    header("Location:" . BASE_PATH . "ajoutcar");
+                    exit;
                 }
             }
         }

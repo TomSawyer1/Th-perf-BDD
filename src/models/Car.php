@@ -53,7 +53,7 @@ class car extends Db
         {
             $name = "profil-" . time() . "-" . uniqid() . "-" . $_FILES["picture"]["name"];
             $this->setPicture($name);
-            $destination = $_SERVER["DOCUMENT_ROOT"] . "/Th-perf-BDD/assets/images/" . $name;
+            $destination = $_SERVER["DOCUMENT_ROOT"] . "/PHP/Th-perf-BDD/assets/images/" . $name;
 
             if (move_uploaded_file($_FILES["picture"]["tmp_name"], $destination)) {
                 echo "L'image est bien enregistré, voila sa destination : $destination<br>";
@@ -222,6 +222,22 @@ class car extends Db
         $carFromBdd = $requetePreparee->fetch(PDO::FETCH_ASSOC);
 
         return $carFromBdd;
+    }
+
+    public static function recupcar_panier($produitId)
+    {
+        $requete = "SELECT * FROM `car` WHERE `id_car` = ?";
+
+        $requeteprepare = self::getDb()->prepare($requete);
+
+        $reponse = $requeteprepare->execute(
+            [$produitId]
+        );
+
+
+        $car = $requeteprepare->fetchAll(PDO::FETCH_ASSOC);
+
+        return $car;
     }
 
     // public static function modifcar()

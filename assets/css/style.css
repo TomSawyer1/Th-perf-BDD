@@ -913,6 +913,76 @@ margin-top: 100px;
   
 }
 
+/*---------------------- PAGE PANIER --------------------- */
+
+.panier{
+  margin: 100px auto;
+  max-width: 1300px;
+
+}
+
+.container-panier{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+}
+
+.resume-panier{
+  border-radius: 21px;
+  background: rgb(241, 241, 241);
+
+  padding: 33px 51px 46px 45px;
+
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.val-panier{
+  display: grid;
+  grid-template-rows: auto;
+  gap: 26px;
+}
+
+.total{
+border-radius: 21px;
+background: rgb(241, 241, 241);
+
+padding: 20px 14px 20px 15px;
+}
+
+#g2{
+  background-color: #6DD177;
+  border: 2px solid #6DD177;
+  width: 399px;
+}
+
+.logo-panier{
+border-radius: 21px;
+background: rgb(241, 241, 241);
+
+display: flex;
+justify-content: center;
+align-items:center ;
+
+padding: 132px 105px;
+
+}
+#logo2{
+  width: 193px;
+}
+
+.infos-panier{
+  display: grid;
+  grid-template-columns: 184px auto 10px;
+
+  gap: 16px;
+}
+
+#panier-img{
+width: 184px;
+height: 152px ;
+}
 
 
 

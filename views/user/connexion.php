@@ -11,10 +11,12 @@ include VIEWS . 'inc/header.php';
   $breadcrumb = App::getBreadcrumbData($_SERVER['REQUEST_URI']);
 
   unset($breadcrumb['Catégorie']);
+  unset($breadcrumb['BMW M']);
   unset($breadcrumb['Inscription']);
   unset($breadcrumb['Ajouter un véhicule']);
   unset($breadcrumb['Liste voitures']);
   unset($breadcrumb['Profil']);
+  unset($breadcrumb['Panier']);
 
 
 
