@@ -978,13 +978,13 @@ padding: 132px 105px;
 
 .infos-panier{
   display: grid;
-  grid-template-columns: 184px auto 10px;
+  grid-template-columns: 212px auto 10px;
 
   gap: 16px;
 }
 
 #panier-img{
-width: 184px;
+width: 212px;
 height: 152px ;
 }
 
